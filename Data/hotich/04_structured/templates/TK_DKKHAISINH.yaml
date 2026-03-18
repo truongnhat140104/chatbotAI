@@ -1,0 +1,255 @@
+{
+  "template_id": "TK_DKKHAISINH",
+  "ten_mau": "Tờ khai đăng ký khai sinh",
+  "loai": "to_khai",
+  "output_type": "input_form",
+  "source_file": "03_text/1.TKngkkhaisinh.doc",
+  "language": "vi",
+  "fields": [
+    {
+      "key": "kinh_gui_co_quan",
+      "label": "Kính gửi (tên cơ quan đăng ký khai sinh)",
+      "type": "text",
+      "required": true,
+      "note_refs": [1]
+    },
+
+    {
+      "key": "nguoi_yeu_cau_ho_ten",
+      "label": "Họ, chữ đệm, tên người yêu cầu",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "nguoi_yeu_cau_ngay_sinh",
+      "label": "Ngày, tháng, năm sinh (người yêu cầu)",
+      "type": "date",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_yeu_cau_noi_cu_tru",
+      "label": "Nơi cư trú (người yêu cầu)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_yeu_cau_giay_to_tuy_than",
+      "label": "Giấy tờ tùy thân (người yêu cầu)",
+      "type": "text",
+      "required": false,
+      "note_refs": [3]
+    },
+    {
+      "key": "quan_he_voi_nguoi_duoc_khai_sinh",
+      "label": "Quan hệ với người được khai sinh",
+      "type": "text",
+      "required": true
+    },
+
+    {
+      "key": "tre_ho_ten",
+      "label": "Họ, chữ đệm, tên (người được khai sinh)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "tre_ngay_sinh",
+      "label": "Ngày, tháng, năm sinh (người được khai sinh)",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "tre_ngay_sinh_bang_chu",
+      "label": "Ngày, tháng, năm sinh (ghi bằng chữ)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "tre_gioi_tinh",
+      "label": "Giới tính",
+      "type": "enum",
+      "options": ["Nam", "Nữ", "Khác"],
+      "required": true
+    },
+    {
+      "key": "tre_dan_toc",
+      "label": "Dân tộc",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "tre_quoc_tich",
+      "label": "Quốc tịch",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "tre_noi_sinh",
+      "label": "Nơi sinh",
+      "type": "text",
+      "required": true,
+      "note_refs": [4]
+    },
+    {
+      "key": "tre_que_quan",
+      "label": "Quê quán",
+      "type": "text",
+      "required": false
+    },
+
+    {
+      "key": "me_ho_ten",
+      "label": "Họ, chữ đệm, tên người mẹ",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "me_nam_sinh",
+      "label": "Năm sinh (mẹ) - ghi đầy đủ ngày, tháng, năm nếu có",
+      "type": "text",
+      "required": false,
+      "note_refs": [5]
+    },
+    {
+      "key": "me_dan_toc",
+      "label": "Dân tộc (mẹ)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "me_quoc_tich",
+      "label": "Quốc tịch (mẹ)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "me_noi_cu_tru",
+      "label": "Nơi cư trú (mẹ)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "me_giay_to_tuy_than",
+      "label": "Giấy tờ tùy thân (mẹ)",
+      "type": "text",
+      "required": false,
+      "note_refs": [3]
+    },
+
+    {
+      "key": "cha_ho_ten",
+      "label": "Họ, chữ đệm, tên người cha",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "cha_nam_sinh",
+      "label": "Năm sinh (cha) - ghi đầy đủ ngày, tháng, năm nếu có",
+      "type": "text",
+      "required": false,
+      "note_refs": [5]
+    },
+    {
+      "key": "cha_dan_toc",
+      "label": "Dân tộc (cha)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "cha_quoc_tich",
+      "label": "Quốc tịch (cha)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "cha_noi_cu_tru",
+      "label": "Nơi cư trú (cha)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "cha_giay_to_tuy_than",
+      "label": "Giấy tờ tùy thân (cha)",
+      "type": "text",
+      "required": false,
+      "note_refs": [3]
+    },
+
+    {
+      "key": "gcn_ket_hon_so",
+      "label": "Thông tin GCN kết hôn cha, mẹ - Số",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "gcn_ket_hon_quyen_so",
+      "label": "Thông tin GCN kết hôn cha, mẹ - Quyển số",
+      "type": "text",
+      "required": false
+    },
+    {
+      "key": "gcn_ket_hon_ngay_dang_ky",
+      "label": "Thông tin GCN kết hôn cha, mẹ - đăng ký ngày",
+      "type": "date",
+      "required": false
+    },
+    {
+      "key": "gcn_ket_hon_noi_dang_ky",
+      "label": "Thông tin GCN kết hôn cha, mẹ - tại",
+      "type": "text",
+      "required": false
+    },
+
+    {
+      "key": "lam_tai",
+      "label": "Làm tại",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "ngay_lap_to_khai",
+      "label": "Ngày lập tờ khai",
+      "type": "date",
+      "required": true
+    },
+
+    {
+      "key": "de_nghi_cap_ban_sao",
+      "label": "Đề nghị cấp bản sao",
+      "type": "enum",
+      "options": ["Có", "Không"],
+      "required": false,
+      "note_refs": [6]
+    },
+    {
+      "key": "so_luong_ban_sao",
+      "label": "Số lượng bản sao",
+      "type": "number",
+      "required": false,
+      "note_refs": [6]
+    }
+  ],
+  "notes": {
+    "1": "Ghi rõ tên cơ quan đăng ký khai sinh.",
+    "2": "Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử; không cung cấp đầy đủ thông tin ngày, tháng, năm sinh. Nếu phải cung cấp “Nơi cư trú” thì ghi theo thường trú; nếu không có thường trú thì ghi tạm trú; nếu không có cả hai thì ghi nơi ở hiện tại.",
+    "3": "Ghi số định danh cá nhân/CCCD/thẻ căn cước (ví dụ: CCCD số ... do ... cấp ngày ...). Nếu không có thì ghi giấy tờ hợp lệ thay thế (hộ chiếu...).",
+    "4": "Nếu sinh tại cơ sở y tế: ghi rõ tên cơ sở y tế và địa chỉ. Nếu sinh ngoài cơ sở y tế: ghi địa danh 02 cấp hành chính (xã, tỉnh) nơi sinh.",
+    "5": "Ghi đầy đủ ngày, tháng sinh của cha, mẹ (nếu có).",
+    "6": "Đánh dấu X nếu có yêu cầu cấp bản sao và ghi rõ số lượng."
+  },
+  "render": {
+    "title": "TỜ KHAI ĐĂNG KÝ KHAI SINH",
+    "signature": {
+      "label": "Người yêu cầu",
+      "fields": ["nguoi_yeu_cau_ho_ten"]
+    }
+  }
+}

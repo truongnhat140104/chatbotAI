@@ -1,0 +1,27 @@
+{
+  "case_id": "HT_KT_001",
+  "title": "Đăng ký khai tử đúng hạn, có giấy báo tử",
+  "module": "hotich",
+  "topic_tags": ["khai_tu", "dung_han", "du_ho_so"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "co_giay_bao_tu", "type": "bool", "required": true, "desc": "Có giấy báo tử/giấy tờ xác nhận chết?"},
+    {"field": "nguoi_di_khai_tu", "type": "string", "required": true, "desc": "Người đi khai tử là ai?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có giấy báo tử không?", "branches": {"true": "Tiếp tục.", "false": "Chuyển case HT_KT_002 (mất giấy báo tử/chết lâu năm)."}},
+    {"id": "DP2", "question": "Có yếu tố nước ngoài không?", "branches": {"true": "Chuyển nhánh có yếu tố nước ngoài.", "false": "Trong nước (thường cấp xã)."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Tiếp nhận hồ sơ khai tử và kiểm tra giấy báo tử/giấy tờ liên quan.", "why": "Cần căn cứ xác nhận sự kiện chết.", "outputs": ["Hồ sơ hợp lệ"]},
+    {"step": 2, "action": "Ghi sổ hộ tịch/cập nhật dữ liệu và cấp trích lục khai tử.", "why": "Hoàn tất đăng ký.", "outputs": ["Trích lục khai tử"]}
+  ],
+  "outputs": ["Trích lục khai tử"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Đăng ký khai tử."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Hồ sơ/quy trình khai tử."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC khai tử)", "note": "Chuẩn TTHC."}
+  ]
+}

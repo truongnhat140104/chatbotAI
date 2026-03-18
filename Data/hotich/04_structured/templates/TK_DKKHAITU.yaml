@@ -1,0 +1,204 @@
+{
+  "template_id": "TK_DKKHAITU",
+  "ten_mau": "Tờ khai đăng ký khai tử",
+  "loai": "to_khai",
+  "output_type": "input_form",
+  "source_file": "03_text/2.TKdkkhaitu.doc",
+  "language": "vi",
+  "fields": [
+    {
+      "key": "kinh_gui_co_quan",
+      "label": "Kính gửi (tên cơ quan đăng ký khai tử)",
+      "type": "text",
+      "required": true,
+      "note_refs": [1]
+    },
+
+    {
+      "key": "nguoi_yeu_cau_ho_ten",
+      "label": "Họ, chữ đệm, tên người yêu cầu",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "nguoi_yeu_cau_ngay_sinh",
+      "label": "Ngày, tháng, năm sinh (người yêu cầu)",
+      "type": "date",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_yeu_cau_noi_cu_tru",
+      "label": "Nơi cư trú (người yêu cầu)",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_yeu_cau_giay_to_tuy_than",
+      "label": "Giấy tờ tùy thân (người yêu cầu)",
+      "type": "text",
+      "required": false,
+      "note_refs": [3]
+    },
+    {
+      "key": "quan_he_voi_nguoi_da_chet",
+      "label": "Quan hệ với người đã chết",
+      "type": "text",
+      "required": true
+    },
+
+    {
+      "key": "nguoi_chet_ho_ten",
+      "label": "Họ, chữ đệm, tên người đã chết",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "nguoi_chet_ngay_sinh",
+      "label": "Ngày, tháng, năm sinh (người đã chết)",
+      "type": "date",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_chet_gioi_tinh",
+      "label": "Giới tính",
+      "type": "enum",
+      "options": ["Nam", "Nữ", "Khác"],
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_chet_dan_toc",
+      "label": "Dân tộc",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_chet_quoc_tich",
+      "label": "Quốc tịch",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_chet_noi_cu_tru_cuoi_cung",
+      "label": "Nơi cư trú cuối cùng",
+      "type": "text",
+      "required": false,
+      "note_refs": [2]
+    },
+    {
+      "key": "nguoi_chet_giay_to_tuy_than",
+      "label": "Giấy tờ tùy thân (người đã chết)",
+      "type": "text",
+      "required": false,
+      "note_refs": [3]
+    },
+
+    {
+      "key": "thoi_diem_chet_gio",
+      "label": "Giờ chết",
+      "type": "number",
+      "required": true
+    },
+    {
+      "key": "thoi_diem_chet_phut",
+      "label": "Phút chết",
+      "type": "number",
+      "required": true
+    },
+    {
+      "key": "ngay_chet",
+      "label": "Ngày chết",
+      "type": "date",
+      "required": true
+    },
+    {
+      "key": "noi_chet",
+      "label": "Nơi chết",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "nguyen_nhan_chet",
+      "label": "Nguyên nhân chết",
+      "type": "text",
+      "required": true
+    },
+
+    {
+      "key": "giay_bao_tu_hoac_thay_the_ten",
+      "label": "Tên giấy tờ (Giấy báo tử hoặc giấy tờ thay thế)",
+      "type": "text",
+      "required": false,
+      "note_refs": [4]
+    },
+    {
+      "key": "giay_bao_tu_hoac_thay_the_so",
+      "label": "Số Giấy báo tử/Giấy tờ thay thế Giấy báo tử",
+      "type": "text",
+      "required": false,
+      "note_refs": [4]
+    },
+    {
+      "key": "giay_bao_tu_hoac_thay_the_co_quan_cap",
+      "label": "Cơ quan cấp",
+      "type": "text",
+      "required": false,
+      "note_refs": [4]
+    },
+    {
+      "key": "giay_bao_tu_hoac_thay_the_ngay_cap",
+      "label": "Ngày cấp",
+      "type": "date",
+      "required": false,
+      "note_refs": [4]
+    },
+
+    {
+      "key": "lam_tai",
+      "label": "Làm tại",
+      "type": "text",
+      "required": true
+    },
+    {
+      "key": "ngay_lap_to_khai",
+      "label": "Ngày lập tờ khai",
+      "type": "date",
+      "required": true
+    },
+
+    {
+      "key": "de_nghi_cap_ban_sao",
+      "label": "Đề nghị cấp bản sao",
+      "type": "enum",
+      "options": ["Có", "Không"],
+      "required": false,
+      "note_refs": [5]
+    },
+    {
+      "key": "so_luong_ban_sao",
+      "label": "Số lượng bản sao",
+      "type": "number",
+      "required": false,
+      "note_refs": [5]
+    }
+  ],
+  "notes": {
+    "1": "Ghi rõ tên cơ quan đăng ký khai tử.",
+    "2": "Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/căn cước công dân/thẻ căn cước/chứng minh nhân dân; không cung cấp đầy đủ thông tin ngày, tháng, năm sinh. Trường hợp phải cung cấp thông tin “Nơi cư trú” thì ghi theo nơi đăng ký thường trú; nếu không có nơi đăng ký thường trú thì ghi theo nơi đăng ký tạm trú; trường hợp không có nơi đăng ký thường trú và nơi đăng ký tạm trú thì ghi theo nơi ở hiện tại.",
+    "3": "Ghi số định danh cá nhân/căn cước công dân/thẻ căn cước (ví dụ: Căn cước công dân số ... do ... cấp ngày ...). Trường hợp không có số định danh cá nhân/căn cước công dân/thẻ căn cước thì ghi giấy tờ hợp lệ thay thế (hộ chiếu, chứng minh nhân dân...).",
+    "4": "Nếu ghi theo Giấy báo tử thì gạch cụm từ “Giấy tờ thay thế Giấy báo tử”; nếu ghi theo số Giấy tờ thay thế Giấy báo tử thì ghi rõ tên, số giấy tờ và gạch cụm từ “Giấy báo tử”; trường hợp không có thì mục này để trống.",
+    "5": "Đánh dấu X nếu có yêu cầu cấp bản sao và ghi rõ số lượng."
+  },
+  "render": {
+    "title": "TỜ KHAI ĐĂNG KÝ KHAI TỬ",
+    "signature": {
+      "label": "Người yêu cầu",
+      "fields": ["nguoi_yeu_cau_ho_ten"]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "doc_id": "1833_QD_BTP",
+  "type": "legal",
+  "chapters": [
+    {
+      "chapter_no": "?",
+      "title": "",
+      "note_refs": [],
+      "sections": [],
+      "articles": [
+        {
+          "article_no": 1,
+          "title": "Công bố kèm theo Quyết định này các thủ tục hành chính được sửa đổi, bổ sung trong lĩnh vực hộ tịch tại cơ quan đăng ký hộ tịch trong nước thuộc phạm vi chức năng quản lý của Bộ Tư pháp (theo Phụ lục ban hành kèm theo Quyết định này).",
+          "note_refs": [],
+          "clauses": [],
+          "raw_paragraphs": []
+        },
+        {
+          "article_no": 2,
+          "title": "Quyết định này có hiệu lực thi hành kể từ ngày 01 tháng 7 năm 2025.",
+          "note_refs": [],
+          "clauses": [],
+          "raw_paragraphs": []
+        },
+        {
+          "article_no": 3,
+          "title": "Chánh Văn phòng Bộ, Cục trưởng Cục Hành chính tư pháp, Thủ trưởng các đơn vị có liên quan chịu trách nhiệm thi hành Quyết định này./.",
+          "note_refs": [],
+          "clauses": [],
+          "raw_paragraphs": []
+        }
+      ]
+    }
+  ],
+  "notes": {},
+  "source": "03_text/format/1833_QD_BTP.docx",
+  "parse_mode": "pdf_text",
+  "module": "hotich",
+  "schema_version": "1.0"
+}

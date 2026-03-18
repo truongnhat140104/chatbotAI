@@ -1,0 +1,74 @@
+{
+  "case_id": "HT_KT_002",
+  "title": "Đăng ký khai tử khi mất giấy báo tử hoặc người chết đã lâu năm",
+  "module": "hotich",
+  "topic_tags": ["khai_tu", "mat_giay_to", "chet_lau_nam"],
+  "assumptions": ["Áp dụng quy định hiện hành", "Không xét lệ phí theo địa phương"],
+  "inputs_schema": [
+    {"field": "co_giay_bao_tu", "type": "bool", "required": true, "desc": "Có giấy báo tử/giấy xác nhận chết?"},
+    {"field": "chet_lau_nam", "type": "bool", "required": true, "desc": "Người chết đã lâu năm (thời gian dài) hay không?"},
+    {"field": "co_giay_to_thay_the", "type": "bool", "required": true, "desc": "Có giấy tờ thay thế (xác nhận của cơ quan có thẩm quyền/giấy tờ liên quan) hay không?"},
+    {"field": "noi_xay_ra_chet", "type": "string", "required": true, "desc": "Nơi xảy ra chết (bệnh viện/nhà/khác)"},
+    {"field": "nguoi_di_khai_tu", "type": "string", "required": true, "desc": "Người đi khai tử là ai (người thân/đại diện/khác)"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {
+      "id": "DP1",
+      "question": "Có yếu tố nước ngoài không?",
+      "branches": {
+        "true": "Chuyển nhánh khai tử có yếu tố nước ngoài (thường cấp huyện).",
+        "false": "Xử lý theo nhánh trong nước (thường cấp xã)."
+      }
+    },
+    {
+      "id": "DP2",
+      "question": "Có giấy báo tử/giấy xác nhận chết không?",
+      "branches": {
+        "true": "Xử lý theo HT_KT_001 (đúng hạn, có giấy báo tử).",
+        "false": "Tiếp tục nhánh mất giấy báo tử/chết lâu năm."
+      }
+    },
+    {
+      "id": "DP3",
+      "question": "Có giấy tờ thay thế hợp lệ không?",
+      "branches": {
+        "true": "Tiếp nhận theo giấy tờ thay thế để xác định sự kiện chết.",
+        "false": "Hướng dẫn xin xác nhận từ cơ quan có thẩm quyền hoặc bổ sung căn cứ theo quy định."
+      }
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "Xác định thẩm quyền đăng ký khai tử và thu thập thông tin tối thiểu về người chết.",
+      "why": "Đảm bảo đúng nơi tiếp nhận và có đủ dữ liệu tra cứu.",
+      "outputs": ["Xác định cơ quan tiếp nhận", "Thông tin định danh người chết"]
+    },
+    {
+      "step": 2,
+      "action": "Hướng dẫn giấy tờ thay thế giấy báo tử (xác nhận của cơ quan có thẩm quyền/giấy tờ liên quan theo quy định).",
+      "why": "Trường hợp mất giấy báo tử cần căn cứ hợp lệ để đăng ký khai tử.",
+      "outputs": ["Danh mục giấy tờ thay thế cần nộp"]
+    },
+    {
+      "step": 3,
+      "action": "Tiếp nhận hồ sơ, kiểm tra tính hợp lệ; yêu cầu bổ sung/xác minh khi cần.",
+      "why": "Giảm rủi ro đăng ký sai sự kiện.",
+      "outputs": ["Phiếu tiếp nhận", "Phiếu yêu cầu bổ sung/xác minh (nếu có)"]
+    },
+    {
+      "step": 4,
+      "action": "Ghi sổ hộ tịch/cập nhật dữ liệu và cấp trích lục khai tử.",
+      "why": "Hoàn tất thủ tục và trả kết quả.",
+      "outputs": ["Trích lục khai tử"]
+    }
+  ],
+  "outputs": ["Trích lục khai tử"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Đăng ký khai tử, thẩm quyền."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Hồ sơ/giấy tờ thay thế, quy trình khai tử."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn nghiệp vụ."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC khai tử)", "note": "Chuẩn TTHC."}
+  ]
+}

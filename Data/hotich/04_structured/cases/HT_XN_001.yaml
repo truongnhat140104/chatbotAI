@@ -1,0 +1,27 @@
+{
+  "case_id": "HT_XN_001",
+  "title": "Cấp Giấy xác nhận tình trạng hôn nhân để đăng ký kết hôn",
+  "module": "hotich",
+  "topic_tags": ["xn_tthn", "ket_hon"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "muc_dich", "type": "string", "required": true, "desc": "Kết hôn/mua bán tài sản/khác"},
+    {"field": "da_cu_tru_nhieu_noi", "type": "bool", "required": true, "desc": "Có cư trú nhiều nơi trong thời gian liên quan không?"},
+    {"field": "thoi_gian_cu_tru", "type": "string", "required": true, "desc": "Khoảng thời gian cần xác nhận"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có cư trú nhiều nơi không?", "branches": {"true": "Cần xác minh tình trạng hôn nhân tại các nơi cư trú trước đây theo quy định.", "false": "Xử lý tại nơi cư trú hiện tại."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Tiếp nhận tờ khai và xác định phạm vi thời gian cần xác nhận.", "why": "Xác định đúng nội dung giấy xác nhận.", "outputs": ["Phạm vi xác nhận"]},
+    {"step": 2, "action": "Nếu cư trú nhiều nơi: hướng dẫn/tiến hành xác minh theo quy định.", "why": "Tránh bỏ sót tình trạng hôn nhân ở nơi khác.", "outputs": ["Kết quả xác minh (nếu có)"]},
+    {"step": 3, "action": "Cấp giấy xác nhận tình trạng hôn nhân và trả kết quả.", "why": "Hoàn tất thủ tục.", "outputs": ["Giấy xác nhận tình trạng hôn nhân"]}
+  ],
+  "outputs": ["Giấy xác nhận tình trạng hôn nhân"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Thẩm quyền/cấp giấy xác nhận."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Quy trình, hồ sơ, xác minh."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/tờ khai."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC xác nhận tình trạng hôn nhân)", "note": "Chuẩn TTHC."}
+  ]
+}

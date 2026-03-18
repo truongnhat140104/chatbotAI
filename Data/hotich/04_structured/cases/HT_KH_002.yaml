@@ -1,0 +1,81 @@
+{
+  "case_id": "HT_KH_002",
+  "title": "Đăng ký kết hôn có yếu tố nước ngoài (một bên là người nước ngoài hoặc giấy tờ nước ngoài)",
+  "module": "hotich",
+  "topic_tags": ["ket_hon", "yeu_to_nuoc_ngoai", "tham_quyen"],
+  "assumptions": ["Áp dụng quy định hiện hành", "Không xét lệ phí địa phương"],
+  "inputs_schema": [
+    {"field": "mot_ben_la_nguoi_nuoc_ngoai", "type": "bool", "required": true, "desc": "Một bên là người nước ngoài?"},
+    {"field": "giay_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có giấy tờ do nước ngoài cấp (hộ chiếu, giấy xác nhận độc thân...) ?"},
+    {"field": "da_hop_phap_hoa", "type": "bool", "required": true, "desc": "Giấy tờ nước ngoài đã hợp pháp hóa lãnh sự (nếu thuộc diện) chưa?"},
+    {"field": "da_dich_thuat_cong_chung", "type": "bool", "required": true, "desc": "Giấy tờ nước ngoài đã dịch/ chứng thực bản dịch theo quy định chưa?"},
+    {"field": "hai_ben_co_mat", "type": "bool", "required": true, "desc": "Hai bên có mặt khi đăng ký?"},
+    {"field": "du_dieu_kien_ket_hon", "type": "bool", "required": true, "desc": "Đủ điều kiện kết hôn theo quy định?"},
+    {"field": "noi_cu_tru_nguoi_vn", "type": "string", "required": true, "desc": "Nơi cư trú của công dân Việt Nam"}
+  ],
+  "decision_points": [
+    {
+      "id": "DP1",
+      "question": "Thẩm quyền giải quyết thuộc cấp nào?",
+      "branches": {
+        "default": "Kết hôn có yếu tố nước ngoài thường thuộc thẩm quyền cấp huyện (Phòng Tư pháp/UBND cấp huyện) theo quy định."
+      }
+    },
+    {
+      "id": "DP2",
+      "question": "Giấy tờ nước ngoài đã hợp pháp hoá/dịch thuật đúng chưa?",
+      "branches": {
+        "true": "Tiếp tục tiếp nhận hồ sơ.",
+        "false": "Hướng dẫn hoàn thiện hợp pháp hóa lãnh sự/phiên dịch/chứng thực bản dịch theo quy định."
+      }
+    },
+    {
+      "id": "DP3",
+      "question": "Hai bên có mặt và đủ điều kiện kết hôn không?",
+      "branches": {
+        "true": "Tiếp tục quy trình đăng ký.",
+        "false": "Từ chối/hoãn tiếp nhận và hướng dẫn theo thiếu điều kiện hoặc thiếu sự có mặt."
+      }
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "Xác định đúng thẩm quyền (thường cấp huyện) và hướng dẫn nơi nộp hồ sơ theo nơi cư trú của công dân Việt Nam.",
+      "why": "Tránh nộp sai cấp xã khi có yếu tố nước ngoài.",
+      "outputs": ["Cơ quan tiếp nhận phù hợp", "Hướng dẫn nơi nộp hồ sơ"]
+    },
+    {
+      "step": 2,
+      "action": "Kiểm tra điều kiện kết hôn của hai bên theo Luật HNGĐ và giấy tờ chứng minh tình trạng hôn nhân.",
+      "why": "Điều kiện kết hôn là bắt buộc.",
+      "outputs": ["Kết quả kiểm tra điều kiện"]
+    },
+    {
+      "step": 3,
+      "action": "Kiểm tra tính hợp lệ của giấy tờ nước ngoài: hợp pháp hóa lãnh sự (nếu cần), dịch thuật, chứng thực bản dịch.",
+      "why": "Giấy tờ nước ngoài phải hợp lệ mới sử dụng trong hồ sơ.",
+      "outputs": ["Danh mục giấy tờ hợp lệ/thiếu"]
+    },
+    {
+      "step": 4,
+      "action": "Tiếp nhận hồ sơ; xử lý xác minh/phỏng vấn (nếu thủ tục yêu cầu) và hoàn tất đăng ký.",
+      "why": "Đảm bảo đăng ký đúng người, đúng ý chí tự nguyện, đúng quy định.",
+      "outputs": ["Phiếu tiếp nhận", "Kết quả xử lý hồ sơ"]
+    },
+    {
+      "step": 5,
+      "action": "Ghi sổ hộ tịch/cập nhật dữ liệu và cấp giấy chứng nhận/trích lục kết hôn.",
+      "why": "Trả kết quả thủ tục.",
+      "outputs": ["Giấy chứng nhận kết hôn/trích lục kết hôn"]
+    }
+  ],
+  "outputs": ["Giấy chứng nhận kết hôn/trích lục kết hôn"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HNGD_52_2014_QH13", "ref": "(điền sau)", "note": "Điều kiện kết hôn."},
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Thẩm quyền đăng ký kết hôn, kết hôn có yếu tố nước ngoài."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Hồ sơ/quy trình kết hôn có yếu tố nước ngoài."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC kết hôn)", "note": "Chuẩn TTHC."}
+  ]
+}

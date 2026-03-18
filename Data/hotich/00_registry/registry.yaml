@@ -1,0 +1,149 @@
+module: "hotich"
+schema_version: "1.0"
+
+items:
+  - doc_id: "53_VBHN_VPQH"
+    doc_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/53_VBHN_VPQH.docx"
+    parse_mode: "clauses_with_notes"
+    keep_note_markers: false
+    # dùng cho trích dẫn / ưu tiên
+    use_for_citation: true
+    priority: 1
+    # hiệu lực mức văn bản (Level A)
+    effective_from: "2025-01-01"
+    effective_to: null            # <- null = còn hiệu lực toàn bộ (hoặc chưa biết ngày hết hiệu lực)
+    status: "active"              # active | expired | partial
+
+  - doc_id: "08_2025_TT_BTP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/08_2025_TT_BTP.docx"
+    parse_mode: "clauses"
+    keep_note_markers: false
+    use_for_citation: true
+    priority: 85
+    effective_from: "2025-07-01"
+    effective_to: null
+    status: "active"
+
+  - doc_id: "92_2023_ND_CP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/92_2023_ND_CP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: false
+    use_for_citation: true
+    priority: 80
+    effective_from: "2023-12-19"
+    effective_to: null
+    status: "active"
+
+  - doc_id: "104_2022_ND_CP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/104_2022_ND_CP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: false
+    use_for_citation: true
+    priority: 88
+    effective_from: "2023-01-01"
+    effective_to: null
+    status: "partial_active"
+
+  - doc_id: "1068_VBHN_BTP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/1068_VBHN_BTP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: true
+    use_for_citation: true
+    priority: 95
+    effective_from: "2025-02-28"
+    effective_to: null
+    status: "active"
+
+  - doc_id: "1844_VBHN_BTP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/1844_VBHN_BTP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: true
+    use_for_citation: true
+    priority: 95
+    effective_from: null
+    effective_to: null
+    status: "active"
+
+  - doc_id: "4510_VBHN_BTP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/4510_VBHN_BTP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: true
+    use_for_citation: true
+    priority: 95
+    effective_from: null
+    effective_to: null
+    status: "active"
+
+  - doc_id: "3884_VBHN_BTP"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/3884_VBHN_BTP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: true
+    use_for_citation: true
+    priority: 95
+    effective_from: null
+    effective_to: null
+    status: "active"
+
+  - doc_id: "60_2014_QH13"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/60_2014_QH13.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: false
+    use_for_citation: true
+    priority: 100
+    effective_from: null
+    effective_to: null
+    status: "active"
+
+  - doc_id: "52_VBHN_VPQH"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/52_VBHN_VPQH.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: true
+    use_for_citation: true
+    priority: 100
+    effective_from: null
+    effective_to: null
+    status: "active"
+
+  - doc_id: "121_VBHN_VPQH"
+    parser_type: "legal_code"
+    enabled: true
+    source_path: "03_text/format/121_VBHN_VPQH.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: true
+    use_for_citation: true
+    priority: 90
+    effective_from: null
+    effective_to: null
+    status: "active"
+
+  - doc_id: "1833_QD_BTP"
+    parser_type: "procedure_catalog"
+    enabled: true
+    source_path: "03_text/format/1833_QD_BTP.docx"
+    parse_mode: "pdf_text"
+    keep_note_markers: false
+    use_for_citation: true
+    priority: 92
+    effective_from: "2025-06-23"
+    effective_to: null
+    status: "active"

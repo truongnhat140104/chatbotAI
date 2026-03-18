@@ -1,0 +1,65 @@
+{
+  "case_id": "HT_XN_002",
+  "title": "Cấp Giấy xác nhận tình trạng hôn nhân khi người yêu cầu đã cư trú nhiều nơi",
+  "module": "hotich",
+  "topic_tags": ["xn_tthn", "cu_tru_nhieu_noi", "xac_minh"],
+  "assumptions": ["Áp dụng quy định hiện hành", "Không xét lệ phí địa phương"],
+  "inputs_schema": [
+    {"field": "muc_dich", "type": "string", "required": true, "desc": "Mục đích xin xác nhận (kết hôn/giao dịch khác)"},
+    {"field": "danh_sach_noi_cu_tru", "type": "string", "required": true, "desc": "Danh sách nơi cư trú theo giai đoạn (có thể dạng text)"},
+    {"field": "thoi_gian_can_xac_nhan", "type": "string", "required": true, "desc": "Khoảng thời gian cần xác nhận tình trạng hôn nhân"},
+    {"field": "co_du_thong_tin_cu_tru", "type": "bool", "required": true, "desc": "Người yêu cầu có cung cấp đủ thông tin các nơi cư trú không?"},
+    {"field": "can_gap", "type": "bool", "required": false, "desc": "Có yêu cầu gấp không? (để hướng dẫn kỳ vọng thời gian) "}
+  ],
+  "decision_points": [
+    {
+      "id": "DP1",
+      "question": "Có đủ thông tin về các nơi cư trú không?",
+      "branches": {
+        "true": "Tiếp tục quy trình xác minh theo danh sách nơi cư trú.",
+        "false": "Yêu cầu bổ sung thông tin cư trú (thời gian, địa chỉ, xã/phường) trước khi xác minh."
+      }
+    },
+    {
+      "id": "DP2",
+      "question": "Xác minh có phát hiện đã đăng ký kết hôn/ly hôn trong thời gian yêu cầu không?",
+      "branches": {
+        "true": "Không cấp theo nội dung độc thân; hướng dẫn theo tình trạng thực tế/giấy tờ liên quan.",
+        "false": "Cấp giấy xác nhận tình trạng hôn nhân theo phạm vi yêu cầu."
+      }
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "Tiếp nhận tờ khai; xác định phạm vi thời gian và mục đích cấp giấy.",
+      "why": "Xác nhận phải đúng phạm vi và mục đích.",
+      "outputs": ["Phạm vi thời gian xác nhận", "Mục đích cấp giấy"]
+    },
+    {
+      "step": 2,
+      "action": "Thu thập/chuẩn hoá danh sách nơi cư trú theo từng giai đoạn để phục vụ xác minh.",
+      "why": "Cư trú nhiều nơi là biến quyết định của thủ tục.",
+      "outputs": ["Bảng cư trú theo giai đoạn (tự tạo từ input)"]
+    },
+    {
+      "step": 3,
+      "action": "Thực hiện/xin xác minh tình trạng hôn nhân tại các nơi cư trú theo quy định (hoặc hướng dẫn người dân phối hợp).",
+      "why": "Tránh bỏ sót tình trạng hôn nhân ở địa phương trước đây.",
+      "outputs": ["Kết quả xác minh theo từng nơi cư trú"]
+    },
+    {
+      "step": 4,
+      "action": "Tổng hợp kết quả và cấp giấy xác nhận tình trạng hôn nhân (hoặc từ chối/cấp theo tình trạng thực tế nếu có ràng buộc).",
+      "why": "Đảm bảo nội dung giấy đúng tình trạng pháp lý.",
+      "outputs": ["Giấy xác nhận tình trạng hôn nhân / văn bản trả lời"]
+    }
+  ],
+  "outputs": ["Giấy xác nhận tình trạng hôn nhân (hoặc văn bản trả lời nếu không đủ điều kiện)"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Thẩm quyền cấp giấy xác nhận tình trạng hôn nhân."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Quy trình xác minh khi cư trú nhiều nơi."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Tờ khai/biểu mẫu và hướng dẫn."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC xác nhận tình trạng hôn nhân)", "note": "Chuẩn TTHC."}
+  ]
+}

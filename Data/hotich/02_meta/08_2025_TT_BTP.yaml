@@ -1,0 +1,41 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "08_2025_TT_BTP"
+  doc_kind: "thong_tu"
+  title: "Quy định về phân định thẩm quyền của chính quyền địa phương 02 cấp và phân cấp trong lĩnh vực quản lý nhà nước của Bộ Tư pháp"
+  number: "08/2025/TT-BTP"
+  issuer: "Bộ Tư pháp"
+  issued_date: "2025-06-12"
+  effective_date: "2025-07-01"
+  status: "con_hieu_luc"
+  scope_tags: ["hanh_chinh", "ho_tich", "tu_phap", "co_cau_to_chuc"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: ""
+
+sources:
+  primary_source: "luatvietnam.vn"
+  source_url: "https://phapluat.gov.vn/legal-documents/2cf41d1e-0627-ac00-f459-c2d14541baf1?tabName=noidung"
+
+files:
+  original:
+    path: "01_raw/08_2025_TT_BTP.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/08_2025_TT_BTP.docx"
+    format: "txt"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/legal/08_2025_TT_BTP.jsonl"
+    toc_json: null

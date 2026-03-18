@@ -1,0 +1,117 @@
+{
+  "schema": "hotich.procedure.v1",
+  "procedure_id": "HOTICH_TTHC_KHAITU_01",
+  "source_procedure_code": "DVCQG_1.000656",
+  "name": "Đăng ký khai tử",
+  "module": "hotich",
+  "tags": ["khai_tu"],
+
+  "effectivity": {
+    "effective_from": null,
+    "effective_to": null,
+    "status": "active"
+  },
+
+  "authority": {
+    "resolve_level": "xa",
+    "resolve_body": "Ủy ban nhân dân cấp xã",
+    "resolve_role": "Công chức Tư pháp - Hộ tịch",
+    "transfer_rules": [],
+    "notes": null
+  },
+
+  "submission_methods": [
+    { "method": "truc_tiep", "note": null },
+    { "method": "truc_tuyen", "note": "Cổng DVCQG/Cổng DVC công cấp tỉnh" },
+    { "method": "buu_chinh", "note": "Qua dịch vụ bưu chính" }
+  ],
+
+  "processing_time": {
+    "standard": "Ngay trong ngày tiếp nhận yêu cầu; nếu nhận sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.",
+    "extended_if_verification_needed": "Trường hợp cần xác minh thì không quá 03 ngày làm việc (áp dụng cho nộp qua bưu chính theo mô tả trên Cổng).",
+    "note": null
+  },
+
+  "fees": {
+    "amount": null,
+    "currency": "VND",
+    "policy": "Lệ phí: xem chi tiết trên Cổng DVCQG."
+  },
+
+  "variants": [
+    {
+      "variant_id": "MacDinh",
+      "name": "Đăng ký khai tử (mặc định)",
+
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Tờ khai đăng ký khai tử theo mẫu (nộp trực tiếp)",
+            "quantity": "01",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tiếp",
+            "notes": null
+          },
+          {
+            "name": "Mẫu hộ tịch điện tử tương tác đăng ký khai tử (nộp trực tuyến)",
+            "quantity": "01 (điện tử)",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tuyến",
+            "notes": null
+          },
+          {
+            "name": "Giấy báo tử hoặc giấy tờ thay Giấy báo tử do cơ quan có thẩm quyền cấp",
+            "quantity": "01",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": null,
+            "notes": "Nếu đã nộp bản điện tử hoặc cơ quan hộ tịch khai thác được dữ liệu điện tử có ký số của Giấy báo tử thì không phải nộp bản giấy."
+          }
+        ],
+        "must_present": [],
+        "optional": []
+      },
+
+      "steps": [
+        {
+          "step": 1,
+          "actor": "nguoi_yeu_cau",
+          "action": "Nộp hồ sơ trực tiếp/bưu chính hoặc nộp trực tuyến (kê khai biểu mẫu điện tử, đính kèm bản chụp/bản sao điện tử giấy tờ theo quy định; thanh toán lệ phí nếu có)."
+        },
+        {
+          "step": 2,
+          "actor": "can_bo_tiep_nhan",
+          "action": "Kiểm tra tính đầy đủ, hợp lệ; nếu nộp trực tiếp thì số hóa hồ sơ và ký số theo quy định."
+        },
+        {
+          "step": 3,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Nếu đủ điều kiện thì ghi Sổ đăng ký khai tử, cập nhật và lưu chính thức trên phần mềm hộ tịch điện tử; in Trích lục khai tử, trình lãnh đạo UBND cấp xã ký."
+        },
+        {
+          "step": 4,
+          "actor": "bo_phan_tra_ket_qua",
+          "action": "Trả Trích lục khai tử cho người yêu cầu (trực tiếp/bưu chính/điện tử tùy hình thức nộp)."
+        }
+      ],
+
+      "output": [
+        { "name": "Trích lục khai tử", "format": "giay_hoac_dien_tu", "quantity": null }
+      ]
+    }
+  ],
+
+  "common_cases_notes":[],
+
+  "citations": {
+    "non_normative_sources": [
+      {
+        "title": "Cổng DVCQG - Chi tiết TTHC (mã 1.000656)",
+        "url": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.000656"
+      }
+    ],
+    "legal_basis": []
+  }
+}

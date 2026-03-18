@@ -1,0 +1,174 @@
+{
+  "schema": "hotich.procedure.v1",
+  "procedure_id": "HOTICH_TTHC_CAP_BAN_SAO_GIAY_KHAISINH_01",
+  "source_procedure_code": "DVCQG_2.000635",
+  "name": "Cấp bản sao Giấy khai sinh",
+  "module": "hotich",
+  "tags": ["khai_sinh", "ban_sao", "trich_luc_ho_tich"],
+
+  "effectivity": {
+    "effective_from": null,
+    "effective_to": null,
+    "status": "active"
+  },
+
+  "authority": {
+    "resolve_level": "xa",
+    "resolve_body": "UBND cấp xã",
+    "resolve_role": "Công chức Tư pháp - Hộ tịch",
+    "transfer_rules": [],
+    "notes": "Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh."
+  },
+
+  "submission_methods": [
+    { "method": "truc_tiep", "note": null },
+    { "method": "truc_tuyen", "note": "Cổng DVCQG; thủ tục trực tuyến toàn trình" },
+    { "method": "buu_chinh", "note": "Qua dịch vụ bưu chính" }
+  ],
+
+  "processing_time": {
+    "standard": "Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.",
+    "standard_same_day": true,
+    "extended_if_verification_needed": null,
+    "extended_days_working": null,
+    "note": "Nếu thông tin người yêu cầu cung cấp không đầy đủ hoặc không chính xác, không thể tra cứu được thông tin thì cơ quan đăng ký hộ tịch từ chối giải quyết."
+  },
+
+  "fees": {
+    "amount": 8000,
+    "currency": "VND",
+    "policy": "Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký."
+  },
+
+  "variants": [
+    {
+      "variant_id": "BanSaoGiayKhaiSinh",
+      "name": "Cấp bản sao Giấy khai sinh",
+
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Tờ khai đề nghị cấp bản sao Trích lục hộ tịch",
+            "quantity": "01",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Người yêu cầu là cá nhân, nộp trực tiếp hoặc qua bưu chính",
+            "notes": null
+          },
+          {
+            "name": "Văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do",
+            "quantity": "01",
+            "doc_type": "request_letter",
+            "template_id": null,
+            "when": "Người yêu cầu là cơ quan, tổ chức",
+            "notes": null
+          },
+          {
+            "name": "Mẫu điện tử tương tác yêu cầu cấp bản sao Giấy khai sinh, bản sao Trích lục hộ tịch",
+            "quantity": "01 (điện tử)",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tuyến",
+            "notes": null
+          },
+          {
+            "name": "Văn bản ủy quyền theo quy định pháp luật",
+            "quantity": "01",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": "Trường hợp ủy quyền thực hiện yêu cầu",
+            "notes": "Nếu người được ủy quyền là ông, bà, cha, mẹ, con, vợ, chồng, anh, chị, em ruột của người ủy quyền thì văn bản ủy quyền không phải công chứng, chứng thực."
+          },
+          {
+            "name": "Bản sao có chứng thực giấy tờ phải xuất trình",
+            "quantity": "01 bộ",
+            "doc_type": "identity_copy",
+            "template_id": null,
+            "when": "Trường hợp gửi hồ sơ qua hệ thống bưu chính",
+            "notes": "Gửi kèm bản sao có chứng thực giấy tờ chứng minh nhân thân và giấy tờ cư trú nếu thuộc trường hợp phải xuất trình."
+          }
+        ],
+        "must_present": [
+          {
+            "name": "Giấy tờ tùy thân của người có yêu cầu",
+            "quantity": "01",
+            "doc_type": "identity",
+            "template_id": null,
+            "when": "Làm thủ tục trực tiếp",
+            "notes": "Hộ chiếu/Thẻ căn cước/Căn cước công dân/Căn cước điện tử/Giấy chứng nhận căn cước hoặc giấy tờ khác có dán ảnh và thông tin cá nhân còn giá trị sử dụng."
+          },
+          {
+            "name": "Giấy tờ chứng minh nơi cư trú",
+            "quantity": "01",
+            "doc_type": "residence",
+            "template_id": null,
+            "when": "Chỉ khi cơ quan đăng ký hộ tịch không khai thác được thông tin cư trú từ cơ sở dữ liệu theo quy định",
+            "notes": null
+          }
+        ],
+        "optional": []
+      },
+
+      "steps": [
+        {
+          "step": 1,
+          "actor": "nguoi_yeu_cau",
+          "action": "Nộp hồ sơ trực tiếp, qua bưu chính hoặc trực tuyến; kê khai đầy đủ thông tin về người yêu cầu và thông tin sự kiện khai sinh đã đăng ký."
+        },
+        {
+          "step": 2,
+          "actor": "can_bo_tiep_nhan",
+          "action": "Tiếp nhận, kiểm tra tính đầy đủ và hợp lệ của hồ sơ; đối chiếu giấy tờ nộp/xuất trình; nếu hồ sơ chưa đầy đủ thì hướng dẫn bổ sung, hoàn thiện."
+        },
+        {
+          "step": 3,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Tra cứu thông tin trong Cơ sở dữ liệu hộ tịch; nếu nộp trực tuyến thì gửi lại biểu mẫu Trích lục hộ tịch điện tử tương ứng cho người yêu cầu kiểm tra, xác nhận; nếu đủ điều kiện thì lập bản sao Giấy khai sinh và trình Chủ tịch/Phó Chủ tịch UBND cấp xã ký."
+        },
+        {
+          "step": 4,
+          "actor": "bo_phan_tra_ket_qua",
+          "action": "Trả bản sao Giấy khai sinh cho người yêu cầu theo hình thức trực tiếp, bưu chính hoặc điện tử tùy cách thức nộp hồ sơ."
+        }
+      ],
+
+      "output": [
+        {
+          "name": "Bản sao Giấy khai sinh",
+          "format": "giay_hoac_dien_tu",
+          "quantity": null,
+          "template_id": null
+        }
+      ]
+    }
+  ],
+
+  "common_cases_notes": [
+    "Thủ tục gốc trên Cổng DVCQG bao gồm cả cấp bản sao Trích lục hộ tịch và bản sao Giấy khai sinh; variant này chỉ áp dụng cho nhu cầu khai thác lại sự kiện khai sinh đã được đăng ký.",
+    "Nếu người yêu cầu không cung cấp đầy đủ hoặc cung cấp thông tin không chính xác, không thể tra cứu được thông tin trong cơ sở dữ liệu thì cơ quan đăng ký hộ tịch từ chối giải quyết.",
+    "Người yêu cầu có thể trực tiếp thực hiện hoặc ủy quyền cho người khác thực hiện theo quy định."
+  ],
+
+  "citations": {
+    "non_normative_sources": [
+      {
+        "title": "Cổng DVCQG - Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh",
+        "url": "https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=185429"
+      },
+      {
+        "title": "Cổng DVCQG - Cấp bản sao trích lục hộ tịch (cấp xã)",
+        "url": "https://dichvucong.gov.vn/p/home/dvc-chi-tiet-thu-tuc-hanh-chinh.html?ma_thu_tuc=1.009073"
+      }
+    ],
+    "legal_basis": [
+      { "doc_id": "LUAT_HOTICH_2014", "ref": "Quy định về cấp bản sao trích lục hộ tịch" },
+      { "doc_id": "ND_123_2015_ND-CP", "ref": "Quy định chi tiết Luật Hộ tịch" },
+      { "doc_id": "ND_87_2020_ND-CP", "ref": "Cơ sở dữ liệu hộ tịch điện tử, đăng ký hộ tịch trực tuyến" },
+      { "doc_id": "TT_04_2024_TT-BTP", "ref": "Mẫu tờ khai, biểu mẫu hộ tịch" },
+      { "doc_id": "TT_281_2016_TT-BTC", "ref": "Mức thu phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch" },
+      { "doc_id": "ND_07_2025_ND-CP", "ref": "Sửa đổi, bổ sung quy định trong lĩnh vực hộ tịch" },
+      { "doc_id": "ND_120_2025_ND-CP", "ref": "Phân định thẩm quyền của chính quyền địa phương 02 cấp trong lĩnh vực tư pháp" },
+      { "doc_id": "TT_08_2025_TT-BTP", "ref": "Phân định thẩm quyền, phân cấp trong lĩnh vực tư pháp" }
+    ]
+  }
+}

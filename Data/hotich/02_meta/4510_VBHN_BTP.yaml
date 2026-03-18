@@ -1,0 +1,41 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "4510_VBHN_BTP"
+  doc_kind: "vbhn"
+  title: "Hợp nhất Thông tư quy định thi hành Nghị định 87/2020/NĐ-CP"
+  number: "4510/VBHN-BTP"
+  issuer: "Bộ Tư pháp"
+  issued_date: "2023-09-27"
+  effective_date: null
+  status: "con_hieu_luc"
+  scope_tags: ["tu_phap", "ho_tich"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: ""
+
+sources:
+  primary_source: "luatvietnam.vn"
+  source_url: "https://luatvietnam.vn/tu-phap/van-ban-hop-nhat-4510-vbhn-btp-2023-hop-nhat-thong-tu-quy-dinh-thi-hanh-nghi-dinh-87-2020-nd-cp-268499-d5.html"
+
+files:
+  original:
+    path: "01_raw/4510_VBHN_BTP.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/4510_VBHN_BTP.docx"
+    format: "docx"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/legal/4510_VBHN_BTP.jsonl"
+    toc_json: null

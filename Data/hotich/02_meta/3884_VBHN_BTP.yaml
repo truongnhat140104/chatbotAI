@@ -1,0 +1,41 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "3884_VBHN_BTP"
+  doc_kind: "vbhn"
+  title: "Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP ngày 15/11/2015 của Chính phủ quy định chi tiết một số điều và biện pháp thi hành Luật Hộ tịch"
+  number: "3884/VBHN-BTP"
+  issuer: "Bộ Tư pháp"
+  issued_date: "2024-07-12"
+  effective_date: null
+  status: "con_hieu_luc"
+  scope_tags: ["hanh_chinh", "tu_phap", "ho_tich"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: ""
+
+sources:
+  primary_source: "luatvietnam.vn"
+  source_url: "https://luatvietnam.vn/hanh-chinh/van-ban-hop-nhat-3884-vbhn-btp-2024-hop-nhat-thong-tu-huong-dan-luat-ho-tich-362578-d5.html"
+
+files:
+  original:
+    path: "01_raw/3884_VBHN_BTP.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/3884_VBHN_BTP.docx"
+    format: "docx"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/legal/3884_VBHN_BTP.jsonl"
+    toc_json: null

@@ -1,0 +1,28 @@
+{
+  "case_id": "HT_TD_001",
+  "title": "Thay đổi hộ tịch: thay đổi họ cho con sau khi đăng ký nhận cha",
+  "module": "hotich",
+  "topic_tags": ["thay_doi", "doi_ho", "nhan_cha_me_con"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "da_co_trich_luc_nhan_cha", "type": "bool", "required": true, "desc": "Đã có kết quả đăng ký nhận cha, mẹ, con?"},
+    {"field": "nguoi_yeu_cau", "type": "string", "required": true, "desc": "Cha/mẹ/người giám hộ"},
+    {"field": "co_dong_y_day_du", "type": "bool", "required": true, "desc": "Có đủ sự đồng ý theo quy định?"},
+    {"field": "co_chung_cu_hop_le", "type": "bool", "required": true, "desc": "Có chứng cứ/hồ sơ hợp lệ?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Đã có căn cứ quan hệ cha con chưa?", "branches": {"true": "Tiếp tục thay đổi họ.", "false": "Yêu cầu thực hiện thủ tục nhận cha, mẹ, con trước (HT_CMC_001)."}},
+    {"id": "DP2", "question": "Có đủ sự đồng ý/chứng cứ không?", "branches": {"true": "Tiếp tục.", "false": "Hướng dẫn bổ sung/giải quyết theo quy định khi có tranh chấp."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Tiếp nhận hồ sơ yêu cầu thay đổi hộ tịch (đổi họ) và kiểm tra căn cứ pháp lý.", "why": "Thay đổi hộ tịch phải có căn cứ và điều kiện.", "outputs": ["Kết quả kiểm tra điều kiện"]},
+    {"step": 2, "action": "Thực hiện thay đổi trong sổ hộ tịch/cơ sở dữ liệu và ghi nhận nội dung thay đổi.", "why": "Cập nhật thông tin chính thức.", "outputs": ["Bản ghi hộ tịch cập nhật họ mới"]},
+    {"step": 3, "action": "Cấp trích lục hộ tịch sau thay đổi.", "why": "Trả kết quả.", "outputs": ["Trích lục sau thay đổi"]}
+  ],
+  "outputs": ["Trích lục hộ tịch sau thay đổi"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Thay đổi hộ tịch."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Thủ tục thay đổi hộ tịch."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn."}
+  ]
+}

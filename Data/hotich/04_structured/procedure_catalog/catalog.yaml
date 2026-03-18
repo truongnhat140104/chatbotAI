@@ -1,0 +1,366 @@
+doc_id: "QD_1833_2025_QD-BTP"
+doc_type: "procedure_catalog"
+module: "hotich"
+schema_version: "1.0"
+effective_from: "2025-07-01"  # Quyết định có hiệu lực từ 01/7/2025 :contentReference[oaicite:4]{index=4}
+effective_to: null
+scope: "Công bố TTHC được sửa đổi, bổ sung lĩnh vực hộ tịch tại cơ quan đăng ký hộ tịch trong nước"  # :contentReference[oaicite:5]{index=5}
+sections:
+  - section_id: "A"
+    title: "Thủ tục hành chính cấp xã"  # :contentReference[oaicite:6]{index=6}
+    cap: "xa"
+    items:
+      - stt: 1
+        ma_tthc: "1.001193"
+        ten: "Đăng ký khai sinh"  # :contentReference[oaicite:7]{index=7}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"  # :contentReference[oaicite:8]{index=8}
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:9]{index=9}
+
+      - stt: 2
+        ma_tthc: "2.000528"
+        ten: "Đăng ký khai sinh có yếu tố nước ngoài"  # :contentReference[oaicite:10]{index=10}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:11]{index=11}
+
+      - stt: 3
+        ma_tthc: "1.004884"
+        ten: "Đăng ký lại khai sinh"  # :contentReference[oaicite:12]{index=12}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:13]{index=13}
+
+      - stt: 4
+        ma_tthc: "2.000522"
+        ten: "Đăng ký lại khai sinh có yếu tố nước ngoài"  # :contentReference[oaicite:14]{index=14}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:15]{index=15}
+
+      - stt: 5
+        ma_tthc: "1.001022"
+        ten: "Đăng ký nhận cha, mẹ, con"  # :contentReference[oaicite:16]{index=16}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:17]{index=17}
+
+      - stt: 6
+        ma_tthc: "2.000779"
+        ten: "Đăng ký nhận cha, mẹ, con có yếu tố nước ngoài"  # :contentReference[oaicite:18]{index=18}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:19]{index=19}
+
+      - stt: 7
+        ma_tthc: "1.000689"
+        ten: "Đăng ký khai sinh kết hợp đăng ký nhận cha, mẹ, con"  # :contentReference[oaicite:20]{index=20}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:21]{index=21}
+
+      - stt: 8
+        ma_tthc: "1.001695"
+        ten: "Đăng ký khai sinh kết hợp đăng ký nhận cha, mẹ, con có yếu tố nước ngoài"  # :contentReference[oaicite:22]{index=22}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:23]{index=23}
+
+      - stt: 9
+        ma_tthc: "1.004772"
+        ten: "Đăng ký khai sinh cho người đã có hồ sơ, giấy tờ cá nhân"  # :contentReference[oaicite:24]{index=24}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:25]{index=25}
+
+      - stt: 10
+        ma_tthc: "1.000893"
+        ten: "Đăng ký khai sinh có yếu tố nước ngoài cho người đã có hồ sơ, giấy tờ cá nhân"  # :contentReference[oaicite:26]{index=26}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:27]{index=27}
+
+      - stt: 11
+        ma_tthc: "1.000894"
+        ten: "Đăng ký kết hôn"  # :contentReference[oaicite:28]{index=28}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:29]{index=29}
+
+      - stt: 12
+        ma_tthc: "2.000806"
+        ten: "Đăng ký kết hôn có yếu tố nước ngoài"  # :contentReference[oaicite:30]{index=30}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:31]{index=31}
+
+      - stt: 13
+        ma_tthc: "1.004746"
+        ten: "Đăng ký lại kết hôn"  # :contentReference[oaicite:32]{index=32}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:33]{index=33}
+
+      - stt: 14
+        ma_tthc: "2.000513"
+        ten: "Đăng ký lại kết hôn có yếu tố nước ngoài"  # :contentReference[oaicite:34]{index=34}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:35]{index=35}
+
+      - stt: 15
+        ma_tthc: "1.000656"
+        ten: "Đăng ký khai tử"  # :contentReference[oaicite:36]{index=36}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:37]{index=37}
+
+      - stt: 16
+        ma_tthc: "1.001766"
+        ten: "Đăng ký khai tử có yếu tố nước ngoài"  # :contentReference[oaicite:38]{index=38}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:39]{index=39}
+
+      - stt: 17
+        ma_tthc: "1.005461"
+        ten: "Đăng ký lại khai tử"  # :contentReference[oaicite:40]{index=40}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:41]{index=41}
+
+      - stt: 18
+        ma_tthc: "2.000497"
+        ten: "Đăng ký lại khai tử có yếu tố nước ngoài"  # :contentReference[oaicite:42]{index=42}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:43]{index=43}
+
+      - stt: 19
+        ma_tthc: "1.004837"
+        ten: "Đăng ký giám hộ"  # :contentReference[oaicite:44]{index=44}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:45]{index=45}
+
+      - stt: 20
+        ma_tthc: "1.001669"
+        ten: "Đăng ký giám hộ có yếu tố nước ngoài"  # :contentReference[oaicite:46]{index=46}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:47]{index=47}
+
+      - stt: 21
+        ma_tthc: "1.004845"
+        ten: "Đăng ký chấm dứt giám hộ"  # :contentReference[oaicite:48]{index=48}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:49]{index=49}
+
+      - stt: 22
+        ma_tthc: "2.000756"
+        ten: "Đăng ký chấm dứt giám hộ có yếu tố nước ngoài"  # :contentReference[oaicite:50]{index=50}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:51]{index=51}
+
+      - stt: 23
+        ma_tthc: "3.000323"
+        ten: "Đăng ký giám sát việc giám hộ"  # :contentReference[oaicite:52]{index=52}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:53]{index=53}
+
+      - stt: 24
+        ma_tthc: "3.000322"
+        ten: "Đăng ký chấm dứt giám sát việc giám hộ"  # :contentReference[oaicite:54]{index=54}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:55]{index=55}
+
+      - stt: 25
+        ma_tthc: "1.004859"
+        ten: "Thay đổi, cải chính, bổ sung thông tin hộ tịch, xác định lại dân tộc"  # :contentReference[oaicite:56]{index=56}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:57]{index=57}
+
+      - stt: 26
+        ma_tthc: "2.000748"
+        ten: "Thay đổi, cải chính, bổ sung thông tin hộ tịch, xác định lại dân tộc có yếu tố nước ngoài"  # :contentReference[oaicite:58]{index=58}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:59]{index=59}
+
+      - stt: 27
+        ma_tthc: "2.002189"
+        ten: "Ghi vào sổ hộ tịch việc kết hôn của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài"  # :contentReference[oaicite:60]{index=60}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:61]{index=61}
+
+      - stt: 28
+        ma_tthc: "2.000554"
+        ten: "Ghi vào sổ hộ tịch việc ly hôn, hủy việc kết hôn của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài"  # :contentReference[oaicite:62]{index=62}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:63]{index=63}
+
+      - stt: 29
+        ma_tthc: "2.000547"
+        ten: "Ghi vào sổ hộ tịch việc hộ tịch khác của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài (khai sinh; giám hộ; nhận cha, mẹ, con; xác định cha, mẹ, con; nuôi con nuôi; khai tử; thay đổi hộ tịch)"  # :contentReference[oaicite:64]{index=64}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:65]{index=65}
+
+      - stt: 30
+        ma_tthc: "1.003583"
+        ten: "Đăng ký khai sinh lưu động"  # :contentReference[oaicite:66]{index=66}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:67]{index=67}
+
+      - stt: 31
+        ma_tthc: "1.000593"
+        ten: "Đăng ký kết hôn lưu động"  # :contentReference[oaicite:68]{index=68}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:69]{index=69}
+
+      - stt: 32
+        ma_tthc: "1.000419"
+        ten: "Đăng ký khai tử lưu động"  # :contentReference[oaicite:70]{index=70}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:71]{index=71}
+
+      - stt: 33
+        ma_tthc: "1.000110"
+        ten: "Đăng ký khai sinh có yếu tố nước ngoài tại khu vực biên giới"  # :contentReference[oaicite:72]{index=72}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:73]{index=73}
+
+      - stt: 34
+        ma_tthc: "1.000094"
+        ten: "Đăng ký kết hôn có yếu tố nước ngoài tại khu vực biên giới"  # :contentReference[oaicite:74]{index=74}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:75]{index=75}
+
+      - stt: 35
+        ma_tthc: "1.000080"
+        ten: "Đăng ký nhận cha, mẹ, con có yếu tố nước ngoài tại khu vực biên giới"  # :contentReference[oaicite:76]{index=76}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:77]{index=77}
+
+      - stt: 36
+        ma_tthc: "1.004827"
+        ten: "Đăng ký khai tử có yếu tố nước ngoài tại khu vực biên giới"  # :contentReference[oaicite:78]{index=78}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:79]{index=79}
+
+      - stt: 37
+        ma_tthc: "1.004873"
+        ten: "Cấp Giấy xác nhận tình trạng hôn nhân"  # :contentReference[oaicite:80]{index=80}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "UBND cấp xã"
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"   # :contentReference[oaicite:81]{index=81}
+
+  - section_id: "B"
+    title: "Thủ tục hành chính tại cơ quan quản lý Cơ sở dữ liệu hộ tịch điện tử"  # :contentReference[oaicite:82]{index=82}
+    cap: "csdlhtdt"
+    items:
+      - stt: 1
+        ma_tthc: "2.000635"
+        ten: "Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh"  # :contentReference[oaicite:83]{index=83}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "Cơ quan quản lý CSDLHTĐT (Sở Tư pháp, UBND cấp xã)."  # :contentReference[oaicite:84]{index=84}
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"  # :contentReference[oaicite:85]{index=85}
+
+      - stt: 2
+        ma_tthc: "2.002516"
+        ten: "Thủ tục xác nhận thông tin hộ tịch"  # :contentReference[oaicite:86]{index=86}
+        linh_vuc: "Hộ tịch"
+        co_quan_thuc_hien: "Cơ quan quản lý CSDLHTĐT (Sở Tư pháp, UBND cấp xã)."  # :contentReference[oaicite:87]{index=87}
+        vbqppl_sua_doi:
+          - "Nghị định số 120/2025/NĐ-CP ngày 11/6/2025"
+          - "Thông tư số 08/2025/TT-BTP ngày 12/6/2025"  # :contentReference[oaicite:88]{index=88}

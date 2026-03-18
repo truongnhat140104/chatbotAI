@@ -1,0 +1,203 @@
+doc_type: "authority_map"
+module: "hotich"
+schema_version: "1.0"
+generated_from:
+  - "QD_1833_2025_QD-BTP"
+effective_from: "2025-07-01"  # :contentReference[oaicite:89]{index=89}
+rules:
+  # Nhóm A: cấp xã
+  - procedure_code: "1.001193"
+    procedure_name: "Đăng ký khai sinh"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:90]{index=90}
+
+  - procedure_code: "2.000528"
+    procedure_name: "Đăng ký khai sinh có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:91]{index=91}
+
+  - procedure_code: "1.004884"
+    procedure_name: "Đăng ký lại khai sinh"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:92]{index=92}
+
+  - procedure_code: "2.000522"
+    procedure_name: "Đăng ký lại khai sinh có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:93]{index=93}
+
+  - procedure_code: "1.001022"
+    procedure_name: "Đăng ký nhận cha, mẹ, con"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:94]{index=94}
+
+  - procedure_code: "2.000779"
+    procedure_name: "Đăng ký nhận cha, mẹ, con có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:95]{index=95}
+
+  - procedure_code: "1.000689"
+    procedure_name: "Đăng ký khai sinh kết hợp đăng ký nhận cha, mẹ, con"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:96]{index=96}
+
+  - procedure_code: "1.001695"
+    procedure_name: "Đăng ký khai sinh kết hợp đăng ký nhận cha, mẹ, con có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:97]{index=97}
+
+  - procedure_code: "1.004772"
+    procedure_name: "Đăng ký khai sinh cho người đã có hồ sơ, giấy tờ cá nhân"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:98]{index=98}
+
+  - procedure_code: "1.000893"
+    procedure_name: "Đăng ký khai sinh có yếu tố nước ngoài cho người đã có hồ sơ, giấy tờ cá nhân"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:99]{index=99}
+
+  - procedure_code: "1.000894"
+    procedure_name: "Đăng ký kết hôn"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:100]{index=100}
+
+  - procedure_code: "2.000806"
+    procedure_name: "Đăng ký kết hôn có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:101]{index=101}
+
+  - procedure_code: "1.004746"
+    procedure_name: "Đăng ký lại kết hôn"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:102]{index=102}
+
+  - procedure_code: "2.000513"
+    procedure_name: "Đăng ký lại kết hôn có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:103]{index=103}
+
+  - procedure_code: "1.000656"
+    procedure_name: "Đăng ký khai tử"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:104]{index=104}
+
+  - procedure_code: "1.001766"
+    procedure_name: "Đăng ký khai tử có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:105]{index=105}
+
+  - procedure_code: "1.005461"
+    procedure_name: "Đăng ký lại khai tử"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:106]{index=106}
+
+  - procedure_code: "2.000497"
+    procedure_name: "Đăng ký lại khai tử có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:107]{index=107}
+
+  - procedure_code: "1.004837"
+    procedure_name: "Đăng ký giám hộ"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:108]{index=108}
+
+  - procedure_code: "1.001669"
+    procedure_name: "Đăng ký giám hộ có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:109]{index=109}
+
+  - procedure_code: "1.004845"
+    procedure_name: "Đăng ký chấm dứt giám hộ"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:110]{index=110}
+
+  - procedure_code: "2.000756"
+    procedure_name: "Đăng ký chấm dứt giám hộ có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:111]{index=111}
+
+  - procedure_code: "3.000323"
+    procedure_name: "Đăng ký giám sát việc giám hộ"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:112]{index=112}
+
+  - procedure_code: "3.000322"
+    procedure_name: "Đăng ký chấm dứt giám sát việc giám hộ"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:113]{index=113}
+
+  - procedure_code: "1.004859"
+    procedure_name: "Thay đổi, cải chính, bổ sung thông tin hộ tịch, xác định lại dân tộc"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:114]{index=114}
+
+  - procedure_code: "2.000748"
+    procedure_name: "Thay đổi, cải chính, bổ sung thông tin hộ tịch, xác định lại dân tộc có yếu tố nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:115]{index=115}
+
+  - procedure_code: "2.002189"
+    procedure_name: "Ghi vào sổ hộ tịch việc kết hôn của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:116]{index=116}
+
+  - procedure_code: "2.000554"
+    procedure_name: "Ghi vào sổ hộ tịch việc ly hôn, hủy việc kết hôn của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:117]{index=117}
+
+  - procedure_code: "2.000547"
+    procedure_name: "Ghi vào sổ hộ tịch việc hộ tịch khác của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài (khai sinh; giám hộ; nhận cha, mẹ, con; xác định cha, mẹ, con; nuôi con nuôi; khai tử; thay đổi hộ tịch)"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:118]{index=118}
+
+  - procedure_code: "1.003583"
+    procedure_name: "Đăng ký khai sinh lưu động"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:119]{index=119}
+
+  - procedure_code: "1.000593"
+    procedure_name: "Đăng ký kết hôn lưu động"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:120]{index=120}
+
+  - procedure_code: "1.000419"
+    procedure_name: "Đăng ký khai tử lưu động"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:121]{index=121}
+
+  - procedure_code: "1.000110"
+    procedure_name: "Đăng ký khai sinh có yếu tố nước ngoài tại khu vực biên giới"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:122]{index=122}
+
+  - procedure_code: "1.000094"
+    procedure_name: "Đăng ký kết hôn có yếu tố nước ngoài tại khu vực biên giới"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:123]{index=123}
+
+  - procedure_code: "1.000080"
+    procedure_name: "Đăng ký nhận cha, mẹ, con có yếu tố nước ngoài tại khu vực biên giới"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:124]{index=124}
+
+  - procedure_code: "1.004827"
+    procedure_name: "Đăng ký khai tử có yếu tố nước ngoài tại khu vực biên giới"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:125]{index=125}
+
+  - procedure_code: "1.004873"
+    procedure_name: "Cấp Giấy xác nhận tình trạng hôn nhân"
+    cap: "xa"
+    co_quan_thuc_hien: "UBND cấp xã"  # :contentReference[oaicite:126]{index=126}
+
+  # Nhóm B: cơ quan quản lý CSDLHTĐT
+  - procedure_code: "2.000635"
+    procedure_name: "Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh"
+    cap: "csdlhtdt"
+    co_quan_thuc_hien: "Cơ quan quản lý CSDLHTĐT (Sở Tư pháp, UBND cấp xã)."  # :contentReference[oaicite:127]{index=127}
+
+  - procedure_code: "2.002516"
+    procedure_name: "Thủ tục xác nhận thông tin hộ tịch"
+    cap: "csdlhtdt"
+    co_quan_thuc_hien: "Cơ quan quản lý CSDLHTĐT (Sở Tư pháp, UBND cấp xã)."  # :contentReference[oaicite:128]{index=128}

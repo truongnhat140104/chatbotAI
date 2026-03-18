@@ -1,0 +1,41 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "53_VBHN_VPQH"
+  doc_kind: "vbhn"
+  title: "Văn bản hợp nhất Luật Quốc tịch Việt Nam"
+  number: "53/VBHN-VPQH"
+  issuer: "Văn phòng Quốc hội"
+  issued_date: 24/7/2025
+  effective_date: null
+  status: "con_hieu_luc"
+  scope_tags: ["quoc_tich", "ho_tich"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: [ ]
+  amends: [ ]
+  amended_by: []
+  replaces: [ ]
+  replaced_by: [ ]
+  related_docs: [ ]
+  notes: ""
+
+sources:
+  primary_source: "phapluat.gov.vn"
+  source_url: null
+
+files:
+  original:
+    path: "01_raw/53_VBHN_VPQH.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/53_VBHN_VPQH.docx"
+    format: "txt"
+    generated_by: "ocr"
+  structured:
+    clauses_jsonl: "04_structured/legal/53_VBHN_VPQH.jsonl"
+    toc_json: null

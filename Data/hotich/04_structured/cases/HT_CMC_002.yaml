@@ -1,0 +1,73 @@
+{
+  "case_id": "HT_CMC_002",
+  "title": "Đăng ký nhận cha, mẹ, con khi thiếu sự đồng thuận (một bên không ký/không hợp tác)",
+  "module": "hotich",
+  "topic_tags": ["nhan_cha_me_con", "tranh_chap", "thieu_dong_thuan"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "nguoi_yeu_cau", "type": "string", "required": true, "desc": "Ai yêu cầu (cha/mẹ/người con/đại diện)"},
+    {"field": "ben_khong_hop_tac", "type": "string", "required": true, "desc": "Bên nào không hợp tác/không ký?"},
+    {"field": "co_chung_cu_adn", "type": "bool", "required": true, "desc": "Có chứng cứ ADN/chứng cứ khác không?"},
+    {"field": "co_tranh_chap", "type": "bool", "required": true, "desc": "Có tranh chấp về quan hệ cha mẹ con không?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {
+      "id": "DP1",
+      "question": "Có tranh chấp/thiếu đồng thuận không?",
+      "branches": {
+        "true": "Không giải quyết theo thủ tục hành chính đơn giản; hướng dẫn giải quyết theo con đường phù hợp (tòa án/khác) tùy quy định.",
+        "false": "Xử lý theo case HT_CMC_001 (có đủ đồng thuận)."
+      }
+    },
+    {
+      "id": "DP2",
+      "question": "Có chứng cứ ADN/chứng cứ mạnh không?",
+      "branches": {
+        "true": "Dùng làm căn cứ khi được phép; nhưng nếu vẫn tranh chấp thì vẫn cần cơ chế giải quyết tranh chấp.",
+        "false": "Hướng dẫn bổ sung chứng cứ hoặc giải quyết tranh chấp theo quy định."
+      }
+    },
+    {
+      "id": "DP3",
+      "question": "Có yếu tố nước ngoài không?",
+      "branches": {
+        "true": "Chuyển nhánh thẩm quyền/yêu cầu giấy tờ theo trường hợp có yếu tố nước ngoài.",
+        "false": "Trong nước."
+      }
+    }
+  ],
+  "steps": [
+    {
+      "step": 1,
+      "action": "Xác định rõ tình trạng đồng thuận và có/không tranh chấp.",
+      "why": "Thủ tục hành chính nhận cha, mẹ, con thường yêu cầu sự tự nguyện và không tranh chấp.",
+      "outputs": ["Kết luận: có tranh chấp/không tranh chấp"]
+    },
+    {
+      "step": 2,
+      "action": "Nếu có tranh chấp hoặc một bên không ký: hướng dẫn người dân chuẩn bị chứng cứ và thực hiện theo cơ chế giải quyết tranh chấp phù hợp.",
+      "why": "Cơ quan hộ tịch không thể tự quyết tranh chấp ngoài phạm vi thủ tục hành chính.",
+      "outputs": ["Hướng dẫn lộ trình xử lý tranh chấp", "Danh mục chứng cứ cần chuẩn bị"]
+    },
+    {
+      "step": 3,
+      "action": "Nếu đủ điều kiện thủ tục (không tranh chấp, đủ chứng cứ): tiếp nhận hồ sơ theo thủ tục nhận cha, mẹ, con.",
+      "why": "Chỉ tiếp nhận khi đáp ứng điều kiện thủ tục.",
+      "outputs": ["Phiếu tiếp nhận/phiếu bổ sung"]
+    },
+    {
+      "step": 4,
+      "action": "Ghi sổ/cập nhật dữ liệu và cấp trích lục nếu hồ sơ hợp lệ.",
+      "why": "Hoàn tất thủ tục.",
+      "outputs": ["Trích lục đăng ký nhận cha, mẹ, con (nếu đủ điều kiện)"]
+    }
+  ],
+  "outputs": ["Hướng dẫn xử lý tranh chấp hoặc trích lục đăng ký nhận cha, mẹ, con (nếu đủ điều kiện)"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Đăng ký nhận cha, mẹ, con; nguyên tắc giải quyết."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Điều kiện/hồ sơ/chứng cứ; trường hợp không giải quyết do tranh chấp."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC nhận cha, mẹ, con)", "note": "Chuẩn TTHC."}
+  ]
+}

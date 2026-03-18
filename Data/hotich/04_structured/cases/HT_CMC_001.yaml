@@ -1,0 +1,28 @@
+{
+  "case_id": "HT_CMC_001",
+  "title": "Đăng ký nhận cha, mẹ, con (có chứng cứ ADN hoặc chứng cứ hợp lệ)",
+  "module": "hotich",
+  "topic_tags": ["nhan_cha_me_con", "adn"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "co_chung_cu_adn", "type": "bool", "required": true, "desc": "Có kết quả ADN/chứng cứ hợp lệ?"},
+    {"field": "tat_ca_ben_co_mat", "type": "bool", "required": true, "desc": "Các bên liên quan có mặt/đồng ý?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có yếu tố nước ngoài không?", "branches": {"true": "Chuyển nhánh có yếu tố nước ngoài.", "false": "Trong nước."}},
+    {"id": "DP2", "question": "Có đủ chứng cứ và đồng thuận không?", "branches": {"true": "Tiếp tục giải quyết.", "false": "Hướng dẫn bổ sung chứng cứ/giải quyết theo con đường khác nếu tranh chấp."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Tiếp nhận hồ sơ nhận cha, mẹ, con và kiểm tra chứng cứ.", "why": "Chứng cứ là yếu tố quyết định.", "outputs": ["Kết quả kiểm tra chứng cứ"]},
+    {"step": 2, "action": "Ghi sổ hộ tịch/cập nhật dữ liệu; điều chỉnh thông tin khai sinh nếu phát sinh thay đổi.", "why": "Cập nhật quan hệ nhân thân và thông tin hộ tịch.", "outputs": ["Bản ghi nhận cha, mẹ, con", "Thông tin hộ tịch được cập nhật"]},
+    {"step": 3, "action": "Cấp trích lục/giấy tờ kết quả.", "why": "Trả kết quả thủ tục.", "outputs": ["Trích lục nhận cha, mẹ, con / trích lục liên quan"]}
+  ],
+  "outputs": ["Trích lục đăng ký nhận cha, mẹ, con"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Đăng ký nhận cha, mẹ, con."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Hồ sơ/chứng cứ/quy trình."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC nhận cha, mẹ, con)", "note": "Chuẩn TTHC."}
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "case_id": "HT_KS_002",
+  "title": "Đăng ký khai sinh quá hạn (trẻ trên 60 ngày), hồ sơ cơ bản đầy đủ",
+  "module": "hotich",
+  "topic_tags": ["khai_sinh", "qua_han"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "tre_duoi_60_ngay", "type": "bool", "required": true, "desc": "Trẻ còn trong hạn 60 ngày? (false = quá hạn)"},
+    {"field": "co_giay_chung_sinh", "type": "bool", "required": true, "desc": "Có Giấy chứng sinh hoặc giấy tờ thay thế?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có yếu tố nước ngoài không?", "branches": {"true": "Chuyển nhánh có yếu tố nước ngoài.", "false": "Trong nước (thường cấp xã)."}},
+    {"id": "DP2", "question": "Có giấy chứng sinh/giấy tờ thay thế không?", "branches": {"true": "Tiếp tục.", "false": "Chuyển case HT_KS_003 (không có giấy chứng sinh)."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Xác định thẩm quyền và tiếp nhận hồ sơ khai sinh quá hạn.", "why": "Quá hạn vẫn phải đăng ký theo đúng thẩm quyền.", "outputs": ["Xác định cơ quan tiếp nhận"]},
+    {"step": 2, "action": "Kiểm tra hồ sơ và lưu ý ghi nhận trường hợp quá hạn theo hướng dẫn.", "why": "Đảm bảo ghi sổ đúng, đủ thông tin.", "outputs": ["Hồ sơ hợp lệ", "Ghi chú xử lý quá hạn (nếu quy định)"]},
+    {"step": 3, "action": "Ghi sổ/cập nhật dữ liệu và cấp trích lục.", "why": "Hoàn tất đăng ký.", "outputs": ["Trích lục khai sinh"]}
+  ],
+  "outputs": ["Trích lục khai sinh"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Đăng ký khai sinh."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Quy định về khai sinh quá hạn."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Hướng dẫn nghiệp vụ/ghi sổ."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC khai sinh)", "note": "Chuẩn TTHC."}
+  ]
+}

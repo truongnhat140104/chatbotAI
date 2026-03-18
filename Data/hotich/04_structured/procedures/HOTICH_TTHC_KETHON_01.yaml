@@ -1,0 +1,135 @@
+{
+  "schema": "hotich.procedure.v1",
+  "procedure_id": "HOTICH_TTHC_KETHON_01",
+  "source_procedure_code": "DVCQG_1.000894",
+  "name": "Đăng ký kết hôn",
+  "module": "hotich",
+  "tags": ["ket_hon"],
+
+  "effectivity": {
+    "effective_from": null,
+    "effective_to": null,
+    "status": "active"
+  },
+
+  "authority": {
+    "resolve_level": "xa",
+    "resolve_body": "Ủy ban nhân dân cấp xã",
+    "resolve_role": "Công chức Tư pháp - Hộ tịch",
+    "transfer_rules": [],
+    "notes": "Bên nam hoặc bên nữ có thể nộp hồ sơ mà không cần văn bản ủy quyền của bên còn lại; nhưng khi nhận/ghi kết quả thì hai bên phải có mặt để xác nhận tự nguyện và ký."
+  },
+
+  "submission_methods": [
+    { "method": "truc_tiep", "note": null },
+    { "method": "truc_tuyen", "note": "Cổng DVCQG/Cổng DVC công cấp tỉnh" },
+    { "method": "buu_chinh", "note": "Qua dịch vụ bưu chính" }
+  ],
+
+  "processing_time": {
+    "standard": "Ngay trong ngày tiếp nhận; nếu nhận sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo",
+    "extended_if_verification_needed": "Nếu cần xác minh điều kiện kết hôn thì không quá 05 ngày làm việc",
+    "note": "Nếu không tra cứu được tình trạng hôn nhân thì UBND xã nơi thường trú/nơi đã đăng ký kết hôn xác minh trong 03 ngày làm việc."
+  },
+
+  "fees": {
+    "amount": null,
+    "currency": "VND",
+    "policy": "Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết')"
+  },
+
+  "variants": [
+    {
+      "variant_id": "MacDinh",
+      "name": "Đăng ký kết hôn (mặc định)",
+
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai",
+            "quantity": "01 bản chính",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tiếp"
+          },
+          {
+            "name": "Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến)",
+            "quantity": "01 bản chính (điện tử)",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tuyến"
+          }
+        ],
+        "must_present": [
+          {
+            "name": "Giấy tờ chứng minh nhân thân (CCCD/thẻ căn cước/căn cước điện tử…)",
+            "quantity": "01 bản chính",
+            "doc_type": "id",
+            "template_id": null,
+            "when": null,
+            "notes": "Nếu thông tin đã có trong CSDLQG về dân cư/CSDL hộ tịch điện tử và được hệ thống điền tự động thì không phải tải lên khi nộp trực tuyến."
+          },
+          {
+            "name": "Giấy tờ chứng minh nơi cư trú (chỉ khi cơ quan hộ tịch không khai thác được thông tin cư trú theo quy định)",
+            "quantity": "01 bản chính",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": "Điều kiện: không khai thác được thông tin cư trú",
+            "conditional": true
+          }
+        ],
+        "optional": []
+      },
+
+      "steps": [
+        {
+          "step": 1,
+          "actor": "nguoi_yeu_cau",
+          "action": "Nộp hồ sơ trực tiếp/trực tuyến; nộp lệ phí (nếu có); có thể nộp thêm phí cấp bản sao trích lục kết hôn nếu yêu cầu."
+        },
+        {
+          "step": 2,
+          "actor": "can_bo_tiep_nhan_mot_cua",
+          "action": "Kiểm tra hồ sơ; nếu hợp lệ thì tiếp nhận và cấp/gửi phiếu hẹn; nếu thiếu thì yêu cầu bổ sung; nếu không bổ sung được thì thông báo từ chối.",
+          "notes": "Hồ sơ nộp trực tiếp được số hóa và ký số theo quy định."
+        },
+        {
+          "step": 3,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Thẩm tra hồ sơ; tra cứu tình trạng hôn nhân qua hệ thống kết nối CSDL; trường hợp không tra cứu được thì đề nghị UBND xã liên quan xác minh (03 ngày làm việc).",
+          "notes": "Nếu công dân đã ly hôn/hủy kết hôn ở nước ngoài nhưng chưa có ghi chú trong CSDL thì hướng dẫn làm thủ tục ghi vào sổ hộ tịch trước."
+        },
+        {
+          "step": 4,
+          "actor": "cong_chuc_tu_phap_ho_tich_va_hai_ben",
+          "action": "Nếu đủ điều kiện: ghi Sổ đăng ký kết hôn/cập nhật phần mềm; in Giấy chứng nhận kết hôn, trình lãnh đạo UBND xã ký; hai bên phải có mặt, xuất trình giấy tờ tùy thân, khẳng định tự nguyện và ký vào sổ + giấy chứng nhận."
+        },
+        {
+          "step": 5,
+          "actor": "bo_phan_mot_cua",
+          "action": "Trả kết quả: mỗi bên nhận 01 bản chính Giấy chứng nhận kết hôn."
+        }
+      ],
+
+      "output": [
+        {
+          "name": "Giấy chứng nhận kết hôn (bản chính)",
+          "format": "giay",
+          "quantity": "02 bản (mỗi bên 01 bản)"
+        },
+        {
+          "name": "Bản sao Trích lục kết hôn (nếu yêu cầu)",
+          "format": "giay",
+          "quantity": null
+        }
+      ]
+    }
+  ],
+
+  "common_cases_notes":[],
+
+  "citations": {
+    "non_normative_sources": [],
+    "legal_basis": []
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "output_dir": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/05_index",
+  "counts": {
+    "legal_units": 1118,
+    "procedure_units": 5,
+    "template_units": 4,
+    "case_units": 14,
+    "authority_units": 39,
+    "all_units": 1180
+  },
+  "by_source_kind": {
+    "legal": 1118,
+    "procedure": 5,
+    "template": 4,
+    "case": 14,
+    "authority": 39
+  },
+  "by_unit_kind": {
+    "article": 239,
+    "clause": 752,
+    "point": 127,
+    "record": 23,
+    "rule": 39
+  }
+}

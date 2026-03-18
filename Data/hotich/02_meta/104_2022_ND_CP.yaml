@@ -1,0 +1,42 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "104_2022_ND_CP"
+  doc_kind: "nghi_dinh"
+  title: "Sửa đổi, bổ sung một số điều của các Nghị định liên quan đến việc nộp, xuất trình sổ hộ khẩu, sổ tạm trú giấy khi thực hiện thủ tục hành chính, cung cấp dịch vụ công"
+  number: "104/2022/NĐ-CP"
+  issuer: "Chính phủ"
+  issued_date: "2022-12-21"
+  effective_date: "2023-01-01"
+  status: "het_hieu_luc_mot_phan"
+  scope_tags: ["hanh_chinh", "tu_phap", "ho_tich"]
+
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: "Thông tin trạng thái hiệu lực theo cổng Pháp luật Quốc gia: hết hiệu lực một phần, các phần hết hiệu lực không ảnh hưởng tới hộ tịch"
+
+sources:
+  primary_source: "phapluat.gov.vn"
+  source_url: "https://phapluat.gov.vn/legal-documents/077581d0-03a6-d900-2054-a26fe3b2a481?tabName=tomtat"
+
+files:
+  original:
+    path: "01_raw/104_2022_ND_CP.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/104_2022_ND_CP.docx"
+    format: "docx"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/legal/104_2022_ND_CP.jsonl"
+    toc_json: null

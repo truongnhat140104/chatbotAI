@@ -1,0 +1,163 @@
+{
+  "schema": "hotich.procedure.v1",
+  "procedure_id": "HOTICH_TTHC_GIAMHO_01",
+  "source_procedure_code": null,
+  "name": "Đăng ký giám hộ",
+  "module": "hotich",
+  "tags": ["giam_ho"],
+
+  "effectivity": {
+    "effective_from": null,
+    "effective_to": null,
+    "status": "active"
+  },
+
+  "authority": {
+    "resolve_level": "xa",
+    "resolve_body": "UBND cấp xã (Cơ quan đăng ký hộ tịch)",
+    "resolve_role": "Công chức Tư pháp - Hộ tịch",
+    "transfer_rules": [],
+    "notes": "Gồm 2 nhánh xử lý phổ biến: giám hộ cử và giám hộ đương nhiên."
+  },
+
+  "submission_methods": [
+    {
+      "method": "truc_tiep",
+      "note": "Thực tế địa phương có thể tích hợp trực tuyến theo nền tảng hộ tịch điện tử nếu tỉnh triển khai."
+    }
+  ],
+
+  "processing_time": {
+    "standard_days_working": 3,
+    "note": "03 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ (đối với nhánh giám hộ cử theo mô tả)."
+  },
+
+  "fees": {
+    "amount": null,
+    "currency": "VND",
+    "policy": "Lệ phí (nếu có) theo quy định địa phương."
+  },
+
+  "variants": [
+    {
+      "variant_id": "GiamHo_Cu",
+      "name": "Đăng ký giám hộ cử",
+
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Tờ khai đăng ký giám hộ theo mẫu",
+            "quantity": "01",
+            "doc_type": "form",
+            "template_id": null,
+            "when": null
+          },
+          {
+            "name": "Văn bản cử người giám hộ (theo Bộ luật Dân sự)",
+            "quantity": "01",
+            "doc_type": "decision_or_agreement",
+            "template_id": null,
+            "when": null
+          }
+        ],
+        "must_present": [],
+        "optional": []
+      },
+
+      "steps": [
+        {
+          "step": 1,
+          "actor": "nguoi_yeu_cau",
+          "action": "Nộp tờ khai và văn bản cử người giám hộ tại cơ quan đăng ký hộ tịch."
+        },
+        {
+          "step": 2,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Thẩm tra điều kiện; nếu đủ điều kiện thì ghi vào Sổ hộ tịch, cùng người đi đăng ký ký vào Sổ; báo cáo Chủ tịch UBND cấp xã cấp trích lục."
+        }
+      ],
+
+      "output": [
+        {
+          "name": "Trích lục đăng ký giám hộ",
+          "format": "giay_hoac_dien_tu"
+        }
+      ]
+    },
+
+    {
+      "variant_id": "GiamHo_DuongNhien",
+      "name": "Đăng ký giám hộ đương nhiên",
+
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Tờ khai đăng ký giám hộ theo mẫu",
+            "quantity": "01",
+            "doc_type": "form",
+            "template_id": null,
+            "when": null
+          },
+          {
+            "name": "Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự)",
+            "quantity": "01 hoặc nhiều giấy tờ tùy trường hợp",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": null
+          }
+        ],
+        "must_present": [],
+        "optional": []
+      },
+
+      "steps": [
+        {
+          "step": 1,
+          "actor": "nguoi_yeu_cau",
+          "action": "Nộp tờ khai và giấy tờ chứng minh căn cứ giám hộ đương nhiên."
+        },
+        {
+          "step": 2,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Đối chiếu căn cứ giám hộ đương nhiên; nếu đủ điều kiện thì ghi Sổ hộ tịch và cấp trích lục."
+        }
+      ],
+
+      "output": [
+        {
+          "name": "Trích lục đăng ký giám hộ",
+          "format": "giay_hoac_dien_tu"
+        }
+      ]
+    }
+  ],
+
+  "common_cases_notes":[],
+
+  "citations": {
+    "non_normative_sources": [
+      {
+        "title": "Bài tổng hợp/tham khảo thủ tục thay đổi người giám hộ",
+        "url": "https://thuvienphapluat.vn/chinh-sach-phap-luat-moi/vn/ho-tro-phap-luat/tu-van-phap-luat/44580/thu-tuc-dang-ky-thay-doi-nguoi-giam-ho"
+      }
+    ],
+    "legal_basis": [
+      {
+        "doc_id": "LUAT_HOTICH_2014",
+        "ref": "Điều 20"
+      },
+      {
+        "doc_id": "LUAT_HOTICH_2014",
+        "ref": "Điều 21"
+      },
+      {
+        "doc_id": "LUAT_HOTICH_2014",
+        "ref": "Điều 42"
+      },
+      {
+        "doc_id": "TT_04_2020_TT-BTP",
+        "ref": "Mẫu biểu/tờ khai (phụ lục liên quan)"
+      }
+    ]
+  }
+}

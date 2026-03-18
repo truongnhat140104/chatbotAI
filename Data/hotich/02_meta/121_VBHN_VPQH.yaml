@@ -1,0 +1,41 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "121_VBHN_VPQH"
+  doc_kind: "vbhn"
+  title: "Luật Hôn nhân và gia đình"
+  number: "121/VBHN-VPQH"
+  issuer: "Văn phòng Quốc hội"
+  issued_date: "2025-08-27"
+  effective_date: null
+  status: "con_hieu_luc"
+  scope_tags: ["hon_nhan_gia_dinh"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: ""
+
+sources:
+  primary_source: "luatvietnam.vn"
+  source_url: "https://luatvietnam.vn/hon-nhan-gia-dinh/van-ban-hop-nhat-121-vbhn-vpqh-nam-2025-do-van-phong-quoc-hoi-ban-hanh-hop-nhat-luat-hon-nhan-va-gia-dinh-410916-d5.html"
+
+files:
+  original:
+    path: "01_raw/121_VBHN_VPQH.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/121_VBHN_VPQH.docx"
+    format: "docx"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/legal/121_VBHN_VPQH.jsonl"
+    toc_json: null

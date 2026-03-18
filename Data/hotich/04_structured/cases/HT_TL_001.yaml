@@ -1,0 +1,27 @@
+{
+  "case_id": "HT_TL_001",
+  "title": "Cấp bản sao trích lục hộ tịch (đương sự yêu cầu trực tiếp)",
+  "module": "hotich",
+  "topic_tags": ["trich_luc", "cap_ban_sao"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "loai_trich_luc", "type": "string", "required": true, "desc": "Khai sinh/kết hôn/khai tử/..."},
+    {"field": "nguoi_yeu_cau", "type": "string", "required": true, "desc": "Đương sự/người thân/được ủy quyền"},
+    {"field": "co_uy_quyen", "type": "bool", "required": true, "desc": "Có ủy quyền không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Người yêu cầu có phải đương sự không?", "branches": {"true": "Tiếp nhận theo nhánh đương sự.", "false": "Kiểm tra ủy quyền/quan hệ hợp lệ."}},
+    {"id": "DP2", "question": "Có ủy quyền không?", "branches": {"true": "Kiểm tra giấy ủy quyền hợp lệ.", "false": "Nếu không phải đương sự: yêu cầu chứng minh quan hệ/ quyền yêu cầu theo quy định."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Xác định quyền yêu cầu cấp trích lục và giấy tờ nhân thân.", "why": "Tránh cấp sai đối tượng.", "outputs": ["Xác nhận quyền yêu cầu"]},
+    {"step": 2, "action": "Tra cứu sổ/cơ sở dữ liệu hộ tịch, đối chiếu thông tin.", "why": "Đảm bảo đúng bản ghi.", "outputs": ["Bản ghi hộ tịch được xác định"]},
+    {"step": 3, "action": "In/cấp bản sao trích lục theo yêu cầu và trả kết quả.", "why": "Hoàn tất thủ tục.", "outputs": ["Bản sao trích lục hộ tịch"]}
+  ],
+  "outputs": ["Bản sao trích lục hộ tịch"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Cấp trích lục hộ tịch."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Quy trình cấp bản sao trích lục."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC trích lục)", "note": "Chuẩn TTHC."}
+  ]
+}

@@ -1,0 +1,41 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "1833_QD_BTP"
+  doc_kind: "quyet_dinh"
+  title: "Công bố thủ tục hành chính được sửa đổi, bổ sung trong lĩnh vực hộ tịch thực hiện tại cơ quan đăng ký hộ tịch trong nước thuộc phạm vi chức năng quản lý của Bộ Tư pháp"
+  number: "1833/QĐ-BTP"
+  issuer: "Bộ Tư pháp"
+  issued_date: "2025-06-23"
+  effective_date: "2025-06-23"
+  status: "con_hieu_luc"
+  scope_tags: ["hanh_chinh", "tu_phap", "ho_tich"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: ""
+
+sources:
+  primary_source: "luatvietnam.vn"
+  source_url: "https://luatvietnam.vn/tu-phap/quyet-dinh-1833-qd-btp-2025-cong-bo-thu-tuc-hanh-chinh-sua-doi-bo-sung-linh-vuc-ho-tich-404771-d1.html"
+
+files:
+  original:
+    path: "01_raw/1833_QD_BTP.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/none_format/1833_QD_BTP.docx"
+    format: "docx"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/procedure_catalog/1833_QD_BTP.jsonl"
+    toc_json: null

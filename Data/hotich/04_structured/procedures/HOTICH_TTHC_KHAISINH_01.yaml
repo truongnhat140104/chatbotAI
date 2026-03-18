@@ -1,0 +1,218 @@
+{
+  "schema": "hotich.procedure.v1",
+  "procedure_id": "HOTICH_TTHC_KHAISINH_01",
+  "source_procedure_code": "DVCQG_1.001193",
+  "name": "Đăng ký khai sinh",
+  "module": "hotich",
+  "tags": ["khai_sinh"],
+
+  "effectivity": {
+    "effective_from": null,
+    "effective_to": null,
+    "status": "active"
+  },
+
+  "authority": {
+    "resolve_level": "xa",
+    "resolve_body": "Ủy ban nhân dân cấp xã",
+    "resolve_role": "Công chức Tư pháp - Hộ tịch",
+    "transfer_rules": [],
+    "notes": "Người dân lựa chọn thực hiện thủ tục hộ tịch tại cơ quan đăng ký hộ tịch nơi cư trú; nếu nộp không đúng xã nơi cư trú thì UBND xã nơi tiếp nhận hỗ trợ nộp trực tuyến đến đúng cơ quan có thẩm quyền."
+  },
+
+  "submission_methods": [
+    { "method": "truc_tiep", "note": null },
+    { "method": "truc_tuyen", "note": "Cổng DVCQG/Cổng DVC công cấp tỉnh" },
+    { "method": "buu_chinh", "note": "Qua dịch vụ bưu chính" }
+  ],
+
+  "processing_time": {
+    "standard": "Ngay trong ngày tiếp nhận; nếu nhận sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo",
+    "extended_if_verification_needed": "Có tình huống cần xác minh tình trạng hôn nhân của cha/mẹ trong 03 ngày làm việc (khi không tra cứu được trên CSDL).",
+    "note": null
+  },
+
+  "fees": {
+    "amount": null,
+    "currency": "VND",
+    "policy": "Khai sinh đúng hạn: miễn lệ phí; khai sinh không đúng hạn: mức thu do HĐND cấp tỉnh quy định",
+    "exemptions": [
+      "Khai sinh đúng hạn",
+      "Người thuộc gia đình có công với cách mạng",
+      "Người thuộc hộ nghèo",
+      "Người khuyết tật"
+    ]
+  },
+
+  "variants": [
+    {
+      "variant_id": "MacDinh",
+      "name": "Đăng ký khai sinh (mặc định)",
+
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Giấy chứng sinh; nếu không có thì nộp văn bản người làm chứng; nếu không có người làm chứng thì giấy cam đoan về việc sinh",
+            "quantity": "01 bản chính",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": null,
+            "conditional": false,
+            "notes": "Nếu đã nộp bản điện tử Giấy chứng sinh hoặc cơ quan hộ tịch khai thác được dữ liệu điện tử có ký số của Giấy chứng sinh thì không phải nộp bản giấy."
+          }
+        ],
+        "must_present": [
+          {
+            "name": "Giấy tờ chứng minh nhân thân (CCCD/thẻ căn cước/căn cước điện tử…)",
+            "quantity": "01 bản chính",
+            "doc_type": "id",
+            "template_id": null,
+            "when": null,
+            "conditional": false,
+            "notes": "Nếu thông tin đã có trong CSDLQG về dân cư/CSDL hộ tịch điện tử và được hệ thống điền tự động thì không phải tải lên khi nộp trực tuyến."
+          },
+          {
+            "name": "Giấy tờ chứng minh nơi cư trú (chỉ khi cơ quan hộ tịch không khai thác được thông tin cư trú theo quy định)",
+            "quantity": "01 bản chính",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": "Chỉ khi không khai thác được thông tin cư trú",
+            "conditional": true,
+            "notes": "Nếu gửi hồ sơ qua bưu chính thì gửi kèm bản sao chứng thực các giấy tờ phải xuất trình."
+          }
+        ],
+        "forms": [
+          {
+            "name": "Tờ khai đăng ký khai sinh (nộp trực tiếp/bưu chính)",
+            "quantity": "01 bản chính",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tiếp/bưu chính",
+            "conditional": false,
+            "notes": null
+          },
+          {
+            "name": "Mẫu hộ tịch điện tử tương tác đăng ký khai sinh (nộp trực tuyến)",
+            "quantity": "01 bản chính (điện tử)",
+            "doc_type": "form",
+            "template_id": null,
+            "when": "Nộp trực tuyến",
+            "conditional": false,
+            "notes": null
+          }
+        ],
+        "optional": []
+      },
+
+      "steps": [
+        {
+          "step": 1,
+          "actor": "nguoi_yeu_cau",
+          "action": "Nộp hồ sơ trực tiếp/bưu chính hoặc nộp hồ sơ trực tuyến trên Cổng DVC; nộp phí/lệ phí (nếu có)."
+        },
+        {
+          "step": 2,
+          "actor": "can_bo_tiep_nhan",
+          "action": "Kiểm tra hồ sơ; nếu đầy đủ thì tiếp nhận và cấp/gửi phiếu hẹn; nếu thiếu thì yêu cầu bổ sung; nếu không bổ sung được thì thông báo từ chối.",
+          "notes": "Hồ sơ nộp trực tiếp được số hóa và ký số theo quy định."
+        },
+        {
+          "step": 3,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Thẩm tra hồ sơ; tra cứu/xác thực thông tin liên quan; nếu đủ điều kiện thì ghi sổ, cập nhật phần mềm hộ tịch.",
+          "notes": "Trường hợp cần, đề nghị UBND xã nơi thường trú/nơi đã đăng ký kết hôn xác minh tình trạng hôn nhân (03 ngày làm việc)."
+        },
+        {
+          "step": 4,
+          "actor": "cong_chuc_tu_phap_ho_tich",
+          "action": "Chuyển thông tin đến CSDLQG về dân cư để lấy số định danh cá nhân; sau khi có số định danh thì in Giấy khai sinh/bản sao, trình lãnh đạo UBND xã ký, chuyển trả kết quả."
+        }
+      ],
+
+      "output": [
+        { "name": "Giấy khai sinh (bản chính)", "format": "giay", "quantity": "01" },
+        { "name": "Bản sao Giấy khai sinh (nếu yêu cầu)", "format": "giay", "quantity": null }
+      ]
+    },
+
+    {
+      "variant_id": "TreBiBoRoi",
+      "name": "Đăng ký khai sinh cho trẻ bị bỏ rơi",
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Biên bản trẻ bị bỏ rơi",
+            "quantity": "01 bản chính",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": "Áp dụng nếu trẻ bị bỏ rơi",
+            "conditional": true,
+            "notes": null
+          }
+        ],
+        "must_present": [],
+        "forms": [],
+        "optional": []
+      },
+      "steps": [],
+      "output": []
+    },
+
+    {
+      "variant_id": "MangThaiHo",
+      "name": "Đăng ký khai sinh (sinh ra do mang thai hộ)",
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Văn bản xác nhận của cơ sở y tế đã thực hiện kỹ thuật hỗ trợ sinh sản (nếu sinh ra do mang thai hộ)",
+            "quantity": "01 bản chính",
+            "doc_type": "proof",
+            "template_id": null,
+            "when": "Áp dụng nếu sinh ra do mang thai hộ",
+            "conditional": true,
+            "notes": null
+          }
+        ],
+        "must_present": [],
+        "forms": [],
+        "optional": []
+      },
+      "steps": [],
+      "output": []
+    },
+
+    {
+      "variant_id": "UyQuyen",
+      "name": "Đăng ký khai sinh có ủy quyền",
+      "required_documents": {
+        "must_submit": [
+          {
+            "name": "Văn bản ủy quyền (được chứng thực) nếu ủy quyền đăng ký khai sinh",
+            "quantity": "01 bản chính",
+            "doc_type": "authorization",
+            "template_id": null,
+            "when": "Áp dụng nếu người yêu cầu ủy quyền cho người khác đi đăng ký",
+            "conditional": true,
+            "notes": "Nếu người được ủy quyền là ông/bà/cha/mẹ/con/vợ/chồng/anh/chị/em ruột thì văn bản ủy quyền không phải chứng thực."
+          }
+        ],
+        "must_present": [],
+        "forms": [],
+        "optional": []
+      },
+      "steps": [],
+      "output": []
+    }
+  ],
+
+  "common_cases_notes": [
+    "Cha mẹ đã đăng ký kết hôn: cơ quan hộ tịch tra cứu/xác thực tình trạng hôn nhân của cha mẹ qua hệ thống kết nối CSDL.",
+    "Trẻ bị bỏ rơi: lập biên bản và niêm yết 07 ngày; hết thời hạn niêm yết không có thông tin cha mẹ thì đăng ký khai sinh.",
+    "Chưa xác định cha: ghi theo mẹ, phần cha để trống; nếu cha làm thủ tục nhận con thì kết hợp giải quyết."
+  ],
+
+  "citations": {
+    "non_normative_sources": [],
+    "legal_basis": []
+  }
+}

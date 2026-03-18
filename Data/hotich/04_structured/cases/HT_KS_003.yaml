@@ -1,0 +1,27 @@
+{
+  "case_id": "HT_KS_003",
+  "title": "Đăng ký khai sinh cho trẻ sinh tại nhà, không có Giấy chứng sinh",
+  "module": "hotich",
+  "topic_tags": ["khai_sinh", "mat_giay_to", "sinh_tai_nha"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "co_giay_chung_sinh", "type": "bool", "required": true, "desc": "Có Giấy chứng sinh? (false)"},
+    {"field": "co_nguoi_lam_chung", "type": "bool", "required": true, "desc": "Có người làm chứng về việc sinh?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có yếu tố nước ngoài không?", "branches": {"true": "Chuyển nhánh có yếu tố nước ngoài.", "false": "Trong nước (thường cấp xã)."}},
+    {"id": "DP2", "question": "Có người làm chứng không?", "branches": {"true": "Dùng xác nhận người làm chứng thay giấy chứng sinh.", "false": "Dùng giấy cam đoan theo quy định."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Hướng dẫn giấy tờ thay thế Giấy chứng sinh (xác nhận người làm chứng/giấy cam đoan).", "why": "Tạo căn cứ xác định việc sinh.", "outputs": ["Văn bản làm chứng hoặc giấy cam đoan"]},
+    {"step": 2, "action": "Tiếp nhận hồ sơ khai sinh và kiểm tra nhân thân người đi đăng ký.", "why": "Đảm bảo đúng người yêu cầu và đủ thông tin.", "outputs": ["Phiếu tiếp nhận/phiếu bổ sung (nếu có)"]},
+    {"step": 3, "action": "Ghi sổ/cập nhật dữ liệu và cấp trích lục.", "why": "Hoàn tất đăng ký.", "outputs": ["Trích lục khai sinh"]}
+  ],
+  "outputs": ["Trích lục khai sinh"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Đăng ký khai sinh."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Hồ sơ khai sinh khi không có giấy chứng sinh."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/tờ khai/hướng dẫn."}
+  ]
+}

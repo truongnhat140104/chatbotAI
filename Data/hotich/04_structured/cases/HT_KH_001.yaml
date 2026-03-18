@@ -1,0 +1,29 @@
+{
+  "case_id": "HT_KH_001",
+  "title": "Đăng ký kết hôn trong nước (hai bên đủ điều kiện, đủ giấy tờ)",
+  "module": "hotich",
+  "topic_tags": ["ket_hon", "trong_nuoc", "du_ho_so"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "hai_ben_co_mat", "type": "bool", "required": true, "desc": "Hai bên nam nữ có mặt khi đăng ký?"},
+    {"field": "du_dieu_kien_ket_hon", "type": "bool", "required": true, "desc": "Đủ điều kiện kết hôn theo quy định?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có yếu tố nước ngoài không?", "branches": {"true": "Chuyển nhánh kết hôn có yếu tố nước ngoài (thường cấp huyện).", "false": "Trong nước (thường cấp xã)."}},
+    {"id": "DP2", "question": "Hai bên có mặt không?", "branches": {"true": "Tiếp tục.", "false": "Hướng dẫn theo quy định về việc có mặt khi đăng ký."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Tiếp nhận hồ sơ đăng ký kết hôn và kiểm tra điều kiện kết hôn.", "why": "Đảm bảo đủ điều kiện trước khi đăng ký.", "outputs": ["Kết quả kiểm tra điều kiện"]},
+    {"step": 2, "action": "Ghi sổ hộ tịch/cập nhật dữ liệu và tổ chức ký vào sổ/giấy tờ.", "why": "Hoàn tất đăng ký.", "outputs": ["Bản ghi đăng ký kết hôn"]},
+    {"step": 3, "action": "Cấp giấy chứng nhận/trích lục kết hôn.", "why": "Trả kết quả.", "outputs": ["Giấy chứng nhận kết hôn/trích lục"]}
+  ],
+  "outputs": ["Giấy chứng nhận kết hôn/trích lục kết hôn"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HNGD_52_2014_QH13", "ref": "(điền sau)", "note": "Điều kiện kết hôn."},
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Thẩm quyền/đăng ký kết hôn."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Hồ sơ/quy trình."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC kết hôn)", "note": "Chuẩn TTHC."}
+  ]
+}

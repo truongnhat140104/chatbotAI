@@ -1,0 +1,43 @@
+schema_version: "1.0"
+module: "hotich"
+
+doc:
+  doc_id: "92_2023_ND_CP"
+  doc_kind: "nghi_dinh"
+  title: "Bãi bỏ một số văn bản quy phạm pháp luật của Chính phủ"
+  number: "92/2023/NĐ-CP"
+  issuer: "Chính phủ"
+  issued_date: "2023-12-19"
+  effective_date: "2023-12-19"
+  status: "con_hieu_luc"
+  scope_tags: ["tu_phap", "hanh_chinh", "ho_tich"]
+  language: "vi"
+
+relations:
+  based_on: []
+  guides: []
+  amends: []
+  amended_by: []
+  replaces: []
+  replaced_by: []
+  related_docs: []
+  notes: []
+
+sources:
+  primary_source: "luatvietnam.vn"
+  source_url: "https://luatvietnam.vn/tu-phap/nghi-dinh-92-2023-nd-cp-bai-bo-mot-so-van-ban-quy-pham-phap-luat-cua-chinh-phu-284657-d1.html"
+  retrieved_date: "2026-03-09"
+  notes: ""
+
+files:
+  original:
+    path: "01_raw/92_2023_ND_CP.pdf"
+    format: "pdf"
+    sha256: null
+  text:
+    path: "03_text/format/92_2023_ND_CP.txt"
+    format: "txt"
+    generated_by: "pdf_text"
+  structured:
+    clauses_jsonl: "04_structured/legal/92_2023_ND_CP.jsonl"
+    toc_json: null

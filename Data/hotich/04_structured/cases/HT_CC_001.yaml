@@ -1,0 +1,27 @@
+{
+  "case_id": "HT_CC_001",
+  "title": "Cải chính hộ tịch (sai họ tên/ngày sinh do ghi nhầm, có chứng cứ)",
+  "module": "hotich",
+  "topic_tags": ["cai_chinh", "sai_thong_tin"],
+  "assumptions": ["Áp dụng quy định hiện hành"],
+  "inputs_schema": [
+    {"field": "loai_sai", "type": "string", "required": true, "desc": "Sai họ tên/ngày sinh/giới tính/khác"},
+    {"field": "co_chung_cu_hop_le", "type": "bool", "required": true, "desc": "Có giấy tờ chứng minh thông tin đúng?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có đủ chứng cứ không?", "branches": {"true": "Tiếp tục cải chính.", "false": "Hướng dẫn bổ sung chứng cứ/hồ sơ."}},
+    {"id": "DP2", "question": "Trường hợp là 'cải chính' hay 'thay đổi'?", "branches": {"cai_chinh": "Sửa sai do lỗi ghi chép.", "thay_doi": "Chuyển case thay đổi hộ tịch (HT_TD_001)."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Tiếp nhận hồ sơ yêu cầu cải chính và kiểm tra căn cứ/chứng cứ.", "why": "Cải chính cần chứng minh lỗi và thông tin đúng.", "outputs": ["Kết quả kiểm tra chứng cứ"]},
+    {"step": 2, "action": "Thực hiện cải chính trong sổ hộ tịch/cơ sở dữ liệu theo thẩm quyền.", "why": "Cập nhật chính xác thông tin.", "outputs": ["Bản ghi hộ tịch được cải chính"]},
+    {"step": 3, "action": "Cấp trích lục hộ tịch sau cải chính.", "why": "Trả kết quả.", "outputs": ["Trích lục sau cải chính"]}
+  ],
+  "outputs": ["Trích lục hộ tịch sau cải chính"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau)", "note": "Thay đổi/cải chính/bổ sung hộ tịch."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Thủ tục cải chính."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu/hướng dẫn."}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "HT_KS_001",
+  "title": "Đăng ký khai sinh đúng hạn, có Giấy chứng sinh, cha mẹ đủ giấy tờ",
+  "module": "hotich",
+  "topic_tags": ["khai_sinh", "dung_han", "du_ho_so"],
+  "assumptions": ["Áp dụng quy định hiện hành", "Không xét mức thu lệ phí theo địa phương"],
+  "inputs_schema": [
+    {"field": "tre_duoi_60_ngay", "type": "bool", "required": true, "desc": "Trẻ còn trong hạn 60 ngày kể từ ngày sinh?"},
+    {"field": "co_giay_chung_sinh", "type": "bool", "required": true, "desc": "Có Giấy chứng sinh?"},
+    {"field": "cha_me_da_dang_ky_ket_hon", "type": "bool", "required": true, "desc": "Cha mẹ đã đăng ký kết hôn?"},
+    {"field": "nguoi_di_dang_ky", "type": "string", "required": true, "desc": "Ai đi đăng ký (cha/mẹ/người giám hộ)?"},
+    {"field": "co_yeu_to_nuoc_ngoai", "type": "bool", "required": true, "desc": "Có yếu tố nước ngoài không?"}
+  ],
+  "decision_points": [
+    {"id": "DP1", "question": "Có yếu tố nước ngoài không?", "branches": {"true": "Chuyển nhánh có yếu tố nước ngoài (thường cấp huyện).", "false": "Xử lý theo thẩm quyền trong nước (thường cấp xã)."}},
+    {"id": "DP2", "question": "Đúng hạn không?", "branches": {"true": "Tiếp tục theo khai sinh đúng hạn.", "false": "Chuyển case khai sinh quá hạn."}}
+  ],
+  "steps": [
+    {"step": 1, "action": "Xác định nhánh thủ tục và thẩm quyền tiếp nhận.", "why": "Đảm bảo nộp đúng cơ quan.", "outputs": ["Nhánh trong nước/ngoài nước", "Cơ quan tiếp nhận"]},
+    {"step": 2, "action": "Hướng dẫn/kiểm tra hồ sơ: tờ khai khai sinh, Giấy chứng sinh, giấy tờ của cha/mẹ.", "why": "Đủ căn cứ ghi sổ hộ tịch.", "outputs": ["Checklist hồ sơ hợp lệ"]},
+    {"step": 3, "action": "Tiếp nhận hồ sơ; yêu cầu bổ sung nếu thiếu.", "why": "Bảo đảm hợp lệ trước khi đăng ký.", "outputs": ["Phiếu tiếp nhận/phiếu bổ sung (nếu có)"]},
+    {"step": 4, "action": "Ghi sổ hộ tịch/cập nhật hệ thống điện tử (nếu có).", "why": "Hoàn tất đăng ký.", "outputs": ["Bản ghi đăng ký khai sinh"]},
+    {"step": 5, "action": "Cấp trích lục khai sinh/giấy tờ kết quả.", "why": "Trả đúng kết quả thủ tục.", "outputs": ["Trích lục khai sinh"]}
+  ],
+  "outputs": ["Trích lục khai sinh"],
+  "legal_basis": [
+    {"doc_id": "LUAT_HOTICH_60_2014_QH13", "ref": "(điền sau khi tách clauses)", "note": "Đăng ký khai sinh, thẩm quyền, thời hạn."},
+    {"doc_id": "ND_123_2015_NDCP", "ref": "(điền sau)", "note": "Quy trình/hồ sơ chi tiết."},
+    {"doc_id": "TT_04_2020_TTBTP", "ref": "(điền sau)", "note": "Biểu mẫu, ghi sổ."},
+    {"doc_id": "QD_1872_2020_QD_BTP", "ref": "(mục/phụ lục TTHC khai sinh)", "note": "Chuẩn TTHC."}
+  ]
+}
