@@ -49,7 +49,7 @@ context_builder = HotichContextBuilder(
 built_context = context_builder.build(query=query, grouped_results=groups)
 
 answerer = QwenLLMAnswerer(
-    base_url="http://127.0.0.1:11434/v1",   # sửa nếu server khác
+    base_url="http://127.0.0.1:11434/",   # sửa nếu server khác
     model_name="qwen2.5:3b",           # sửa theo model bạn đang serve
     api_key="ollama",
     temperature=0.1,

@@ -1,16 +1,16 @@
 {
   "model_name": "bkai-foundation-models/vietnamese-bi-encoder",
-  "num_units": 1180,
+  "num_units": 2260,
   "embedding_dim": 768,
   "normalize_embeddings": true,
   "batch_size": 32,
   "device": "auto",
   "use_word_segment": true,
-  "index_dir": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/05_index",
-  "output_dir": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/05_index/embeddings",
-  "source_file": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/05_index/all_units.jsonl",
+  "index_dir": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/05_index",
+  "output_dir": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/05_index/embeddings",
+  "source_file": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/05_index/all_units.jsonl",
   "artifacts": {
-    "embeddings": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/05_index/embeddings/embeddings.npy",
-    "unit_refs": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/05_index/embeddings/unit_refs.jsonl"
+    "embeddings": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/05_index/embeddings/embeddings.npy",
+    "unit_refs": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/05_index/embeddings/unit_refs.jsonl"
   }
 }

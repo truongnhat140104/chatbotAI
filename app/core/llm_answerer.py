@@ -24,8 +24,8 @@ class QwenLLMAnswerer:
 
     def __init__(
         self,
-        base_url: str = "http://127.0.0.1:1234/v1",
-        model_name: str = "qwen2.5:latest",
+        base_url: str = "http://127.0.0.1:11434/v1",
+        model_name: str = "qwen2.5:3b",
         api_key: str = "not-needed",
         temperature: float = 0.1,
         max_tokens: int = 1200,
@@ -56,6 +56,10 @@ class QwenLLMAnswerer:
         return text
 
     def _detect_mode(self, built_context: BuiltContext) -> str:
+        forced_mode = getattr(built_context, "query_mode", "").strip().lower()
+        if forced_mode:
+            return forced_mode
+
         q = self._norm(built_context.query)
 
         if any(x in q for x in ["to khai", "mau", "bieu mau", "form"]):
@@ -140,6 +144,12 @@ class QwenLLMAnswerer:
             "3. Thẩm quyền / nơi nộp\n"
             "4. Thời hạn / lệ phí nếu có\n"
             "5. Biểu mẫu liên quan nếu có trong context\n"
+            "Ưu tiên dùng PROCEDURE CONTEXT làm nguồn chính cho các mục 1, 2, 4.\n"
+            "Ưu tiên dùng AUTHORITY CONTEXT cho mục 3.\n"
+            "Ưu tiên dùng TEMPLATE CONTEXT cho mục 5.\n"
+            "LEGAL CONTEXT chỉ dùng để củng cố căn cứ pháp lý hoặc đối chiếu citation.\n"
+            "Không dùng CASE CONTEXT làm nguồn chính nếu đã có PROCEDURE CONTEXT.\n"
+            "Mỗi mục 1-5 phải kèm ít nhất một citation nếu context có nguồn phù hợp.\n"
         )
 
     def _user_prompt(self, built_context: BuiltContext) -> str:
@@ -157,6 +167,12 @@ class QwenLLMAnswerer:
         elif mode == "template":
             extra_instruction = (
                 "Yêu cầu đặc biệt: nếu context có biểu mẫu, hãy liệt kê các trường thông tin chính có thể nhìn thấy trong context.\n"
+            )
+        elif mode == "procedure":
+            extra_instruction = (
+                "Yêu cầu đặc biệt: với câu hỏi thủ tục, hãy ưu tiên đọc PROCEDURE CONTEXT trước. "
+                "Nếu một mục chưa thấy rõ trong PROCEDURE CONTEXT thì mới tham chiếu AUTHORITY/LEGAL/TEMPLATE. "
+                "Không suy diễn từ CASE CONTEXT nếu đã có thủ tục phù hợp.\n"
             )
 
         return (

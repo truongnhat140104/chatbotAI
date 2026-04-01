@@ -1,6 +1,6 @@
 [
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/00_registry",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/00_registry",
     "file_count": 1,
     "parse_errors": [],
     "non_object_files": [],
@@ -81,7 +81,7 @@
     "status": "OK"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/02_meta",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/02_meta",
     "file_count": 12,
     "parse_errors": [],
     "non_object_files": [],
@@ -520,7 +520,7 @@
     "status": "WARNING"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/authority",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/authority",
     "file_count": 1,
     "parse_errors": [],
     "non_object_files": [],
@@ -573,7 +573,7 @@
     "status": "OK"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/cases",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/cases",
     "file_count": 14,
     "parse_errors": [],
     "non_object_files": [],
@@ -924,7 +924,7 @@
     "status": "WARNING"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/legal",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/legal",
     "file_count": 12,
     "parse_errors": [],
     "non_object_files": [],
@@ -16846,7 +16846,7 @@
     "status": "WARNING"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/procedure_catalog",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/procedure_catalog",
     "file_count": 1,
     "parse_errors": [],
     "non_object_files": [],
@@ -16918,7 +16918,7 @@
     "status": "OK"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/procedures",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/procedures",
     "file_count": 5,
     "parse_errors": [],
     "non_object_files": [],
@@ -18039,7 +18039,7 @@
     "status": "WARNING"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/qa",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/qa",
     "file_count": 0,
     "parse_errors": [],
     "non_object_files": [],
@@ -18049,7 +18049,7 @@
     "status": "EMPTY"
   },
   {
-    "folder": "/Users/truongnhat/Documents/Python/PythonProject1/Data/hotich/04_structured/templates",
+    "folder": "/Users/truongnhat/Documents/Python/ChatbotAI/Data/hotich/04_structured/templates",
     "file_count": 4,
     "parse_errors": [],
     "non_object_files": [],

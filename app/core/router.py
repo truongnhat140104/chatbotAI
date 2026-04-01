@@ -1,8 +1,8 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
 import re
 import unicodedata
-from dataclasses import dataclass
 from typing import Any
 
 
@@ -16,9 +16,11 @@ class RouteDecision:
     clause_no: str = ""
     law_alias: str = ""
 
+
 class HotichRouter:
     """
     Router rule-based đơn giản cho giai đoạn MVP.
+
     Intent chính:
     - procedure
     - template
@@ -50,10 +52,16 @@ class HotichRouter:
         }
 
     def _detect_law_alias(self, q: str) -> str:
+        """
+        Chỉ gán alias khi người dùng nêu khá rõ tên luật / số hiệu.
+        Tránh trường hợp mọi câu chứa "hộ tịch" đều bị ép sang legal_article_lookup.
+        """
         if "hon nhan va gia dinh" in q:
             return "luat_hon_nhan_va_gia_dinh"
-        if "luat ho tich" in q or "ho tich" in q:
+
+        if any(x in q for x in ["luat ho tich", "60 2014 qh13", "60/2014/qh13"]):
             return "luat_ho_tich"
+
         return ""
 
     def _extract_article_lookup(self, q: str) -> dict[str, str]:
@@ -65,7 +73,6 @@ class HotichRouter:
         """
         article_no = ""
         clause_no = ""
-        law_alias = ""
 
         m_article = re.search(r"\bdieu\s+(\d+)\b", q)
         if m_article:
@@ -125,7 +132,6 @@ class HotichRouter:
                     scores[intent] += 3.0
                     reasons.append(f"{intent}: matched '{kw}'")
 
-        # Heuristic boosters
         if any(x in q for x in ["dang ky khai sinh", "dang ky ket hon", "dang ky khai tu", "giam ho"]):
             scores["procedure"] += 4.0
             reasons.append("procedure: matched core procedure phrase")
@@ -142,14 +148,10 @@ class HotichRouter:
             scores["case"] += 4.0
             reasons.append("case: matched case-like phrase")
 
-        # Nếu hỏi giấy tờ/hồ sơ thì thường vẫn là procedure trước
         if any(x in q for x in ["giay to", "ho so", "can gi", "can nhung gi"]):
             scores["procedure"] += 4.0
             reasons.append("procedure: dossier question boost")
 
-
-
-        # Tie-break ưu tiên thực dụng hơn cho trợ lý hành chính
         priority = ["procedure", "template", "legal", "case"]
 
         legal_strong_patterns = [
@@ -171,8 +173,6 @@ class HotichRouter:
         if "ho tich" in q and any(x in q for x in ["van ban", "quy dinh", "can cu", "phap ly"]):
             scores["legal"] += 6.0
             reasons.append("legal: broad hộ tịch legal scope boost")
-
-        if "ho tich" in q and any(x in q for x in ["van ban", "quy dinh", "can cu", "phap ly"]):
             scores["procedure"] -= 3.0
             reasons.append("procedure: penalty under broad legal query")
 

@@ -80,9 +80,9 @@ def resolve_source(doc_id: str, item: dict) -> tuple[list[str], str]:
     if cand_docx.exists():
         return read_docx_lines(cand_docx), f"03_text/format/{cand_docx.name}"
     if cand_md.exists():
-        return read_text_lines(cand_md), f"03_text/{cand_md.name}"
+        return read_text_lines(cand_md), f"03_text/format/{cand_md.name}"
     if cand_txt.exists():
-        return read_text_lines(cand_txt), f"03_text/{cand_txt.name}"
+        return read_text_lines(cand_txt), f"03_text/format/{cand_txt.name}"
 
     raise FileNotFoundError(f"Không tìm thấy {doc_id} trong 03_text (docx/md/txt)")
 
@@ -288,7 +288,19 @@ def build_structure(lines: list[str], doc_id: str, keep_note_markers: bool) -> d
             add_point(pt_key, note_inline, pt_text)
             continue
 
-        # 4) fallback: dòng tiếp theo của khoản/điều
+        # 4) fallback: dòng tiêu đề bị xuống dòng riêng sau Chương/Mục
+        if cur_art is None and cur_clause is None:
+            clean_line = line if keep_note_markers else strip_note_markers(line)
+            if cur_sec is not None and not cur_sec.get("title"):
+                cur_sec["title"] = clean_line
+                set_or_merge_note_refs(cur_sec, extract_note_refs_anywhere(line))
+                continue
+            if cur_chap is not None and not cur_chap.get("title"):
+                cur_chap["title"] = clean_line
+                set_or_merge_note_refs(cur_chap, extract_note_refs_anywhere(line))
+                continue
+
+        # 5) fallback: dòng tiếp theo của khoản/điều
         if cur_clause is not None:
             # nếu dòng lẻ có marker [n] thì cộng note_refs vào clause
             set_or_merge_note_refs(cur_clause, extract_note_refs_anywhere(line))

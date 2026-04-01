@@ -137,6 +137,32 @@ class HotichIndexer:
         doc = self._resolve_doc_meta(doc_id)
         return self._text(doc.get("doc_kind"))
 
+    def _iter_legal_articles(
+        self,
+        chapter: dict[str, Any],
+    ) -> list[tuple[dict[str, Any], str, str]]:
+        article_rows: list[tuple[dict[str, Any], str, str]] = []
+
+        chapter_articles = chapter.get("articles", []) if isinstance(chapter, dict) else []
+        for article in chapter_articles:
+            if isinstance(article, dict):
+                article_rows.append((article, "", ""))
+
+        sections = chapter.get("sections", []) if isinstance(chapter, dict) else []
+        for section in sections:
+            if not isinstance(section, dict):
+                continue
+            section_no = self._text(section.get("section_no"))
+            section_title = self._text(section.get("title"))
+            section_articles = section.get("articles", [])
+            if not isinstance(section_articles, list):
+                continue
+            for article in section_articles:
+                if isinstance(article, dict):
+                    article_rows.append((article, section_no, section_title))
+
+        return article_rows
+
     # ------------------------------------------------------------------
     # Unit builders
     # ------------------------------------------------------------------
@@ -163,6 +189,7 @@ class HotichIndexer:
                 extra.get("doc_title", ""),
                 extra.get("doc_number", ""),
                 extra.get("article_title", ""),
+                extra.get("section_title", ""),
                 extra.get("chapter_title", ""),
                 extra.get("tags_text", ""),
             ],
@@ -174,6 +201,8 @@ class HotichIndexer:
                 f"[{source_kind}/{unit_kind}]",
                 extra.get("doc_title", ""),
                 extra.get("doc_number", ""),
+                extra.get("chapter_title", ""),
+                extra.get("section_title", ""),
                 extra.get("citation_label", ""),
                 title,
                 text,
@@ -209,9 +238,8 @@ class HotichIndexer:
             for chapter in chapters:
                 chapter_no = self._text(chapter.get("chapter_no"))
                 chapter_title = self._text(chapter.get("title"))
-                articles = chapter.get("articles", []) if isinstance(chapter, dict) else []
 
-                for article in articles:
+                for article, section_no, section_title in self._iter_legal_articles(chapter):
                     article_no = self._text(article.get("article_no"))
                     article_title = self._text(article.get("title"))
                     raw_paragraphs = article.get("raw_paragraphs", []) if isinstance(article, dict) else []
@@ -245,6 +273,8 @@ class HotichIndexer:
                                     "doc_kind": doc_kind,
                                     "chapter_no": chapter_no,
                                     "chapter_title": chapter_title,
+                                    "section_no": section_no,
+                                    "section_title": section_title,
                                     "article_no": article_no,
                                     "article_title": article_title,
                                     "clause_key": "",
@@ -286,6 +316,8 @@ class HotichIndexer:
                                         "doc_kind": doc_kind,
                                         "chapter_no": chapter_no,
                                         "chapter_title": chapter_title,
+                                        "section_no": section_no,
+                                        "section_title": section_title,
                                         "article_no": article_no,
                                         "article_title": article_title,
                                         "clause_key": clause_key,
@@ -344,6 +376,8 @@ class HotichIndexer:
                                         "doc_kind": doc_kind,
                                         "chapter_no": chapter_no,
                                         "chapter_title": chapter_title,
+                                        "section_no": section_no,
+                                        "section_title": section_title,
                                         "article_no": article_no,
                                         "article_title": article_title,
                                         "clause_key": clause_key,

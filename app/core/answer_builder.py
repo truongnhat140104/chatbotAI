@@ -527,6 +527,55 @@ class HotichAnswerBuilder:
         lines.extend(f"- {x}" for x in picked)
         return "\n".join(lines)
 
+    def _is_case_like_query(self, query: str) -> bool:
+        q = self._normalize_text(query)
+        case_markers = [
+            "truong hop", "tinh huong", "neu", "mat", "khong co", "uy quyen",
+            "qua han", "bi bo roi", "sai thong tin", "cai chinh", "cap lai",
+        ]
+        return any(x in q for x in case_markers)
+
+    def _filter_case_group(
+        self,
+        query: str,
+        results: list[SearchResult],
+        anchor_title: str = "",
+        max_items: int = 1,
+    ) -> list[SearchResult]:
+        if self._is_case_like_query(query):
+            return results[:max_items]
+
+        picked: list[SearchResult] = []
+        for r in results:
+            if self._looks_related(query, f"{r.title} {r.snippet}", anchor_title):
+                picked.append(r)
+        return picked[:max_items]
+
+    def _prioritize_legal_by_procedure_refs(
+        self,
+        legal_results: list[SearchResult],
+        procedure_item: dict[str, Any] | None = None,
+        keep: int = 4,
+    ) -> list[SearchResult]:
+        if procedure_item is None:
+            return legal_results[:keep]
+
+        refs = set(self._extract_doc_refs(procedure_item.get("citations", [])))
+        if not refs:
+            return legal_results[:keep]
+
+        boosted = []
+        for r in legal_results:
+            score = r.score
+            doc_id = self._text(r.data.get("doc_id")) if isinstance(r.data, dict) else ""
+            item_id = self._text(r.item_id)
+            if doc_id in refs or item_id in refs:
+                score += 1000.0
+            boosted.append((score, r))
+
+        boosted.sort(key=lambda x: (-x[0], -x[1].semantic_score, -x[1].lexical_score, x[1].item_id))
+        return [r for _, r in boosted[:keep]]
+
     def _build_legal_section(
         self,
         legal_results: list[SearchResult],
@@ -559,11 +608,15 @@ class HotichAnswerBuilder:
     # Public API
     # ------------------------------------------------------------------
 
-    def answer(self, query: str, per_kind: int = 3) -> AnswerResult:
+    def answer(self, query: str, per_kind: int = 3, forced_mode: str = "auto") -> AnswerResult:
         from app.core.router import HotichRouter
 
         router = HotichRouter()
-        decision = router.route(query)
+        requested_mode = (forced_mode or "auto").strip().lower()
+        if requested_mode in {"procedure", "template", "legal", "case"}:
+            primary_intent = requested_mode
+        else:
+            primary_intent = router.route(query).primary_intent
 
         procedure_k = per_kind
         template_k = per_kind
@@ -571,29 +624,29 @@ class HotichAnswerBuilder:
         case_k = per_kind
         authority_k = per_kind
 
-        if decision.primary_intent == "procedure":
-            procedure_k = 5
-            template_k = 3
-            legal_k = 4
-            case_k = 3
-            authority_k = 3
-        elif decision.primary_intent == "template":
-            procedure_k = 3
-            template_k = 5
-            legal_k = 3
-            case_k = 2
+        if primary_intent == "procedure":
+            procedure_k = max(per_kind + 3, 6)
+            template_k = max(2, per_kind - 1)
+            legal_k = max(3, per_kind + 1)
+            case_k = 1
+            authority_k = max(3, per_kind + 1)
+        elif primary_intent == "template":
+            procedure_k = max(2, per_kind)
+            template_k = max(per_kind + 2, 5)
+            legal_k = max(2, per_kind)
+            case_k = 1
             authority_k = 2
-        elif decision.primary_intent == "legal":
+        elif primary_intent == "legal":
             procedure_k = 2
             template_k = 1
-            legal_k = 8
-            case_k = 2
+            legal_k = max(per_kind + 5, 8)
+            case_k = 1
             authority_k = 2
-        elif decision.primary_intent == "case":
-            procedure_k = 4
+        elif primary_intent == "case":
+            procedure_k = max(3, per_kind + 1)
             template_k = 2
-            legal_k = 3
-            case_k = 5
+            legal_k = max(3, per_kind)
+            case_k = max(per_kind + 2, 5)
             authority_k = 2
 
         groups = {
@@ -604,7 +657,6 @@ class HotichAnswerBuilder:
             "authority": self.retriever.search(query, source_kinds=["authority"], top_k=authority_k, min_score=1.0),
         }
 
-        # Tối ưu tập candidates bằng Hill Climbing nếu có
         if self.hc_reranker is not None:
             total_k = procedure_k + template_k + legal_k + case_k + authority_k
             groups = self.hc_reranker.optimize_grouped(
@@ -619,6 +671,21 @@ class HotichAnswerBuilder:
         )
 
         anchor_title = top_procedure.get("title", "") if top_procedure else ""
+
+        if primary_intent in {"procedure", "template"}:
+            groups["legal"] = self._prioritize_legal_by_procedure_refs(
+                groups.get("legal", []),
+                procedure_item=top_procedure,
+                keep=max(2, min(legal_k, 4)),
+            )
+            groups["case"] = self._filter_case_group(
+                query=query,
+                results=groups.get("case", []),
+                anchor_title=anchor_title,
+                max_items=1,
+            )
+            if not self._is_case_like_query(query):
+                groups["case"] = []
 
         template_text = self._build_template_section(
             query=query,
@@ -637,11 +704,11 @@ class HotichAnswerBuilder:
 
         answer_lines: list[str]
 
-        if decision.primary_intent == "legal":
+        if primary_intent == "legal":
             answer_lines = [
                 f"## Trả lời cho câu hỏi: {query}",
                 "",
-                f"_Intent chính: {decision.primary_intent}_",
+                f"_Intent chính: {primary_intent}",
                 "",
                 legal_text,
                 "",
@@ -657,16 +724,17 @@ class HotichAnswerBuilder:
             answer_lines = [
                 f"## Trả lời cho câu hỏi: {query}",
                 "",
-                f"_Intent chính: {decision.primary_intent}_",
+                f"_Intent chính: {primary_intent}",
                 "",
                 procedure_text,
                 "",
-                template_text,
-                "",
                 legal_text,
-                "",
-                case_text,
             ]
+
+            if template_text:
+                answer_lines.extend(["", template_text])
+            if case_text:
+                answer_lines.extend(["", case_text])
 
         return AnswerResult(
             query=query,

@@ -14,6 +14,7 @@ class BuiltContext:
     context_text: str
     citation_map: dict[str, str]
     selected_items: dict[str, list[dict[str, Any]]]
+    query_mode: str = ""
 
 
 class HotichContextBuilder:
@@ -118,6 +119,24 @@ class HotichContextBuilder:
 
         return "procedure"
 
+    def _resolve_query_mode(self, query: str, forced_mode: str = "auto") -> str:
+        requested_mode = (forced_mode or "auto").strip().lower()
+        if requested_mode in {"procedure", "template", "case"}:
+            return requested_mode
+        if requested_mode == "legal":
+            article_lookup = self._extract_article_lookup(query)
+            if article_lookup["sub_intent"] == "legal_article_lookup":
+                return "legal_article_lookup"
+            return "legal"
+        return self._query_mode(query)
+
+    def _is_case_like_query(self, query: str) -> bool:
+        q = self._normalize_text(query)
+        return any(x in q for x in [
+            "truong hop", "tinh huong", "neu", "mat", "khong co", "uy quyen",
+            "qua han", "sai thong tin", "cai chinh", "cap lai", "bi bo roi",
+        ])
+
     def _compact(self, value: Any, max_len: int = 300) -> str:
         text = self._flatten(value, limit=max_len)
         text = " ".join(text.split())
@@ -186,7 +205,7 @@ class HotichContextBuilder:
             "item_id": result.item_id,
             "title": title,
             "score": result.score,
-            "summary": text[:1200],
+            "summary": text[:2400],
             "source_path": source_path,
         }
 
@@ -211,8 +230,8 @@ class HotichContextBuilder:
             "clause_key": self._text(best_unit.get("clause_key")),
             "article_title": self._text(best_unit.get("article_title")),
             "score": result.score,
-            "top_units": top_units[:3],
-            "summary": snippet[:1500],
+            "top_units": top_units[:5],
+            "summary": snippet[:2200],
             "source_path": result.source_path,
         }
 
@@ -225,7 +244,7 @@ class HotichContextBuilder:
             "item_id": result.item_id,
             "title": result.title,
             "score": result.score,
-            "summary": (self._text(best_unit.get("text")) or result.snippet)[:1000],
+            "summary": (self._text(best_unit.get("text")) or result.snippet)[:1600],
             "source_path": result.source_path,
         }
 
@@ -238,7 +257,7 @@ class HotichContextBuilder:
             "item_id": result.item_id,
             "title": result.title,
             "score": result.score,
-            "summary": (self._text(best_unit.get("text")) or result.snippet)[:1200],
+            "summary": (self._text(best_unit.get("text")) or result.snippet)[:1400],
             "source_path": result.source_path,
         }
 
@@ -251,7 +270,7 @@ class HotichContextBuilder:
             "item_id": result.item_id,
             "title": result.title,
             "score": result.score,
-            "summary": (self._text(best_unit.get("text")) or result.snippet)[:1000],
+            "summary": (self._text(best_unit.get("text")) or result.snippet)[:1600],
             "source_path": result.source_path,
         }
 
@@ -330,14 +349,14 @@ class HotichContextBuilder:
             top_units = item.get("top_units", [])
             if top_units:
                 unit_lines = []
-                for u in top_units[:3]:
+                for u in top_units[:5]:
                     u_label = self._text(u.get("citation_label")) or self._text(u.get("unit_id"))
                     u_text = self._text(u.get("text"))
                     if u_label:
-                        unit_lines.append(f"{u_label}: {u_text[:240]}")
+                        unit_lines.append(f"{u_label}: {u_text[:360]}")
                 if unit_lines:
                     lines.append("Relevant units:")
-                    lines.append(self._format_list(unit_lines, max_items=3))
+                    lines.append(self._format_list(unit_lines, max_items=5))
 
             lines.append("")
 
@@ -414,6 +433,7 @@ class HotichContextBuilder:
         self,
         query: str,
         grouped_results: dict[str, list[SearchResult]],
+        forced_mode: str = "auto",
     ) -> BuiltContext:
         selected_items: dict[str, list[dict[str, Any]]] = {
             "procedure": [],
@@ -423,7 +443,8 @@ class HotichContextBuilder:
             "authority": [],
         }
 
-        query_mode = self._query_mode(query)
+        query_mode = self._resolve_query_mode(query, forced_mode=forced_mode)
+        case_like = self._is_case_like_query(query)
 
         if query_mode == "legal_article_lookup":
             for r in grouped_results.get("legal", [])[: self.max_legals]:
@@ -432,29 +453,37 @@ class HotichContextBuilder:
         elif query_mode == "template":
             for r in grouped_results.get("template", [])[: max(self.max_templates, 2)]:
                 selected_items["template"].append(self._extract_template(r))
-
             for r in grouped_results.get("procedure", [])[:1]:
                 selected_items["procedure"].append(self._extract_procedure(r))
+            for r in grouped_results.get("legal", [])[:2]:
+                selected_items["legal"].append(self._extract_legal(r))
 
         elif query_mode == "legal":
             for r in grouped_results.get("legal", [])[: self.max_legals]:
                 selected_items["legal"].append(self._extract_legal(r))
 
+        elif query_mode == "case":
+            for r in grouped_results.get("procedure", [])[:1]:
+                selected_items["procedure"].append(self._extract_procedure(r))
+            for r in grouped_results.get("legal", [])[:2]:
+                selected_items["legal"].append(self._extract_legal(r))
+            for r in grouped_results.get("case", [])[: max(self.max_cases, 2)]:
+                selected_items["case"].append(self._extract_case(r))
+            for r in grouped_results.get("authority", [])[: self.max_authorities]:
+                selected_items["authority"].append(self._extract_authority(r))
+
         else:
             for r in grouped_results.get("procedure", [])[: self.max_procedures]:
                 selected_items["procedure"].append(self._extract_procedure(r))
-
-            for r in grouped_results.get("legal", [])[: self.max_legals]:
+            for r in grouped_results.get("authority", [])[: max(self.max_authorities, 2)]:
+                selected_items["authority"].append(self._extract_authority(r))
+            for r in grouped_results.get("legal", [])[: min(self.max_legals, 3)]:
                 selected_items["legal"].append(self._extract_legal(r))
-
             for r in grouped_results.get("template", [])[: self.max_templates]:
                 selected_items["template"].append(self._extract_template(r))
-
-            for r in grouped_results.get("case", [])[: self.max_cases]:
-                selected_items["case"].append(self._extract_case(r))
-
-            for r in grouped_results.get("authority", [])[: self.max_authorities]:
-                selected_items["authority"].append(self._extract_authority(r))
+            if case_like or not selected_items["procedure"]:
+                for r in grouped_results.get("case", [])[: self.max_cases]:
+                    selected_items["case"].append(self._extract_case(r))
 
         citation_map: dict[str, str] = {}
         citation_counter = [1]
@@ -468,10 +497,10 @@ class HotichContextBuilder:
             blocks = [
                 f"# USER QUERY\n{query}",
                 self._build_procedure_block(selected_items["procedure"], citation_map, citation_counter),
+                self._build_authority_block(selected_items["authority"], citation_map, citation_counter),
                 self._build_legal_block(selected_items["legal"], citation_map, citation_counter, query=query),
                 self._build_template_block(selected_items["template"], citation_map, citation_counter),
                 self._build_case_block(selected_items["case"], citation_map, citation_counter),
-                self._build_authority_block(selected_items["authority"], citation_map, citation_counter),
             ]
 
         context_text = "\n\n".join(block for block in blocks if block).strip()
@@ -481,4 +510,5 @@ class HotichContextBuilder:
             context_text=context_text,
             citation_map=citation_map,
             selected_items=selected_items,
+            query_mode=query_mode,
         )
