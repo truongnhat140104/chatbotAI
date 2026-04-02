@@ -133,53 +133,69 @@ class HotichQAService:
         return {"status": "ok", "stats": stats}
 
     def ask(self, query: str, per_kind: int = 3, use_llm: bool = True, mode: str = "auto") -> dict[str, Any]:
-        route = self.router.route(query)
+        decision = self.router.route(query)
+
         requested_mode = (mode or "auto").strip().lower()
         if requested_mode not in {"auto", "legal", "procedure", "template", "case"}:
             requested_mode = "auto"
 
-        engine = self.selector.pick(query=query, route=route, requested_mode=requested_mode)
-        engine_result = engine.run(query=query, route=route, per_kind=per_kind)
+        effective_intent = decision.primary_intent if requested_mode == "auto" else requested_mode
+        pipeline_mode = effective_intent
+
+        answer_result = self.answer_builder.answer(
+            query,
+            per_kind=per_kind,
+            forced_mode=pipeline_mode,
+        )
 
         built_context = self.context_builder.build(
             query=query,
-            grouped_results=engine_result.grouped_results,
-            forced_mode=engine_result.query_mode,
+            grouped_results=answer_result.grouped_results,
+            forced_mode=pipeline_mode,
         )
 
-        answer_text = engine_result.answer_text
-        answer_mode = "engine_rule_based"
+        answer_text = answer_result.answer_text
+        answer_mode = "rule_based"
         llm_mode = built_context.query_mode
         llm_used = False
         llm_error = None
 
-        missing_legal_context = built_context.query_mode in {"legal", "legal_article_lookup"} and not built_context.citation_map
+        # Chỉ dùng LLM cho case; exact intents thì ưu tiên trả lời trực tiếp để tăng EM/F1
+        allow_llm = use_llm and pipeline_mode == "case"
 
-        if use_llm and not missing_legal_context:
+        missing_legal_context = (
+                built_context.query_mode in {"legal", "legal_article_lookup"}
+                and not built_context.citation_map
+        )
+
+        if allow_llm and not missing_legal_context:
             try:
                 llm_result = self.llm_answerer.answer(built_context)
                 answer_text = llm_result.answer_text
-                answer_mode = "engine_llm"
+                answer_mode = "llm"
                 llm_mode = llm_result.mode
                 llm_used = True
             except Exception as exc:
                 llm_error = str(exc)
-                answer_mode = "engine_fallback_rule_based"
+                answer_mode = "fallback_rule_based"
         elif missing_legal_context:
-            llm_error = "Skipped LLM: legal engine chua truy xuat duoc can cu phap ly du tin cay."
+            llm_error = "Skipped LLM: không truy xuất được căn cứ pháp lý đủ tin cậy cho chế độ tra cứu luật."
+            answer_mode = "rule_based_no_legal_context"
+        else:
+            llm_error = "LLM disabled for exact-answer mode."
+            answer_mode = "rule_based_exact"
 
         return {
             "query": query,
             "requested_mode": requested_mode,
-            "selected_engine": engine_result.engine_name,
-            "intent": route.primary_intent if requested_mode == "auto" else requested_mode,
-            "auto_intent": route.primary_intent,
-            "scores": route.scores,
-            "reasons": route.reasons,
-            "sub_intent": route.sub_intent,
-            "article_no": route.article_no,
-            "clause_no": route.clause_no,
-            "law_alias": route.law_alias,
+            "intent": effective_intent,
+            "auto_intent": decision.primary_intent,
+            "scores": decision.scores,
+            "reasons": decision.reasons,
+            "sub_intent": decision.sub_intent,
+            "article_no": decision.article_no,
+            "clause_no": decision.clause_no,
+            "law_alias": decision.law_alias,
             "query_mode": built_context.query_mode,
             "answer_text": answer_text,
             "answer_mode": answer_mode,
@@ -188,10 +204,8 @@ class HotichQAService:
             "llm_error": llm_error,
             "citation_map": built_context.citation_map,
             "selected_items": built_context.selected_items,
-            "engine_debug": engine_result.debug,
-            "results": self._serialize_groups(engine_result.grouped_results),
+            "results": self._serialize_groups(answer_result.grouped_results),
         }
-
 
 @lru_cache(maxsize=1)
 def get_service() -> HotichQAService:

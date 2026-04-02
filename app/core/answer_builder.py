@@ -613,58 +613,80 @@ class HotichAnswerBuilder:
 
         router = HotichRouter()
         requested_mode = (forced_mode or "auto").strip().lower()
+
         if requested_mode in {"procedure", "template", "legal", "case"}:
             primary_intent = requested_mode
         else:
             primary_intent = router.route(query).primary_intent
 
-        procedure_k = per_kind
-        template_k = per_kind
-        legal_k = per_kind
-        case_k = per_kind
-        authority_k = per_kind
-
-        if primary_intent == "procedure":
-            procedure_k = max(per_kind + 3, 6)
-            template_k = max(2, per_kind - 1)
-            legal_k = max(3, per_kind + 1)
-            case_k = 1
-            authority_k = max(3, per_kind + 1)
-        elif primary_intent == "template":
-            procedure_k = max(2, per_kind)
-            template_k = max(per_kind + 2, 5)
-            legal_k = max(2, per_kind)
-            case_k = 1
-            authority_k = 2
-        elif primary_intent == "legal":
-            procedure_k = 2
-            template_k = 1
-            legal_k = max(per_kind + 5, 8)
-            case_k = 1
-            authority_k = 2
-        elif primary_intent == "case":
-            procedure_k = max(3, per_kind + 1)
-            template_k = 2
-            legal_k = max(3, per_kind)
-            case_k = max(per_kind + 2, 5)
-            authority_k = 2
-
-        groups = {
-            "procedure": self.retriever.search(query, source_kinds=["procedure"], top_k=procedure_k, min_score=1.0),
-            "template": self.retriever.search(query, source_kinds=["template"], top_k=template_k, min_score=1.0),
-            "legal": self.retriever.search(query, source_kinds=["legal"], top_k=legal_k, min_score=1.0),
-            "case": self.retriever.search(query, source_kinds=["case"], top_k=case_k, min_score=1.0),
-            "authority": self.retriever.search(query, source_kinds=["authority"], top_k=authority_k, min_score=1.0),
+        groups: dict[str, list[SearchResult]] = {
+            "procedure": [],
+            "template": [],
+            "legal": [],
+            "case": [],
+            "authority": [],
         }
 
-        if self.hc_reranker is not None:
-            total_k = procedure_k + template_k + legal_k + case_k + authority_k
-            groups = self.hc_reranker.optimize_grouped(
-                query=query,
-                grouped_results=groups,
-                total_k=total_k,
+        # -----------------------------------------
+        # Retrieve only what is needed for each mode
+        # -----------------------------------------
+        if primary_intent == "legal":
+            groups["legal"] = self.retriever.search(
+                query, source_kinds=["legal"], top_k=max(per_kind + 5, 8), min_score=1.0
+            )
+            groups["authority"] = self.retriever.search(
+                query, source_kinds=["authority"], top_k=1, min_score=1.0
             )
 
+        elif primary_intent == "template":
+            groups["template"] = self.retriever.search(
+                query, source_kinds=["template"], top_k=max(per_kind + 2, 5), min_score=1.0
+            )
+            groups["procedure"] = self.retriever.search(
+                query, source_kinds=["procedure"], top_k=2, min_score=1.0
+            )
+
+        elif primary_intent == "procedure":
+            groups["procedure"] = self.retriever.search(
+                query, source_kinds=["procedure"], top_k=max(per_kind + 3, 6), min_score=1.0
+            )
+            groups["authority"] = self.retriever.search(
+                query, source_kinds=["authority"], top_k=max(2, per_kind), min_score=1.0
+            )
+            groups["legal"] = self.retriever.search(
+                query, source_kinds=["legal"], top_k=2, min_score=1.0
+            )
+
+            qn = self._normalize_text(query)
+            if any(x in qn for x in ["mau", "to khai", "bieu mau"]):
+                groups["template"] = self.retriever.search(
+                    query, source_kinds=["template"], top_k=2, min_score=1.0
+                )
+
+        else:  # case
+            groups["case"] = self.retriever.search(
+                query, source_kinds=["case"], top_k=max(per_kind + 2, 5), min_score=1.0
+            )
+            groups["procedure"] = self.retriever.search(
+                query, source_kinds=["procedure"], top_k=max(3, per_kind), min_score=1.0
+            )
+            groups["legal"] = self.retriever.search(
+                query, source_kinds=["legal"], top_k=max(3, per_kind), min_score=1.0
+            )
+            groups["authority"] = self.retriever.search(
+                query, source_kinds=["authority"], top_k=2, min_score=1.0
+            )
+
+            if self.hc_reranker is not None:
+                groups = self.hc_reranker.optimize_grouped(
+                    query=query,
+                    grouped_results=groups,
+                    total_k=max(8, per_kind * 3),
+                )
+
+        # -----------------------------------------
+        # Build sections
+        # -----------------------------------------
         procedure_text, top_procedure = self._build_procedure_section(
             query=query,
             results=groups.get("procedure", []),
@@ -676,63 +698,58 @@ class HotichAnswerBuilder:
             groups["legal"] = self._prioritize_legal_by_procedure_refs(
                 groups.get("legal", []),
                 procedure_item=top_procedure,
-                keep=max(2, min(legal_k, 4)),
+                keep=2,
             )
-            groups["case"] = self._filter_case_group(
-                query=query,
-                results=groups.get("case", []),
-                anchor_title=anchor_title,
-                max_items=1,
-            )
-            if not self._is_case_like_query(query):
-                groups["case"] = []
+
+        if primary_intent != "case":
+            groups["case"] = []
 
         template_text = self._build_template_section(
             query=query,
             results=groups.get("template", []),
             anchor_title=anchor_title,
         )
+
         legal_text = self._build_legal_section(
             groups.get("legal", []),
             procedure_item=top_procedure,
         )
+
         case_text = self._build_case_section(
             query=query,
             results=groups.get("case", []),
             anchor_title=anchor_title,
         )
 
-        answer_lines: list[str]
+        # -----------------------------------------
+        # Shorter, more targeted output
+        # -----------------------------------------
+        answer_lines: list[str] = [
+            f"## Trả lời cho câu hỏi: {query}",
+            "",
+            f"_Intent chính: {primary_intent}",
+            "",
+        ]
 
         if primary_intent == "legal":
-            answer_lines = [
-                f"## Trả lời cho câu hỏi: {query}",
-                "",
-                f"_Intent chính: {primary_intent}",
-                "",
-                legal_text,
-                "",
-                procedure_text,
-            ]
+            answer_lines.append(legal_text)
 
+        elif primary_intent == "template":
             if template_text:
-                answer_lines.extend(["", template_text])
+                answer_lines.append(template_text)
+            if procedure_text and "Chưa" not in procedure_text:
+                answer_lines.extend(["", procedure_text])
 
-            if case_text:
-                answer_lines.extend(["", case_text])
-        else:
-            answer_lines = [
-                f"## Trả lời cho câu hỏi: {query}",
-                "",
-                f"_Intent chính: {primary_intent}",
-                "",
-                procedure_text,
-                "",
-                legal_text,
-            ]
+        elif primary_intent == "procedure":
+            answer_lines.append(procedure_text)
+            if legal_text and "Chưa" not in legal_text:
+                answer_lines.extend(["", legal_text])
 
-            if template_text:
-                answer_lines.extend(["", template_text])
+        else:  # case
+            if procedure_text:
+                answer_lines.append(procedure_text)
+            if legal_text:
+                answer_lines.extend(["", legal_text])
             if case_text:
                 answer_lines.extend(["", case_text])
 
@@ -741,7 +758,6 @@ class HotichAnswerBuilder:
             answer_text="\n".join(answer_lines).strip(),
             grouped_results=groups,
         )
-
 def main() -> None:
     loader = HotichLoader()
     bundle = loader.load_all()
