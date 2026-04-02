@@ -117,8 +117,8 @@ class ProcedureEngine(BaseEngine):
             answer = groups["procedure"][0].data["best_unit"]["text"]
         else:
             answer = (
-                "Chưa xác định được một thủ tục đủ khớp bằng exact engines. "
-                "Bạn có thể chuyển sang case engines hoặc nêu rõ tên thủ tục cần hỏi."
+                "Chưa xác định được một thủ tục đủ khớp bằng exact engine. "
+                "Bạn có thể chuyển sang case engine hoặc nêu rõ tên thủ tục cần hỏi."
             )
             groups["case"] = self.retriever.search(
                 query=query,

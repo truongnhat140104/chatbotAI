@@ -42,7 +42,7 @@ class LegalLookupEngine(BaseEngine):
     def _fallback_no_result(self, query: str) -> str:
         return (
             "Chưa truy xuất được căn cứ pháp lý đủ tin cậy từ kho dữ liệu hiện có cho câu hỏi này. "
-            "Bạn có thể thử nêu rõ tên luật, số điều hoặc khoản để engines tra cứu chính xác hơn."
+            "Bạn có thể thử nêu rõ tên luật, số điều hoặc khoản để engine tra cứu chính xác hơn."
         )
 
     def run(self, query: str, route: RouteDecision, per_kind: int = 3) -> EngineRunResult:

@@ -7,20 +7,24 @@ from typing import Any
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-from app.core.answer_builder import HotichAnswerBuilder
 from app.core.context_builder import HotichContextBuilder
 from app.core.hill_climbing_reranker import HotichHillClimbingReranker
 from app.core.hybrid_retriever import HotichHybridRetriever, SearchResult
 from app.core.llm_answerer import QwenLLMAnswerer
 from app.core.loader import HotichLoader
 from app.core.router import HotichRouter
+from app.engines.case_rag_engine import CaseRAGEngine
+from app.engines.legal_engine import LegalLookupEngine
+from app.engines.procedure_engine import ProcedureEngine
+from app.engines.selector import EngineSelector
+from app.engines.template_engine import TemplateEngine
 
 
 class AskRequest(BaseModel):
-    query: str = Field(..., min_length=1, description="Câu hỏi người dùng")
-    per_kind: int = Field(default=3, ge=1, le=10, description="Số lượng kết quả mỗi nhóm")
-    use_llm: bool = Field(default=True, description="Có gọi LLM hay không")
-    mode: str = Field(default="auto", description="Chế độ truy vấn: auto/legal/procedure/template/case")
+    query: str = Field(..., min_length=1, description="Cau hoi nguoi dung")
+    per_kind: int = Field(default=3, ge=1, le=10, description="So luong ket qua moi nhom")
+    use_llm: bool = Field(default=True, description="Co goi LLM hay khong")
+    mode: str = Field(default="auto", description="Che do truy van: auto/legal/procedure/template/case")
 
 
 class HotichQAService:
@@ -62,16 +66,38 @@ class HotichQAService:
             except Exception as exc:
                 self.init_warnings.append(f"Hill Climbing disabled: {exc}")
 
-        self.answer_builder = HotichAnswerBuilder(
-            bundle=self.bundle,
-            retriever=self.retriever,
-            hc_reranker=self.hc_reranker,
-        )
         self.context_builder = HotichContextBuilder()
         self.llm_answerer = QwenLLMAnswerer(
             base_url=llm_base_url,
             model_name=llm_model,
             api_key=llm_api_key,
+        )
+
+        self.legal_engine = LegalLookupEngine(
+            bundle=self.bundle,
+            retriever=self.retriever,
+            hc_reranker=self.hc_reranker,
+        )
+        self.procedure_engine = ProcedureEngine(
+            bundle=self.bundle,
+            retriever=self.retriever,
+            hc_reranker=self.hc_reranker,
+        )
+        self.template_engine = TemplateEngine(
+            bundle=self.bundle,
+            retriever=self.retriever,
+            hc_reranker=self.hc_reranker,
+        )
+        self.case_engine = CaseRAGEngine(
+            bundle=self.bundle,
+            retriever=self.retriever,
+            hc_reranker=self.hc_reranker,
+        )
+        self.selector = EngineSelector(
+            legal_engine=self.legal_engine,
+            procedure_engine=self.procedure_engine,
+            template_engine=self.template_engine,
+            case_engine=self.case_engine,
         )
 
     @staticmethod
@@ -103,34 +129,26 @@ class HotichQAService:
     def health(self) -> dict[str, Any]:
         stats = self.bundle.summary()
         stats["init_warnings"] = self.init_warnings
-        return {
-            "status": "ok",
-            "stats": stats,
-        }
+        stats["architecture"] = "engine-based"
+        return {"status": "ok", "stats": stats}
 
     def ask(self, query: str, per_kind: int = 3, use_llm: bool = True, mode: str = "auto") -> dict[str, Any]:
-        decision = self.router.route(query)
+        route = self.router.route(query)
         requested_mode = (mode or "auto").strip().lower()
         if requested_mode not in {"auto", "legal", "procedure", "template", "case"}:
             requested_mode = "auto"
 
-        effective_intent = decision.primary_intent if requested_mode == "auto" else requested_mode
+        engine = self.selector.pick(query=query, route=route, requested_mode=requested_mode)
+        engine_result = engine.run(query=query, route=route, per_kind=per_kind)
 
-        pipeline_mode = effective_intent if requested_mode == "auto" else requested_mode
-
-        answer_result = self.answer_builder.answer(
-            query,
-            per_kind=per_kind,
-            forced_mode=pipeline_mode,
-        )
         built_context = self.context_builder.build(
             query=query,
-            grouped_results=answer_result.grouped_results,
-            forced_mode=pipeline_mode,
+            grouped_results=engine_result.grouped_results,
+            forced_mode=engine_result.query_mode,
         )
 
-        answer_text = answer_result.answer_text
-        answer_mode = "rule_based"
+        answer_text = engine_result.answer_text
+        answer_mode = "engine_rule_based"
         llm_mode = built_context.query_mode
         llm_used = False
         llm_error = None
@@ -141,27 +159,27 @@ class HotichQAService:
             try:
                 llm_result = self.llm_answerer.answer(built_context)
                 answer_text = llm_result.answer_text
-                answer_mode = "llm"
+                answer_mode = "engine_llm"
                 llm_mode = llm_result.mode
                 llm_used = True
             except Exception as exc:
                 llm_error = str(exc)
-                answer_mode = "fallback_rule_based"
+                answer_mode = "engine_fallback_rule_based"
         elif missing_legal_context:
-            llm_error = "Skipped LLM: không truy xuất được căn cứ pháp lý đủ tin cậy cho chế độ tra cứu luật."
-            answer_mode = "rule_based_no_legal_context"
+            llm_error = "Skipped LLM: legal engine chua truy xuat duoc can cu phap ly du tin cay."
 
         return {
             "query": query,
             "requested_mode": requested_mode,
-            "intent": effective_intent,
-            "auto_intent": decision.primary_intent,
-            "scores": decision.scores,
-            "reasons": decision.reasons,
-            "sub_intent": decision.sub_intent,
-            "article_no": decision.article_no,
-            "clause_no": decision.clause_no,
-            "law_alias": decision.law_alias,
+            "selected_engine": engine_result.engine_name,
+            "intent": route.primary_intent if requested_mode == "auto" else requested_mode,
+            "auto_intent": route.primary_intent,
+            "scores": route.scores,
+            "reasons": route.reasons,
+            "sub_intent": route.sub_intent,
+            "article_no": route.article_no,
+            "clause_no": route.clause_no,
+            "law_alias": route.law_alias,
             "query_mode": built_context.query_mode,
             "answer_text": answer_text,
             "answer_mode": answer_mode,
@@ -170,7 +188,8 @@ class HotichQAService:
             "llm_error": llm_error,
             "citation_map": built_context.citation_map,
             "selected_items": built_context.selected_items,
-            "results": self._serialize_groups(answer_result.grouped_results),
+            "engine_debug": engine_result.debug,
+            "results": self._serialize_groups(engine_result.grouped_results),
         }
 
 
@@ -181,8 +200,8 @@ def get_service() -> HotichQAService:
 
 app = FastAPI(
     title="Hotich QA API",
-    version="1.0.0",
-    description="API điều phối pipeline: router -> retriever -> hill climbing -> context -> LLM",
+    version="2.0.0",
+    description="API engine-based: router -> engine selector -> exact engine / case RAG engine -> context -> LLM",
 )
 
 

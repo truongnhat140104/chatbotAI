@@ -5,15 +5,14 @@ import streamlit as st
 
 API_URL_DEFAULT = "http://127.0.0.1:8000"
 MODE_LABELS = {
-    "Tự động (Auto)": "auto",
-    "Tra cứu luật": "legal",
-    "Thủ tục hành chính": "procedure",
-    "Biểu mẫu": "template",
-    "Tình huống": "case",
+    "Tu dong (Auto)": "auto",
+    "Tra cuu luat": "legal",
+    "Thu tuc hanh chinh": "procedure",
+    "Bieu mau": "template",
+    "Tinh huong": "case",
 }
 
 
-# --- API FUNCTIONS ---
 def call_health(api_base: str) -> dict | None:
     try:
         resp = requests.get(f"{api_base}/health", timeout=10)
@@ -24,11 +23,11 @@ def call_health(api_base: str) -> dict | None:
 
 
 def call_ask(
-        api_base: str,
-        query: str,
-        per_kind: int = 3,
-        use_llm: bool = True,
-        mode: str = "auto",
+    api_base: str,
+    query: str,
+    per_kind: int = 3,
+    use_llm: bool = True,
+    mode: str = "auto",
 ) -> dict:
     resp = requests.post(
         f"{api_base}/ask",
@@ -44,173 +43,167 @@ def call_ask(
     return resp.json()
 
 
-# --- UI RENDER FUNCTIONS ---
 def render_result_group(title: str, items: list[dict]) -> None:
     if not items:
-        st.info(f"Không tìm thấy dữ liệu cho nhóm **{title}**.")
+        st.info(f"Khong tim thay du lieu cho nhom **{title}**.")
         return
 
     for idx, item in enumerate(items, start=1):
-        with st.expander(f"📄 {idx}. {item['title']}", expanded=False):
-            st.markdown(f"**Trích đoạn:**\n> {item['snippet']}")
-            st.caption(f"📁 Nguồn: `{item['source_path']}` | 🔑 ID: `{item['item_id']}`")
-
-            # Trực quan hóa điểm số bằng cột
+        with st.expander(f"{idx}. {item['title']}", expanded=False):
+            st.markdown(f"**Trich doan:**\n> {item['snippet']}")
+            st.caption(f"Nguon: `{item['source_path']}` | ID: `{item['item_id']}`")
             c1, c2, c3 = st.columns(3)
-            c1.metric("Tổng điểm (Score)", f"{item['score']:.2f}")
-            c2.metric("Ngữ nghĩa (Semantic)", f"{item.get('semantic_score', 0):.4f}")
-            c3.metric("Từ vựng (Lexical)", f"{item.get('lexical_score', 0):.2f}")
+            c1.metric("Tong diem", f"{item['score']:.2f}")
+            c2.metric("Ngu nghia", f"{item.get('semantic_score', 0):.4f}")
+            c3.metric("Tu vung", f"{item.get('lexical_score', 0):.2f}")
 
 
 def render_results_by_mode(payload: dict) -> None:
     results = payload.get("results", {})
-    display_mode = payload.get("intent") or "procedure"
+    display_mode = payload.get("query_mode") or payload.get("intent") or "procedure"
 
-    # Sắp xếp thứ tự ưu tiên các tab dựa trên intent
     orders = {
-        "template": [("Biểu mẫu", "template"), ("Thủ tục", "procedure"), ("Văn bản luật", "legal"),
-                     ("Tình huống", "case"), ("Thẩm quyền", "authority")],
-        "legal": [("Văn bản luật", "legal"), ("Thủ tục", "procedure"), ("Biểu mẫu", "template"), ("Tình huống", "case"),
-                  ("Thẩm quyền", "authority")],
-        "case": [("Tình huống", "case"), ("Thủ tục", "procedure"), ("Văn bản luật", "legal"), ("Biểu mẫu", "template"),
-                 ("Thẩm quyền", "authority")],
-        "procedure": [("Thủ tục", "procedure"), ("Văn bản luật", "legal"), ("Biểu mẫu", "template"),
-                      ("Tình huống", "case"), ("Thẩm quyền", "authority")],
+        "template": [("Bieu mau", "template"), ("Thu tuc", "procedure"), ("Van ban luat", "legal"), ("Tinh huong", "case"), ("Tham quyen", "authority")],
+        "legal": [("Van ban luat", "legal"), ("Thu tuc", "procedure"), ("Bieu mau", "template"), ("Tinh huong", "case"), ("Tham quyen", "authority")],
+        "legal_article_lookup": [("Van ban luat", "legal"), ("Thu tuc", "procedure"), ("Bieu mau", "template"), ("Tinh huong", "case"), ("Tham quyen", "authority")],
+        "case": [("Tinh huong", "case"), ("Thu tuc", "procedure"), ("Van ban luat", "legal"), ("Bieu mau", "template"), ("Tham quyen", "authority")],
+        "procedure": [("Thu tuc", "procedure"), ("Van ban luat", "legal"), ("Bieu mau", "template"), ("Tinh huong", "case"), ("Tham quyen", "authority")],
     }
 
     current_order = orders.get(display_mode, orders["procedure"])
-
-    # Sử dụng Tabs thay vì dàn hàng dọc dài ngoằng
     tabs = st.tabs([title for title, _ in current_order])
-
     for tab, (title, key) in zip(tabs, current_order):
         with tab:
             render_result_group(title, results.get(key, []))
 
 
-# --- MAIN APP ---
+def render_meta(payload: dict) -> None:
+    col_a, col_b, col_c = st.columns(3)
+    with col_a:
+        st.markdown("**Router**")
+        st.info(
+            f"Requested: `{payload.get('requested_mode')}`\n\n"
+            f"Auto intent: `{payload.get('auto_intent')}`\n\n"
+            f"Intent: `{payload.get('intent')}`"
+        )
+    with col_b:
+        st.markdown("**Engine**")
+        st.info(
+            f"Selected engine: `{payload.get('selected_engine', 'n/a')}`\n\n"
+            f"Query mode: `{payload.get('query_mode')}`\n\n"
+            f"Answer mode: `{payload.get('answer_mode')}`"
+        )
+    with col_c:
+        st.markdown("**LLM**")
+        st.info(
+            f"LLM used: `{payload.get('llm_used')}`\n\n"
+            f"LLM mode: `{payload.get('llm_mode')}`\n\n"
+            f"Sub intent: `{payload.get('sub_intent')}`"
+        )
+
+    llm_error = payload.get("llm_error")
+    if llm_error:
+        st.warning(f"LLM/Error: {llm_error}")
+
+    engine_debug = payload.get("engine_debug")
+    if engine_debug:
+        st.markdown("**Engine debug**")
+        st.json(engine_debug)
+
+    st.markdown("**Intent scores**")
+    st.json(payload.get("scores", {}))
+
+    if payload.get("citation_map"):
+        st.markdown("**Citation Map**")
+        st.json(payload.get("citation_map"))
+
+
 def main() -> None:
     st.set_page_config(
-        page_title="Trợ lý ảo Hộ tịch",
+        page_title="Tro ly ao Ho tich",
         page_icon="⚖️",
         layout="wide",
-        initial_sidebar_state="expanded"
+        initial_sidebar_state="expanded",
     )
 
-    # Khởi tạo state
     if "chat_history" not in st.session_state:
         st.session_state["chat_history"] = []
     if "current_query" not in st.session_state:
         st.session_state["current_query"] = ""
 
-    # Header
-    st.title("⚖️ Trợ lý ảo Hộ tịch")
-    st.caption("Tra cứu quy định pháp luật, thủ tục, tình huống và biểu mẫu Hộ tịch.")
+    st.title("⚖️ Tro ly ao Ho tich")
+    st.caption("Tra cuu quy dinh phap luat, thu tuc, tinh huong va bieu mau Ho tich.")
 
-    # --- SIDEBAR ---
     with st.sidebar:
-        st.header("⚙️ Cấu hình hệ thống")
-
-        with st.expander("Tham số kết nối & Model", expanded=False):
+        st.header("Cau hinh he thong")
+        with st.expander("Ket noi va truy van", expanded=False):
             api_base = st.text_input("API Base URL", value=API_URL_DEFAULT)
-            use_llm = st.toggle("Sử dụng LLM (Qwen2.5) sinh câu trả lời", value=True)
-            per_kind = st.slider("Số lượng tài liệu truy xuất (mỗi loại)", min_value=1, max_value=6, value=3)
+            use_llm = st.toggle("Su dung LLM de dien dat cau tra loi", value=True)
+            per_kind = st.slider("So luong tai lieu truy xuat moi loai", min_value=1, max_value=6, value=3)
 
-        selected_mode_label = st.selectbox("🎯 Chế độ truy vấn ưu tiên", list(MODE_LABELS.keys()), index=0)
+        selected_mode_label = st.selectbox("Che do truy van uu tien", list(MODE_LABELS.keys()), index=0)
         selected_mode = MODE_LABELS[selected_mode_label]
 
         st.divider()
-        st.subheader("💡 Câu hỏi gợi ý")
+        st.subheader("Cau hoi goi y")
         suggestions = [
-            "Đăng ký khai sinh cần chuẩn bị giấy tờ gì?",
-            "Làm mất bản chính giấy khai sinh thì có cấp lại được không?",
-            "Cho tôi xin mẫu tờ khai đăng ký kết hôn.",
-            "Người nước ngoài kết hôn với người Việt Nam làm thủ tục ở đâu?",
-            "Trường hợp nào được miễn lệ phí hộ tịch?",
+            "Dang ky khai sinh can chuan bi giay to gi?",
+            "Lam mat ban chinh giay khai sinh thi co cap lai duoc khong?",
+            "Cho toi xin mau to khai dang ky ket hon.",
+            "Nguoi nuoc ngoai ket hon voi nguoi Viet Nam lam thu tuc o dau?",
+            "Truong hop nao duoc mien le phi ho tich?",
+            "Dieu 17 Luat Ho tich quy dinh gi?",
         ]
-
         for q in suggestions:
             if st.button(q, use_container_width=True):
                 st.session_state["current_query"] = q
 
         st.divider()
-        # Health check
-        with st.spinner("Đang kiểm tra kết nối..."):
+        with st.spinner("Dang kiem tra ket noi..."):
             health = call_health(api_base)
 
         if health and health.get("status") == "ok":
-            st.success("🟢 Backend đang hoạt động")
+            st.success("Backend dang hoat dong")
             stats = health.get("stats", {})
-
-            with st.expander("📊 Thống kê dữ liệu Index"):
-                st.write(f"- **Văn bản luật:** {stats.get('legal_docs', 0)}")
-                st.write(f"- **Thủ tục:** {stats.get('procedures', 0)}")
-                st.write(f"- **Biểu mẫu:** {stats.get('templates', 0)}")
-                st.write(f"- **Tình huống:** {stats.get('cases', 0)}")
+            with st.expander("Thong ke du lieu"):
+                st.write(f"- Van ban luat: {stats.get('legal_docs', 0)}")
+                st.write(f"- Thu tuc: {stats.get('procedures', 0)}")
+                st.write(f"- Bieu mau: {stats.get('templates', 0)}")
+                st.write(f"- Tinh huong: {stats.get('cases', 0)}")
+                st.write(f"- Kien truc: {stats.get('architecture', 'unknown')}")
+                warnings = stats.get("init_warnings") or []
+                if warnings:
+                    st.warning("\n".join(warnings))
         else:
-            st.error("🔴 Không thể kết nối tới Backend")
+            st.error("Khong the ket noi toi Backend")
 
-    # --- CHAT INTERFACE ---
-
-    # Hiển thị lịch sử chat
     for i, msg in enumerate(st.session_state["chat_history"]):
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
-
             payload = msg.get("payload")
             if msg["role"] == "assistant" and payload:
-                # Chỉ mở rộng (expand) chi tiết kỹ thuật ở câu trả lời mới nhất
-                is_latest = (i == len(st.session_state["chat_history"]) - 1)
-
-                with st.expander("🔎 Xem nguồn tài liệu & Thông tin kỹ thuật", expanded=is_latest):
-                    tab_docs, tab_meta, tab_json = st.tabs(["📚 Nguồn tài liệu", "⚙️ Metadata", "💻 JSON Response"])
-
+                is_latest = i == len(st.session_state["chat_history"]) - 1
+                with st.expander("Xem nguon tai lieu va thong tin ky thuat", expanded=is_latest):
+                    tab_docs, tab_meta, tab_json = st.tabs(["Nguon tai lieu", "Metadata", "JSON Response"])
                     with tab_docs:
                         render_results_by_mode(payload)
-
                     with tab_meta:
-                        col_a, col_b = st.columns(2)
-                        with col_a:
-                            st.markdown("**Trạng thái Intent**")
-                            st.info(
-                                f"Yêu cầu: `{payload.get('requested_mode')}`\n\nAuto Intent: `{payload.get('auto_intent')}`\n\nThực thi: `{payload.get('intent')}`")
-                        with col_b:
-                            st.markdown("**Thông tin LLM**")
-                            st.info(
-                                f"Query Mode: `{payload.get('query_mode')}`\n\nLLM Mode: `{payload.get('llm_mode')}`\n\nModel: `{payload.get('llm_used')}`")
-
-                        llm_error = payload.get("llm_error")
-                        if llm_error:
-                            st.warning(f"⚠️ LLM Fallback Error: {llm_error}")
-
-                        st.markdown("**Phân tích điểm Intent (Auto)**")
-                        st.json(payload.get("scores", {}))
-
-                        if payload.get("citation_map"):
-                            st.markdown("**Citation Map**")
-                            st.json(payload.get("citation_map"))
-
+                        render_meta(payload)
                     with tab_json:
                         st.json(payload)
 
-    # Xử lý input (từ thanh chat hoặc nút gợi ý)
-    user_input = st.chat_input("Nhập câu hỏi về quy định, thủ tục hộ tịch...")
+    user_input = st.chat_input("Nhap cau hoi ve quy dinh, thu tuc ho tich...")
     query = user_input or st.session_state.get("current_query")
 
     if query:
-        # Reset current_query state
         st.session_state["current_query"] = ""
-
-        # Thêm câu hỏi của user vào lịch sử
         st.session_state["chat_history"].append({"role": "user", "content": query})
 
-        # Render tin nhắn user ngay lập tức
         with st.chat_message("user"):
             st.markdown(query)
 
-        # Gọi API và lấy phản hồi
         with st.chat_message("assistant"):
-            with st.spinner("Đang tra cứu dữ liệu hộ tịch..."):
+            with st.spinner("Dang tra cuu du lieu ho tich..."):
                 try:
                     data = call_ask(
                         api_base,
@@ -227,9 +220,9 @@ def main() -> None:
                             "payload": data,
                         }
                     )
-                    st.rerun()  # Rerun để render lại giao diện với expander đúng trạng thái
+                    st.rerun()
                 except Exception as exc:
-                    error_msg = f"❌ Đã có lỗi xảy ra khi gọi API: `{exc}`"
+                    error_msg = f"Loi goi API: `{exc}`"
                     st.error(error_msg)
                     st.session_state["chat_history"].append(
                         {
