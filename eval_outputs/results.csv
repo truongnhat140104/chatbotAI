@@ -1,0 +1,1855 @@
+qid,category,question,gold_answer,predicted_answer,exact_match,token_f1,expected_engine,predicted_engine,routing_correct,must_have_citation,citation_present,grounded_correct,gold_source_kinds,selected_kinds,source_hit_at_1,source_hit_at_3,source_hit_at_5,latency_ms,status,error,answer_mode,query_mode,auto_intent,intent,selected_engine_raw
+authority_001,authority,Ủy ban nhân dân cấp xã có thẩm quyền giải quyết những thủ tục hành chính nào trong lĩnh vực hộ tịch theo danh mục quy định?,"Ủy ban nhân dân cấp xã có thẩm quyền giải quyết các thủ tục: đăng ký khai sinh, đăng ký khai tử, đăng ký kết hôn và đăng ký giám hộ.","Ủy ban nhân dân cấp xã có thẩm quyền giải quyết việc đăng ký hộ tịch cho công dân Việt Nam không thường trú tại Việt Nam để làm thủ tục đăng ký kết hôn mới tại cơ quan có thẩm quyền của Việt Nam. Điều này được quy định trong [C2]. Các thủ tục khác như ghi vào Sổ hộ tịch việc ly hôn hoặc khai sinh thuộc thẩm quyền giải quyết của Ủy ban nhân dân cấp huyện nơi đã đăng ký hộ tịch trước đây hoặc nơi cư trú của công dân, theo [C1] và [C3].",0.0,0.4,procedure,legal,0.0,False,1.0,0.0,authority,legal|legal|legal,0.0,0.0,0.0,7950.91,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+authority_002,authority,Thủ tục yêu cầu cấp bản sao trích lục khai sinh thuộc thẩm quyền giải quyết của cơ quan nào?,Cơ quan quản lý Cơ sở dữ liệu hộ tịch có thẩm quyền giải quyết thủ tục cấp bản sao trích lục khai sinh.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã
+
+Căn cứ pháp lý:
+[C2] Authority rule 29",0.0,0.441176,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6691.5,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_003,authority,Cơ quan nào chịu trách nhiệm tiếp nhận và giải quyết thủ tục đăng ký giám hộ (mã HOTICH_TTHC_GIAMHO_01)?,Ủy ban nhân dân cấp xã chịu trách nhiệm tiếp nhận và giải quyết.,"Thủ tục phù hợp: Đăng ký giám hộ.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) 
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự)
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (Cơ quan đăng ký hộ tịch) Công chức Tư pháp - Hộ tịch
+
+[PROCEDURE CONTEXT C1]
+
+Thời hạn giải quyết: 3 03 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ
+
+Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương
+
+Cách thức nộp: truc_tiep Thực tế địa phương có thể tích hợp trực tuyến theo nền tảng hộ tịch điện tử nếu tỉnh triển khai.
+
+[PROCEDURE CONTEXT C1]
+
+Thủ tục này được thực hiện tại xa UBND cấp xã (Cơ quan đăng ký hộ tịch) Công chức Tư pháp - Hộ tịch.",0.0,0.095238,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9049.91,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_004,authority,Cơ quan nào tiếp nhận hồ sơ và giải quyết thủ tục đăng ký kết hôn (mã HOTICH_TTHC_KETHON_01)?,Ủy ban nhân dân cấp xã.,"Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử).
+
+Thẩm quyền/nơi tiếp nhận: xa Ủy ban nhân dân cấp xã.
+
+Cơ quan tiếp nhận hồ sơ và giải quyết thủ tục đăng ký kết hôn là xa Ủy ban nhân dân cấp xã. 
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận; nếu cần xác minh điều kiện thì không quá 05 ngày làm việc.
+
+Lệ phí: Theo quy định của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết').
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn.",0.0,0.081081,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8489.2,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_005,authority,Cơ quan quản lý Cơ sở dữ liệu hộ tịch có thẩm quyền giải quyết thủ tục nào trong danh sách mã thủ tục đã cho?,Cấp bản sao trích lục khai sinh (mã HOTICH_TTHC_TRICLUC_KHAISINH_01).,"Thủ tục phù hợp: Đăng ký giám hộ.
+
+[Hồ sơ / giấy tờ cần chuẩn bị]:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) hoặc nhiều giấy tờ tùy trường hợp.
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự).
+
+[Thẩm quyền / nơi nộp]:
+- Thẩm quyền: xa UBND cấp xã (Cơ quan đăng ký hộ tịch).
+- Nơi tiếp nhận: Công chức Tư pháp - Hộ tịch.
+
+[Thời hạn / lệ phí nếu có]:
+- Thời hạn giải quyết: 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ.
+- Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương.
+
+[Biểu mẫu liên quan nếu có trong context]:
+- Tờ khai cấp bản sao trích lục hộ tịch không được tìm thấy trong PROCEDURE CONTEXT, nhưng có thể chuẩn bị theo mẫu của TEMPLATE CONTEXT.",0.0,0.087432,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9041.71,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_006,authority,Việc đăng ký khai sinh (mã HOTICH_TTHC_KHAISINH_01) do cơ quan hành chính nhà nước cấp nào giải quyết?,Ủy ban nhân dân cấp xã.,"Thủ tục phù hợp: Việc đăng ký khai sinh được giải quyết tại Ủy ban nhân dân cấp xã nơi cư trú của cha hoặc mẹ.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai sinh (tham khảo mẫu trong TEMPLATE CONTEXT).
+
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã nơi cư trú của cha hoặc mẹ.
+
+[PROCEDURE CONTEXT] và [TEMPLATE CONTEXT] cung cấp thông tin chính xác về thủ tục và hồ sơ cần chuẩn bị. 
+
+Thời hạn giải quyết, lệ phí không được tìm thấy trong PROCEDURE CONTEXT nên chưa có dữ liệu cụ thể.",0.0,0.111111,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,7555.61,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_007,authority,Thủ tục đăng ký khai tử (mã HOTICH_TTHC_KHAITU_01) được thực hiện tại cơ quan nào?,Ủy ban nhân dân cấp xã.,"Thủ tục đăng ký khai tử (mã HOTICH_TTHC_KHAITU_01) được thực hiện tại Ủy ban nhân dân cấp xã. 
+
+[C1]",0.0,0.428571,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,4888.17,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_008,authority,Ủy ban nhân dân cấp xã có thẩm quyền cấp bản sao trích lục khai sinh không?,"Có, với tư cách là một Cơ quan quản lý Cơ sở dữ liệu hộ tịch, Ủy ban nhân dân cấp xã có thẩm quyền cấp bản sao trích lục khai sinh.","Ủy ban nhân dân cấp xã có thẩm quyền cấp bản sao trích lục khai sinh theo quy định tại Điều 13 của Luật Hộ tịch (60/2014/QH13). Ủy ban nhân dân cấp xã là cơ quan có thẩm quyền giải quyết việc đăng ký khai sinh cho trẻ em khi cha hoặc mẹ người đó đang cư trú tại Việt Nam nhưng đã di chuyển ra nước ngoài. 
+
+Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị bao gồm: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch, người yêu cầu cá nhân hoặc cơ quan, tổ chức cung cấp thông tin lý do yêu cầu và giấy tờ tùy thân nếu là cá nhân yêu cầu. 
+
+Thẩm quyền/nơi tiếp nhận: Ủy ban nhân dân cấp xã.
+
+Biểu mẫu liên quan: Tờ khai cấp bản sao trích lục hộ tịch (C5).
+
+Ủy ban nhân dân cấp xã có thẩm quyền giải quyết việc đăng ký khai sinh cho trẻ em khi cha hoặc mẹ người đó đang cư trú tại Việt Nam nhưng đã di chuyển ra nước ngoài.",0.0,0.230088,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9502.91,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_009,authority,Có sự khác biệt nào về cơ quan có thẩm quyền giải quyết giữa thủ tục đăng ký khai sinh và thủ tục yêu cầu cấp bản sao trích lục khai sinh không?,"Có. Đăng ký khai sinh thẩm quyền thuộc về Ủy ban nhân dân cấp xã, còn cấp bản sao trích lục khai sinh thuộc thẩm quyền của Cơ quan quản lý Cơ sở dữ liệu hộ tịch (bao gồm nhiều cấp cơ quan khác nhau).","Thủ tục phù hợp: Thủ tục đăng ký khai sinh và thủ tục yêu cầu cấp bản sao trích lục khai sinh đều được giải quyết tại Ủy ban nhân dân cấp xã.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Đối với thủ tục đăng ký khai sinh, cần Tờ khai đăng ký khai sinh.
+- Đối với thủ tục yêu cầu cấp bản sao trích lục khai sinh, cần Tờ khai cấp bản sao trích lục hộ tịch.
+
+Thẩm quyền / nơi nộp: 
+- Thủ tục đăng ký khai sinh được giải quyết tại Ủy ban nhân dân cấp xã.
+- Thủ tục yêu cầu cấp bản sao trích lục khai sinh cũng được giải quyết tại Ủy ban nhân dân cấp xã.
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai cấp bản sao trích lục hộ tịch (Citation: [C5])
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí 8000 VND cho việc khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.",0.0,0.263636,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10210.25,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_010,authority,Nếu công dân muốn xin cấp bản sao trích lục khai sinh thì bắt buộc phải đến Ủy ban nhân dân cấp xã hay có thể đến cơ quan khác?,"Công dân có thể đến bất kỳ Cơ quan quản lý Cơ sở dữ liệu hộ tịch nào để yêu cầu, không bắt buộc chỉ đến Ủy ban nhân dân cấp xã nơi đã đăng ký trước đây.","Kết luận sơ bộ: Nếu công dân muốn xin cấp bản sao trích lục khai sinh, họ có thể đến Ủy ban nhân dân cấp xã hoặc cơ quan khác.
+
+Bước cần làm: Không có yêu cầu bắt buộc phải đến Ủy ban nhân dân cấp xã. Công dân có thể lựa chọn đến bất kỳ cơ quan nào phù hợp với nhu cầu của mình.
+
+Hồ sơ hoặc điều kiện liên quan: Không có hồ sơ cụ thể được đề cập trong thông tin hiện có, chỉ nói về việc công dân yêu cầu và cơ quan đăng ký hộ tịch thực hiện.
+
+Căn cứ pháp lý: [C2] Điều 22 khoản 1 của Thông tư hướng dẫn Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.39759,procedure,case,0.0,False,1.0,0.0,authority,procedure|legal|legal|case|case,1.0,1.0,1.0,9146.65,ok,,engine_llm,case,case,case,case_rag_engine
+authority_011,authority,"Trong danh mục thủ tục hộ tịch, những mã thủ tục nào thuộc thẩm quyền giải quyết trực tiếp của Ủy ban nhân dân cấp xã?","HOTICH_TTHC_KHAISINH_01, HOTICH_TTHC_KHAITU_01, HOTICH_TTHC_KETHON_01, HOTICH_TTHC_GIAMHO_01.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Giấy tờ tùy thân của người yêu cầu (nếu có)
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND.
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai cấp bản sao trích lục hộ tịch
+
+Citation:
+[C1]",0.0,0.0,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9240.6,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_012,authority,Thẩm quyền giải quyết thủ tục đăng ký kết hôn có thuộc nhóm 'Cơ quan quản lý Cơ sở dữ liệu hộ tịch' nói chung không?,"Không, thẩm quyền giải quyết thủ tục đăng ký kết hôn được quy định cụ thể và giới hạn ở cơ quan hành chính là Ủy ban nhân dân cấp xã.","Thẩm quyền giải quyết thủ tục đăng ký kết hôn không thuộc nhóm 'Cơ quan quản lý Cơ sở dữ liệu hộ tịch' nói chung. Thủ tục này được thực hiện tại Ủy ban nhân dân cấp xã nơi cá nhân đã đăng ký kết hôn hoặc ghi chú việc kết hôn trước đây, theo Điều 48 khoản 2 của Luật Hộ tịch (60/2014/QH13).",0.0,0.412371,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,5757.9,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_013,authority,"Các thủ tục hành chính liên quan đến việc xác lập sự kiện hộ tịch mới (khai sinh, khai tử, kết hôn, giám hộ) chủ yếu do cơ quan nào giải quyết theo danh mục?",Ủy ban nhân dân cấp xã.,"Thủ tục phù hợp: Đăng ký giám hộ.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) hoặc nhiều giấy tờ tùy trường hợp.
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự).
+- Decision_or_agreement; 
+- Proof.
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (Cơ quan đăng ký hộ tịch).
+
+Thủ tục này do Cơ quan đăng ký hộ tịch trong nước thuộc phạm vi chức năng quản lý của Bộ Tư pháp giải quyết theo danh mục quy định tại [C2].
+
+Thời hạn giải quyết: 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ.
+
+Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương. 
+
+Các thủ tục hành chính liên quan đến việc xác lập sự kiện hộ tịch mới như khai sinh, khai tử, kết hôn và giám hộ chủ yếu do cơ quan đăng ký hộ tịch trong nước giải quyết theo danh mục quy định tại [C2].",0.0,0.048077,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9655.26,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_014,authority,Việc trích xuất dữ liệu hộ tịch đã đăng ký để cấp cho người dân (ví dụ: cấp bản sao trích lục) được giao cho nhóm cơ quan nào thực hiện?,Cơ quan quản lý Cơ sở dữ liệu hộ tịch.,"Thủ tục phù hợp: Việc trích xuất dữ liệu hộ tịch đã đăng ký để cấp cho người dân (ví dụ: cấp bản sao trích lục) được giao cho cơ quan đăng ký hộ tịch.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch, gồm thông tin về người yêu cầu và người được cấp bản sao trích lục hộ tịch.
+
+Thẩm quyền / nơi nộp: Cơ quan đăng ký hộ tịch có thẩm quyền thực hiện việc ghi vào Sổ hộ tịch việc đã đăng ký hộ tịch, sau đó cấp Trích lục hộ tịch cho người yêu cầu. Người yêu cầu có thể nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu.
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai cấp bản sao trích lục hộ tịch.",0.0,0.081448,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10415.61,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_015,authority,"Anh A muốn đăng ký khai sinh cho con và đồng thời xin cấp bản sao trích lục khai sinh. Dựa vào phân định thẩm quyền, cơ quan nào có thể giải quyết đồng thời cả hai yêu cầu này?","Ủy ban nhân dân cấp xã, vì đây vừa là cơ quan có thẩm quyền đăng ký khai sinh, vừa là Cơ quan quản lý Cơ sở dữ liệu hộ tịch có thẩm quyền cấp bản sao trích lục.","Thủ tục phù hợp: Theo PROCEDURE CONTEXT, cả việc đăng ký khai sinh và cấp bản sao trích lục hộ tịch đều được giải quyết tại Ủy ban nhân dân cấp xã. 
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Giấy tờ tùy thân của người yêu cầu (nếu có yêu cầu)
+
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã
+
+Thời hạn / lệ phí nếu có: Thủ tục giải quyết ngay trong ngày tiếp nhận hồ sơ, không có thời hạn cụ thể. Lệ phí là 8000 VND cho phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai cấp bản sao trích lục hộ tịch (C5)",0.0,0.337209,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10045.09,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_016,authority,Tại sao thủ tục cấp bản sao trích lục khai sinh lại quy định thẩm quyền là 'Cơ quan quản lý Cơ sở dữ liệu hộ tịch' thay vì chỉ đích danh UBND cấp xã như thủ tục đăng ký khai sinh?,"Vì bản sao trích lục được cấp từ hệ thống cơ sở dữ liệu dùng chung, nên bất kỳ cơ quan nào quản lý cơ sở dữ liệu (UBND cấp xã, cấp huyện hoặc cơ quan tư pháp cấp cao hơn) đều có thẩm quyền cấp, giúp người dân có thể yêu cầu ở nhiều nơi.","Thủ tục cấp bản sao trích lục khai sinh quy định thẩm quyền là 'Cơ quan quản lý Cơ sở dữ liệu hộ tịch' thay vì chỉ đích danh UBND cấp xã như thủ tục đăng ký khai sinh. Điều này được quy định trong Nghị định quy định về Cơ sở dữ liệu hộ tịch điện tử, đăng ký hộ tịch trực tuyến (1068/VBHN-BTP) - Điều 13 khoản 3.
+
+Hồ sơ cần chuẩn bị bao gồm: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch và các giấy tờ có liên quan như Giấy tờ tùy thân của người yêu cầu. 
+
+Thẩm quyền thực hiện thủ tục là 'Cơ quan quản lý Cơ sở dữ liệu hộ tịch'. 
+
+Nơi nộp hồ sơ là cơ quan đăng ký hộ tịch, cụ thể là UBND cấp xã.
+
+Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Không có biểu mẫu liên quan được cung cấp trong context.",0.0,0.291971,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10903.47,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_017,authority,"Theo dữ liệu về thẩm quyền, nếu một cá nhân thực hiện đăng ký giám hộ và sau đó nhiều năm xin trích lục lại thông tin giám hộ đó thì có sự thay đổi về chủ thể có thẩm quyền giải quyết không?",Có sự thay đổi từ cơ quan giải quyết đăng ký ban đầu (Ủy ban nhân dân cấp xã) sang nhóm chủ thể quản lý dữ liệu (Cơ quan quản lý Cơ sở dữ liệu hộ tịch) khi thực hiện yêu cầu cấp trích lục.,"Thủ tục phù hợp: Đăng ký giám hộ (Citation: C1).
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) hoặc nhiều giấy tờ tùy trường hợp.
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự).
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (Cơ quan đăng ký hộ tịch) Công chức Tư pháp - Hộ tịch.
+
+Biểu mẫu liên quan: Tờ khai cấp bản sao trích lục hộ tịch (Citation: C5).
+
+Thời hạn / lệ phí không được nêu trong dữ liệu hiện có.",0.0,0.269006,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8892.78,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+authority_018,authority,"Việc giao thẩm quyền giải quyết 4 thủ tục đăng ký sự kiện hộ tịch (khai sinh, khai tử, kết hôn, giám hộ) cho Ủy ban nhân dân cấp xã có ý nghĩa gì trong phân cấp quản lý?","Thể hiện nguyên tắc phân cấp giải quyết thủ tục hành chính liên quan đến nhân thân gắn liền với nơi cư trú của người dân về cơ sở chính quyền cấp xã để tạo sự thuận tiện, kịp thời.","1. Thủ tục phù hợp: Cấp bản sao Giấy khai sinh
+
+2. Hồ sơ / giấy tờ cần chuẩn bị:
+   - Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+   - Bản sao Giấy khai sinh
+   
+3. Thẩm quyền / nơi nộp:
+   - Ủy ban nhân dân cấp xã nơi cư trú của cha hoặc mẹ
+
+4. Thời hạn / lệ phí nếu có:
+   - Ngay trong ngày tiếp nhận hồ sơ
+   - Lệ phí: 8000 VND
+
+5. Biểu mẫu liên quan nếu có trong context:
+   - Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (không được cung cấp trong context)",0.0,0.262774,procedure,procedure,1.0,False,1.0,0.0,authority,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8702.32,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_001,case,Tôi và bạn gái chưa đăng ký kết hôn nhưng đã có một cháu trai mới sinh. Nay tôi muốn đi khai sinh cho cháu và ghi tên tôi là cha trên Giấy khai sinh thì cần làm thủ tục gì và nộp ở cơ quan nào?,"Bạn cần thực hiện đồng thời thủ tục đăng ký nhận cha, mẹ, con và thủ tục đăng ký khai sinh cho trẻ. Bạn có thể nộp hồ sơ tại Ủy ban nhân dân cấp xã nơi cư trú của bạn (người cha) hoặc của mẹ cháu bé.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (được cung cấp trong PROCEDURE CONTEXT).
+
+Thẩm quyền/nơi nộp: 
+- UBND cấp xã
+
+Thời hạn và lệ phí không được nêu cụ thể trong thông tin hiện có, nên chưa đủ căn cứ.
+
+Biểu mẫu liên quan:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (được cung cấp trong PROCEDURE CONTEXT).
+
+Nếu cần thêm thông tin về thủ tục hoặc nơi nộp cụ thể, bạn nên liên hệ trực tiếp với UBND cấp xã để được hướng dẫn chi tiết.",0.0,0.314465,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,8421.75,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_002,case,Tôi có hộ khẩu thường trú tại Hà Nội nhưng đang làm việc và có đăng ký tạm trú tại TP.HCM. Bạn gái tôi hộ khẩu ở Đà Nẵng. Chúng tôi có thể đăng ký kết hôn tại TP.HCM được không và quy định thẩm quyền nộp ở đâu?,"Bạn hoàn toàn có thể đăng ký kết hôn tại TP.HCM. Theo Luật Hộ tịch, Ủy ban nhân dân cấp xã nơi cư trú (bao gồm thường trú hoặc tạm trú) của một trong hai bên nam, nữ có thẩm quyền giải quyết đăng ký kết hôn. Do đó, bạn nộp hồ sơ tại UBND cấp xã nơi bạn đang đăng ký tạm trú ở TP.HCM.","Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp).
+- Các giấy tờ tùy thân của hai bên nam và nữ.
+- Giấy chứng minh nhân dân hoặc hộ chiếu nếu có yêu cầu.
+
+Thẩm quyền/nơi nộp: Ủy ban nhân dân cấp xã nơi cư trú của một trong hai bên nam, nữ thực hiện đăng ký kết hôn. 
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (trực tiếp).
+
+Quy định thẩm quyền nộp ở đâu: Ủy ban nhân dân cấp xã nơi cư trú của một trong hai bên nam, nữ thực hiện đăng ký kết hôn.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; nếu cần xác minh điều kiện thì không quá 05 ngày làm việc.
+
+Lệ phí: Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết').
+
+Nếu có yêu cầu đăng ký kết hôn có yếu tố nước ngoài, thẩm quyền sẽ thuộc Ủy ban nhân dân cấp huyện theo quy định tại Điều 37 Luật Hộ tịch.",0.0,0.379845,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,9545.25,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_003,case,"Người thân của tôi qua đời tại bệnh viện và đã được bác sĩ cấp Giấy báo tử. Khi đi đăng ký khai tử tại Ủy ban nhân dân phường, tôi cần chuẩn bị hồ sơ nộp gồm những giấy tờ gì?","Bạn cần chuẩn bị hồ sơ nộp gồm: Tờ khai đăng ký khai tử theo mẫu quy định và bản chính Giấy báo tử do bệnh viện cấp. Đồng thời, người đi đăng ký khai tử cần xuất trình thêm giấy tờ tùy thân hợp lệ (CCCD, CMND hoặc Hộ chiếu) để cán bộ tiếp nhận kiểm tra.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Địa điểm nộp hồ sơ: xa UBND cấp xã
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Căn cứ/dẫn chiếu liên quan:
+- Cổng DVCQG - Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=185429
+- Cổng DVCQG - Cấp bản sao trích lục hộ tịch (cấp xã) https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=185429",0.0,0.238806,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,12542.01,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_004,case,"Cháu nhà tôi sinh ở nhà, không có giấy chứng sinh của cơ sở y tế thì khi đi đăng ký khai sinh tôi cần chuẩn bị giấy tờ gì để thay thế?",Bạn cần cung cấp văn bản xác nhận của người làm chứng về việc sinh; trong trường hợp không có người làm chứng thì phải có giấy cam đoan về việc sinh.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Cách thức nộp: truc_tiep qua Cổng DVCQG hoặc qua dịch vụ bưu chính.
+
+Để thay thế Giấy khai sinh, bạn cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch",0.0,0.172589,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,9855.28,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_005,case,Bố tôi mất đã lâu nhưng gia đình chưa làm giấy khai tử do bị thất lạc giấy báo tử. Nay tôi muốn đi khai tử cho bố thì cần nộp giấy tờ gì thay cho giấy báo tử?,"Trường hợp mất giấy báo tử hoặc người chết đã lâu năm, bạn cần cung cấp văn bản xác nhận của cơ quan có thẩm quyền hoặc các giấy tờ liên quan khác để thay thế theo quy định.","Kết luận sơ bộ: Để thay thế giấy báo tử, bạn cần nộp bản sao Giấy khai sinh.
+
+Bước cần làm: 
+1. Cấp bản sao Giấy khai sinh cho bạn.
+
+Hồ sơ hoặc điều kiện liên quan:
+- Bản sao Giấy khai sinh
+
+Căn cứ pháp lý:
+[C1]",0.0,0.325581,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,8102.77,ok,,engine_llm,case,case,case,case_rag_engine
+case_006,case,Vợ chồng tôi mới sinh một cháu gái được 20 ngày tuổi. Xin hỏi thủ tục khai sinh cho cháu trong thời điểm này được xếp vào nhóm đăng ký đúng hạn hay quá hạn?,Cháu bé được 20 ngày tuổi (nằm trong thời hạn 60 ngày kể từ ngày sinh) nên thủ tục khai sinh của cháu được xác định là đăng ký khai sinh đúng hạn.,"Kết luận sơ bộ: Thủ tục khai sinh cho cháu của bạn được xếp vào nhóm đăng ký đúng hạn.
+
+Bước cần làm: Không có bước cụ thể khác ngoài việc xác minh thông tin về tình trạng hôn nhân của cha mẹ và giấy chứng sinh.
+
+Hồ sơ hoặc điều kiện liên quan: Có Giấy chứng sinh, cha mẹ đã đăng ký kết hôn. 
+
+Căn cứ pháp lý: 
+[C3] Điều 16 khoản 3 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP - Trường hợp con do người vợ sinh ra trước thời điểm đăng ký kết hôn, chưa được đăng ký khai sinh mà khi đăng ký khai sinh, vợ chồng có văn bản thừa nhận là con chung thì thông tin về người cha được ghi ngay vào Giấy khai sinh của người con mà không phải làm thủ tục đăng ký nhận cha, con.",0.0,0.216495,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,10061.33,ok,,engine_llm,case,case,case,case_rag_engine
+case_007,case,Tôi muốn ra phường xin trích lục lại bản sao giấy khai sinh của bản thân thì cán bộ tiếp nhận sẽ kiểm tra yếu tố nào đầu tiên trong hồ sơ?,Cán bộ sẽ kiểm tra giấy tờ nhân thân của bạn để xác định bạn có đúng là đương sự hay không nhằm xác nhận quyền yêu cầu cấp trích lục hợp lệ.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp: 
+- Cán bộ tiếp nhận tại phường/xã
+
+Các cán bộ tiếp nhận sẽ kiểm tra yếu tố đầu tiên trong hồ sơ là giấy tờ tùy thân của người yêu cầu. 
+
+[PROCEDURE CONTEXT C1]",0.0,0.444444,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,7334.4,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_008,case,Tôi dự định kết hôn với người nước ngoài. Xin hỏi giấy tờ do phía nước ngoài cấp (như giấy xác nhận tình trạng độc thân) cần đáp ứng điều kiện pháp lý nào trước khi nộp tại Việt Nam?,"Giấy tờ do nước ngoài cấp phải được hợp pháp hóa lãnh sự (trừ trường hợp được miễn), sau đó phải được dịch thuật ra tiếng Việt và chứng thực bản dịch theo đúng quy định.","Kết luận sơ bộ: Giấy xác nhận tình trạng độc thân do phía nước ngoài cấp cần đáp ứng điều kiện pháp lý về việc người yêu cầu đã cư trú nhiều nơi.
+
+Bước cần làm: Người yêu cầu phải cung cấp danh sách các nơi cư trú trong thời gian qua và thông tin về tình trạng hôn nhân tại mỗi địa điểm đó. 
+
+Hồ sơ hoặc điều kiện liên quan: Danh sách nơi cư trú, giấy tờ chứng minh tình trạng hôn nhân tại từng địa điểm.
+
+Căn cứ pháp lý: [C4] Cấp Giấy xác nhận tình trạng hôn nhân khi người yêu cầu đã cư trú nhiều nơi - Điều 33 khoản 3 3884/VBHN-BTP.",0.0,0.155844,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,9426.16,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+case_009,case,"Tôi muốn làm thủ tục nhận cha cho con nhưng người mẹ không chịu hợp tác và không chịu ký giấy. Cơ quan hộ tịch có tiếp nhận và giải quyết thủ tục nhận cha, mẹ, con ngay cho tôi không?","Không. Do thiếu sự đồng thuận và có dấu hiệu tranh chấp, cơ quan hộ tịch sẽ không giải quyết theo thủ tục hành chính. Cán bộ sẽ hướng dẫn bạn chuẩn bị chứng cứ và thực hiện cơ chế giải quyết tranh chấp tại cơ quan có thẩm quyền trước.","Kết luận sơ bộ: Cơ quan hộ tịch có thể tiếp nhận và giải quyết thủ tục nhận cha cho con nhưng cần chứng cứ hợp lệ hoặc sự đồng thuận từ một bên.
+
+Bước cần làm: Bạn cần phải cung cấp các bằng chứng hợp lệ về quan hệ cha mẹ con, như kết quả xét nghiệm ADN. Nếu không có chứng cứ này, cơ quan hộ tịch sẽ không thể tiếp nhận và giải quyết thủ tục.
+
+Hồ sơ hoặc điều kiện liên quan: 
+- Chứng chỉ nhân thân của cả cha và mẹ
+- Kết quả xét nghiệm ADN
+- Giấy tờ chứng minh nơi cư trú (nếu cần)
+- Văn bản từ chối giải quyết của Tòa án nếu có tranh chấp
+
+Căn cứ pháp lý: [C2] Điều 16 khoản 4 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.302439,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,10388.24,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+case_010,case,"Sau khi hoàn thành thủ tục nhận cha cho con, tôi muốn đổi họ của con từ họ mẹ sang họ của tôi (họ cha) thì cần thực hiện thủ tục gì và dựa trên căn cứ nào?","Bạn cần thực hiện thủ tục thay đổi hộ tịch (thay đổi họ cho con). Căn cứ pháp lý bắt buộc để giải quyết thủ tục này là Trích lục đăng ký nhận cha, mẹ, con đã được cơ quan nhà nước cấp trước đó.","Để đổi họ của con từ họ mẹ sang họ của bạn (họ cha), bạn cần thực hiện thủ tục theo Điều 83 khoản 1 của Luật Hôn nhân và gia đình (121/VBHN-VPQH). Thủ tục này liên quan đến việc yêu cầu người không trực tiếp nuôi con thực hiện các nghĩa vụ theo quy định tại Điều 82 của Luật này. Dựa trên căn cứ này, bạn cần phải có sự đồng ý từ phía mẹ về việc đổi họ cho con.
+
+Tuy nhiên, để thực hiện thủ tục này, bạn cũng cần tham khảo thêm văn bản hợp nhất Luật Quốc tịch Việt Nam (53/VBHN-VPQH) vì điều 35 khoản 1a của văn bản này nói rằng khi có sự thay đổi về quốc tịch do thôi quốc tịch Việt Nam của cha mẹ thì quốc tịch của con chưa thành niên cũng được thay đổi theo quốc tịch của họ, nếu cha mẹ không có yêu cầu khác. Điều này đảm bảo rằng việc đổi họ cho con sẽ tuân thủ quy định về quốc tịch.
+
+Tuy nhiên, cần lưu ý rằng thông tin về thẩm quyền thực hiện thủ tục này vẫn còn thiếu trong các văn bản được cung cấp. Bạn nên liên hệ với cơ quan có thẩm quyền để biết rõ hơn về thẩm quyền thực hiện thủ tục này tại địa phương của bạn.",0.0,0.214286,case,legal,0.0,False,1.0,0.0,case,legal|legal|legal,0.0,0.0,0.0,8482.36,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+case_011,case,Tôi nhờ bạn thân ra ủy ban xin trích lục bản sao giấy chứng nhận kết hôn của tôi được không và hồ sơ cần có thêm giấy tờ gì để chứng minh quyền yêu cầu?,"Được phép nhờ bạn thân đi xin trích lục, tuy nhiên người đi làm thay (không phải đương sự) bắt buộc phải xuất trình văn bản ủy quyền hợp lệ để chứng minh quyền yêu cầu theo quy định.","Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh, như được mô tả trong PROCEDURE CONTEXT [C1].
+
+Hồ sơ/giấy tờ cần chuẩn bị bao gồm:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Bản chính hoặc bản sao có chứng thực các giấy tờ, tài liệu liên quan đến nội dung yêu cầu cấp bản sao trích lục hộ tịch.
+
+Thẩm quyền/nơi tiếp nhận là xa UBND cấp xã, nơi đăng ký kết hôn. Thủ tục gốc trên Cổng DVCQG.
+
+Biểu mẫu cần chuẩn bị là Tờ khai đăng ký kết hôn [C5].
+
+Để chứng minh quyền yêu cầu, bạn cần giấy tờ chứng minh quan hệ cá nhân với người có Giấy chứng nhận kết hôn (giấy chứng minh mối quan hệ như CMND/CCCD, giấy khai sinh...). 
+
+Vì không có thông tin cụ thể về việc bạn nhờ bạn thân ra ủy ban, nên chưa rõ liệu bạn cần nộp hồ sơ trực tiếp hay qua dịch vụ bưu chính. Thời hạn giải quyết là ngay trong ngày tiếp nhận hồ sơ; nếu không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+
+Lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Nếu bạn nhờ bạn thân ra ủy ban, cần chuẩn bị thêm giấy tờ chứng minh quan hệ cá nhân với người có Giấy chứng nhận kết hôn.",0.0,0.147651,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,11957.69,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+case_012,case,Con tôi đã được 3 tháng tuổi nhưng chưa làm khai sinh do tôi làm mất giấy chứng sinh. Xin cho biết các bước cơ quan chức năng sẽ thực hiện để giải quyết tình huống này?,"1. Cơ quan xác định đây là hồ sơ khai sinh quá hạn. 2. Hướng dẫn người dân cung cấp giấy cam đoan hoặc xác nhận của người làm chứng thay cho giấy chứng sinh. 3. Tiếp nhận hồ sơ, kiểm tra nhân thân và ghi nhận tình trạng quá hạn theo quy định. 4. Ghi sổ hộ tịch, cập nhật dữ liệu và cấp trích lục khai sinh.","Kết luận sơ bộ: Tình huống này thuộc trường hợp đăng ký khai sinh cho trẻ sinh tại nhà, không có Giấy chứng sinh. Bước cần làm là liên hệ với cơ quan hộ tịch nơi cư trú để thực hiện thủ tục đăng ký khai sinh.
+
+Cách xử lý / bước cần làm:
+1. Liên hệ với cơ quan hộ tịch nơi cư trú để nộp hồ sơ đăng ký khai sinh cho con bạn.
+2. Nộp giấy chứng sinh giả hoặc văn bản người làm chứng về việc sinh, nếu có.
+3. Nếu không có giấy chứng sinh giả hoặc văn bản người làm chứng, thì cần cung cấp giấy cam đoan về việc sinh.
+
+Hồ sơ hoặc điều kiện liên quan:
+- Giấy chứng sinh giả hoặc văn bản người làm chứng
+- Giấy cam đoan về việc sinh
+
+Căn cứ pháp lý:
+[C1] - Điều 15 khoản 3 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.316667,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,10349.86,ok,,engine_llm,case,case,case,case_rag_engine
+case_013,case,Tôi dự định đăng ký kết hôn với bạn gái là người nước ngoài. Xin cho biết hồ sơ sẽ nộp tại cơ quan cấp nào và cán bộ tiếp nhận sẽ kiểm tra những yếu tố gì đối với giấy tờ của cô ấy?,"Hồ sơ đăng ký kết hôn có yếu tố nước ngoài thường thuộc thẩm quyền tiếp nhận của Ủy ban nhân dân cấp huyện. Cán bộ tiếp nhận sẽ kiểm tra tính hợp lệ của giấy tờ nước ngoài bao gồm: giấy tờ đã được hợp pháp hóa lãnh sự chưa, có bản dịch thuật và đã được chứng thực bản dịch hay chưa, cũng như kiểm tra điều kiện kết hôn bắt buộc theo Luật Hôn nhân và gia đình.","Thủ tục phù hợp: Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Bản sao Giấy khai sinh của bạn gái (nếu có).
+
+Thẩm quyền / nơi nộp: 
+- Nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu cấp bản sao Trích lục hộ tịch tại xa UBND cấp xã.
+
+Cán bộ tiếp nhận sẽ kiểm tra những yếu tố gì đối với giấy tờ của cô ấy:
+- Người yêu cầu đăng ký hộ tịch có thể nộp bản sao được chứng thực từ bản chính hoặc bản sao được cấp từ sổ gốc (sau đây gọi là bản sao) hoặc bản chụp kèm theo bản chính hoặc bản điện tử các giấy tờ này, bao gồm cả giấy tờ được tích hợp, hiển thị trên Ứng dụng định danh điện tử (VNeID).
+- Người tiếp nhận có trách nhiệm kiểm tra, đối chiếu bản chụp với bản chính và ký xác nhận, không yêu cầu nộp bản sao giấy tờ đó.
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai đăng ký kết hôn (to_khai).",0.0,0.304878,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,12152.93,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_001,edge_case,"Nếu trẻ sinh ra tại nhà, không có Giấy chứng sinh của cơ sở y tế và cũng không có người làm chứng về việc sinh thì người đi đăng ký khai sinh phải cung cấp giấy tờ gì để thay thế?",Phải cung cấp giấy cam đoan về việc sinh theo quy định pháp luật thay cho Giấy chứng sinh.,"Thủ tục phù hợp: Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do.
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Các thông tin trên dựa trên PROCEDURE CONTEXT [C1].",0.0,0.062893,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,8788.93,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_002,edge_case,"Trong thủ tục nhận cha, mẹ, con, nếu người cha có kết quả giám định ADN nhưng người mẹ kiên quyết không đồng ý và không ký vào tờ khai thì cơ quan hộ tịch sẽ giải quyết thế nào?","Cơ quan hộ tịch sẽ từ chối giải quyết theo thủ tục hành chính do có tranh chấp, đồng thời hướng dẫn người dân thu thập chứng cứ để thực hiện cơ chế giải quyết tranh chấp tại cơ quan có thẩm quyền.","Tên biểu mẫu: Tờ khai đăng ký kết hôn
+
+Biểu mẫu này được sử dụng để làm gì trong thủ tục nhận cha, mẹ, con?
+
+Tờ khai đăng ký kết hôn không liên quan trực tiếp đến việc người mẹ kiên quyết không đồng ý và không ký vào tờ khai. Việc này thuộc về thủ tục giải quyết khi có sự chênh lệch giữa kết quả giám định ADN của người cha và quan điểm của người mẹ.
+
+Lưu ý khi điền: Không có thông tin cụ thể liên quan đến trường hợp đặc biệt đề cập trong câu hỏi.
+
+Thủ tục liên quan: Không có thông tin trong context để mô tả thủ tục cụ thể.",0.0,0.186335,case,template,0.0,False,1.0,0.0,case,procedure|legal|legal|template|template,0.0,0.0,0.0,8800.18,ok,,engine_llm,template,template,template,template_engine
+edge_case_003,edge_case,Hãy nêu trình tự xử lý đối với trường hợp đăng ký khai sinh cho trẻ em bị bỏ rơi theo quy định hiện hành?,"1. Cơ quan tiếp nhận tiến hành lập biên bản về việc trẻ bị bỏ rơi. 2. Thực hiện niêm yết công khai trong 07 ngày. 3. Nếu hết thời hạn niêm yết mà không có thông tin về cha mẹ, tiến hành đăng ký khai sinh cho trẻ bị bỏ rơi.","Kết luận sơ bộ: Trường hợp đăng ký khai sinh cho trẻ em bị bỏ rơi cần tuân theo quy định tại Thông tư 3884/VBHN-BTP và các văn bản liên quan.
+
+Bước cần làm:
+1. Cơ quan đăng ký hộ tịch nơi cư trú tiếp nhận hồ sơ khai sinh của trường hợp này.
+2. Kiểm tra hồ sơ, xác minh thông tin về cha mẹ trẻ em bị bỏ rơi.
+3. Nếu không xác định được cha mẹ hoặc người có quyền lợi và nghĩa vụ khác, cơ quan đăng ký hộ tịch sẽ tiến hành đăng ký khai sinh cho trẻ em chưa xác định được cha.
+
+Hồ sơ liên quan:
+- Hồ sơ khai sinh của trẻ em bị bỏ rơi
+- Giấy chứng nhận tình trạng hôn nhân của cha mẹ (nếu có)
+- Văn bản từ chối giải quyết của Tòa án nếu trường hợp không thể xác định cha
+
+Căn cứ pháp lý:
+[C3] Điều 16 khoản 4 Thông tư 3884/VBHN-BTP: Trường hợp con do người vợ sinh ra hoặc có thai trong thời kỳ hôn nhân nhưng vợ hoặc chồng không thừa nhận là con chung hoặc người khác muốn nhận con thì do Tòa án nhân dân xác định theo quy định pháp luật. Trường hợp Tòa án nhân dân từ chối giải quyết thì cơ quan đăng ký hộ tịch tiếp nhận, giải quyết yêu cầu đăng ký khai sinh cho trẻ em chưa xác định được cha hoặc đăng ký nhận cha, con.",0.0,0.222222,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,13128.27,ok,,engine_llm,case,case,case,case_rag_engine
+edge_case_004,edge_case,"Công dân Việt Nam đã ly hôn tại nước ngoài, nay về nước muốn đăng ký kết hôn lần hai nhưng chưa làm thủ tục ghi chú ly hôn thì cán bộ tiếp nhận hồ sơ kết hôn sẽ xử lý ra sao?","Cán bộ sẽ hướng dẫn công dân làm thủ tục ghi vào Sổ hộ tịch (ghi chú) việc ly hôn ở nước ngoài trước, sau khi hoàn tất mới tiếp nhận hồ sơ và giải quyết thủ tục đăng ký kết hôn.","Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử)
+- Tờ khai đăng ký kết hôn theo mẫu (Có thể khai chung một tờ khai 01 bản chính)
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; nếu cần xác minh điều kiện kết hôn thì không quá 5 ngày làm việc.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (Có thể dùng mẫu từ PROCEDURE CONTEXT hoặc TEMPLATE CONTEXT)
+
+[PROCEDURE CONTEXT], [C1] và [TEMPLATE CONTEXT] được sử dụng trong trả lời.",0.0,0.195876,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,8756.17,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_005,edge_case,"Người thân qua đời đã lâu năm nay gia đình mới đi đăng ký khai tử và không có Giấy báo tử, gia đình cần chuẩn bị giấy tờ gì để chứng minh sự kiện chết?",Gia đình cần cung cấp văn bản xác nhận của cơ quan có thẩm quyền hoặc các giấy tờ liên quan khác để thay thế Giấy báo tử theo quy định.,"Thủ tục phù hợp: Đăng ký khai tử.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai tử theo mẫu (nộp trực tiếp).
+- Giấy chứng sinh hoặc giấy khai sinh của người đã chết.
+- Chứng minh nhân dân hoặc thẻ Căn cước công dân của người yêu cầu.
+
+Thẩm quyền/nơi nộp: xa Ủy ban nhân dân cấp xã Công chức Tư pháp - Hộ tịch.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận yêu cầu; nếu cần xác minh thì không quá 03 ngày làm việc.
+
+Lệ phí: VND Lệ phí: xem chi tiết trên Cổng DVCQG.
+
+Các giấy tờ thay thế có thể được chấp nhận là Giấy chứng sinh hoặc giấy khai sinh của người đã chết.",0.0,0.233766,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,8590.5,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_006,edge_case,"Người vợ tương lai bận công tác xa, người chồng có thể tự mình mang hồ sơ đi nộp để làm thủ tục đăng ký kết hôn được không và có cần vợ làm giấy ủy quyền không?",Người chồng hoàn toàn có thể nộp hồ sơ đăng ký kết hôn một mình mà không cần văn bản ủy quyền của người vợ.,"Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Tờ khai đăng ký kết hôn theo mẫu (trực tuyến).
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (template_context:C5).
+
+[PROCEDURE CONTEXT:C1]
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận; nếu nhận sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+
+Lệ phí: VND Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết').
+
+[PROCEDURE CONTEXT:C1]
+
+Thủ tục này cho phép người chồng tự mình mang hồ sơ đi nộp để làm thủ tục đăng ký kết hôn. Tuy nhiên, vợ cần phải có giấy ủy quyền cho chồng thực hiện việc này. 
+
+Vì vậy, đáp án phù hợp là: Người chồng có thể tự mình mang hồ sơ đi nộp để làm thủ tục đăng ký kết hôn được không và có cần vợ làm giấy ủy quyền không? [C1].",0.0,0.190476,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,10037.26,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_007,edge_case,"Đến ngày hẹn trả kết quả đăng ký kết hôn, một trong hai bên nam hoặc nữ vắng mặt do ốm thì cơ quan đăng ký có thể trao Giấy chứng nhận kết hôn cho người còn lại mang về không?","Không. Khi trả kết quả, bắt buộc cả hai bên nam và nữ đều phải có mặt để xác nhận tính tự nguyện và cùng ký tên vào Sổ hộ tịch, Giấy chứng nhận kết hôn.","Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên.
+- Bản chụp các giấy tờ tùy thân của cả hai bên (bên nam và bên nữ).
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (CITATION: [C5]).
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; nếu cần xác minh điều kiện thì không quá 05 ngày làm việc. Lệ phí theo quy định của địa phương, được hiển thị trên Cổng DVCQG (CITATION: PROCEDURE CONTEXT).
+
+Nếu một bên vắng mặt do ốm và người còn lại muốn nhận kết quả đăng ký kết hôn, cơ quan đăng ký có thể trao Giấy chứng nhận kết hôn cho người còn lại mang về. Đây là trường hợp được quy định trong PROCEDURE CONTEXT khi nói đến việc trả kết quả đăng ký hộ tịch trực tuyến (CITATION: AUTHORITY CONTEXT).",0.0,0.235849,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,9354.59,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_008,edge_case,"Đối với trường hợp trẻ em sinh ra nhờ mang thai hộ, hồ sơ đăng ký khai sinh bắt buộc phải nộp bổ sung giấy tờ gì so với thủ tục khai sinh thông thường?",Bắt buộc phải nộp bổ sung văn bản thỏa thuận về việc mang thai hộ theo đúng quy định của pháp luật.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Không có giấy tờ bổ sung so với thủ tục khai sinh thông thường, chỉ cần nộp bản sao Giấy khai sinh và các giấy tờ khác theo quy định hiện hành.
+
+Thẩm quyền / nơi nộp: 
+- Thẩm quyền là UBND cấp xã.
+- Nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu cấp bản sao Trích lục hộ tịch.
+
+Thời hạn / lệ phí nếu có:
+- Không có thời hạn cụ thể trong thông tin được cung cấp.
+- Lệ phí 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context:
+- Không có biểu mẫu liên quan được cung cấp trong thông tin hiện tại.",0.0,0.116959,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,9045.39,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_009,edge_case,Ông nội đại diện đi đăng ký khai sinh cho cháu nội bằng hình thức ủy quyền thì văn bản ủy quyền có cần phải mang đi chứng thực không?,"Không cần chứng thực văn bản ủy quyền, vì người được ủy quyền là ông nội (thuộc diện người thân thích), chỉ cần xuất trình giấy tờ chứng minh mối quan hệ.","Thủ tục phù hợp: Việc đại diện giữa vợ và chồng trong việc xác lập, thực hiện và chấm dứt giao dịch liên quan đến tài sản chung có giấy chứng nhận quyền sở hữu, giấy chứng nhận quyền sử dụng tài sản chỉ ghi tên vợ hoặc chồng được thực hiện theo quy định tại Điều 24 và Điều 25 của Luật này (Citation: [C3]).
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Văn bản ủy quyền từ cha mẹ người cháu nội cho ông nội đại diện.
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã sẽ tiếp nhận hồ sơ (Citation: [C2]).
+Thời hạn / lệ phí nếu có: Thủ tục này không yêu cầu thời hạn cụ thể hoặc lệ phí, chỉ cần chuẩn bị đầy đủ hồ sơ và giấy tờ.
+
+Biểu mẫu liên quan: Không có trong context.",0.0,0.24,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,8602.07,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_010,edge_case,"Người dân do nhầm lẫn nên mang hồ sơ đăng ký khai sinh nộp trực tiếp tại Ủy ban nhân dân cấp xã không phải là nơi cư trú của mình, cơ quan tiếp nhận sẽ xử lý tình huống này thế nào?",Ủy ban nhân dân cấp xã nơi tiếp nhận sẽ không trả lại hồ sơ ngay mà có trách nhiệm hỗ trợ người dân nộp hồ sơ trực tuyến đến đúng cơ quan đăng ký hộ tịch có thẩm quyền.,"Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị bao gồm: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch, chứng minh thư của người yêu cầu và lý do nộp hồ sơ tại cơ quan khác.
+
+Thẩm quyền / nơi nộp là xa UBND cấp xã Công chức Tư pháp - Hộ tịch.
+
+Cơ quan tiếp nhận sẽ xử lý tình huống này bằng cách cung cấp bản sao Giấy khai sinh cho người dân. Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+
+Lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Các giấy tờ cần chuẩn bị bao gồm: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch và chứng minh thư của người yêu cầu.",0.0,0.280543,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,9651.78,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_011,edge_case,"Nếu người dân mang đầy đủ hồ sơ hợp lệ đến đăng ký khai tử vào lúc 16h00 chiều, cơ quan không xử lý kịp thì việc trả kết quả sẽ được hẹn vào thời điểm nào?","Trường hợp nhận hồ sơ hợp lệ sau 15 giờ mà không giải quyết được ngay, cơ quan sẽ trả kết quả trong ngày làm việc tiếp theo.","Thủ tục phù hợp: Đăng ký khai tử.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Hồ sơ đăng ký khai tử bao gồm các thông tin cá nhân, chứng minh thư và các tài liệu liên quan đến việc khai tử.
+- Người dân phải mang đầy đủ hồ sơ hợp lệ để cơ quan có thẩm quyền xử lý kịp thời.
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã (Cơ quan đăng ký hộ tịch).
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn không được nêu trong thông tin hiện có.
+- Lệ phí cũng chưa được nêu trong thông tin hiện có.
+
+Biểu mẫu liên quan nếu có trong context:
+- Không có biểu mẫu cụ thể trong thông tin hiện có.
+
+Vì vậy, tôi chỉ có thể cung cấp thông tin về thủ tục và các yêu cầu cần thiết để thực hiện đăng ký khai tử. Thời hạn và lệ phí chưa được nêu trong thông tin hiện có.",0.0,0.12766,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,9174.26,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_012,edge_case,"Khi điền Tờ khai đăng ký kết hôn, người dân có bắt buộc phải điền mục 'Nơi cư trú' nếu đã cung cấp đủ Căn cước công dân gắn chíp có số định danh cá nhân không?","Không bắt buộc, mục Nơi cư trú chỉ yêu cầu ghi trong trường hợp người yêu cầu đăng ký chưa có hoặc không cung cấp được số định danh cá nhân/Căn cước công dân/Thẻ căn cước.","Theo Citation C1 và C2, khi điền Tờ khai đăng ký kết hôn, người dân không bắt buộc phải điền mục 'Nơi cư trú' nếu đã cung cấp đủ Căn cước công dân gắn chíp có số định danh cá nhân. Điều này được quy định trong Hợp nhất Thông tư quy định thi hành Nghị định 87/2020/NĐ-CP và Nghị định quy định về Cơ sở dữ liệu hộ tịch điện tử, đăng ký hộ tịch trực tuyến.",0.0,0.420168,case,legal,0.0,False,1.0,0.0,case,legal|legal|legal,0.0,0.0,0.0,6186.49,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+edge_case_013,edge_case,"Khi lập hồ sơ đăng ký khai tử sử dụng văn bản xác nhận của cơ quan nhà nước thay cho Giấy báo tử, Tờ khai đăng ký khai tử phải được ghi chú thế nào tại phần giấy tờ chứng minh để đảm bảo hợp lệ?","Phải gạch cụm từ 'Giấy tờ thay thế Giấy báo tử' (hoặc gạch 'Giấy báo tử') trên tờ khai và ghi rõ tên, số của giấy tờ thay thế hợp lệ đó vào.","Thủ tục phù hợp: Sử dụng văn bản xác nhận của cơ quan nhà nước thay cho Giấy báo tử để lập hồ sơ đăng ký khai tử.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai tử phải được ghi chú như sau tại phần giấy tờ chứng minh: ""Kính gửi (tên cơ quan đăng ký kết hôn)"".
+- Ghi rõ tên cơ quan đăng ký kết hôn trong trường hợp người yêu cầu chưa có/không có.
+
+Thẩm quyền / nơi nộp:
+- Nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do.
+
+Thời hạn / lệ phí nếu có: 
+- Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context:
+- Không có biểu mẫu cụ thể trong context, chỉ đề cập đến Tờ khai đăng ký kết hôn.",0.0,0.213953,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,10769.74,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_014,edge_case,"Sau khi hoàn tất thủ tục nhận cha cho con và được cấp Trích lục, người cha muốn đổi họ của con từ họ mẹ sang họ của mình thì có được không và phải làm thủ tục gì?","Được phép. Người cha cần nộp hồ sơ thực hiện thủ tục thay đổi hộ tịch (thay đổi họ cho con), sử dụng Trích lục đăng ký nhận cha, mẹ, con làm căn cứ pháp lý.","Thủ tục phù hợp: Người cha muốn đổi họ của con từ họ mẹ sang họ của mình sau khi đã được cấp Trích lục cần thực hiện thủ tục cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao trích lục hộ tịch
+- Giấy tờ tùy thân (nếu có yêu cầu)
+
+Thẩm quyền / nơi nộp: 
+- UBND cấp xã
+- Phòng Tư pháp
+
+Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Thời hạn và lệ phí không được nêu trong thông tin hiện có, nên chưa thể trả lời chính xác về thời hạn và lệ phí. 
+
+Biểu mẫu liên quan: Tờ khai cấp bản sao trích lục hộ tịch (C5).
+
+Nếu người cha muốn thực hiện việc này, cần chuẩn bị đầy đủ hồ sơ theo hướng dẫn trong PROCEDURE CONTEXT và nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu.",0.0,0.227979,case,procedure,0.0,False,1.0,0.0,case,procedure|procedure|legal|legal|template,0.0,0.0,0.0,8416.65,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+edge_case_015,edge_case,"Trong quá trình giải quyết thủ tục hộ tịch, nếu thông tin của người dân đã có sẵn và tra cứu được từ Cơ sở dữ liệu quốc gia về dân cư thì cơ quan giải quyết có được quyền yêu cầu nộp lại bản giấy để đối chiếu không?","Không được yêu cầu nộp hoặc xuất trình bản giấy, trừ trường hợp cơ quan nhà nước thực sự cần sử dụng để phục vụ cho mục đích xác minh, thẩm tra lại tính xác thực của các thông tin đó.","Kết luận sơ bộ: Nếu thông tin của người dân đã có sẵn và tra cứu được từ Cơ sở dữ liệu quốc gia về dân cư, cơ quan giải quyết có thể yêu cầu nộp lại bản giấy để đối chiếu.
+
+Bước cần làm: Cơ quan giải quyết có quyền yêu cầu nộp lại bản giấy để đối chiếu với thông tin đã có trong CSDLQG về dân cư/CSDL hộ tịch điện tử.
+
+Hồ sơ hoặc điều kiện liên quan: Không có hồ sơ cụ thể được đề cập, chỉ cần thông tin đã có sẵn từ CSDLQG về dân cư.
+
+Căn cứ pháp lý: [C2] Điều 10 khoản 2 điểm b của Nghị định quy định về Cơ sở dữ liệu hộ tịch điện tử, đăng ký hộ tịch trực tuyến.",0.0,0.194286,case,case,1.0,False,1.0,0.0,case,procedure|legal|legal|case|case,0.0,0.0,1.0,9456.41,ok,,engine_llm,case,case,case,case_rag_engine
+legal_001,legal,"Theo quy định, những chủ thể nào bắt buộc phải có mặt khi nhận kết quả đăng ký kết hôn hoặc đăng ký lại kết hôn?","Hai bên nam, nữ đều phải có mặt khi trả kết quả đăng ký kết hôn, đăng ký lại kết hôn.","Thủ tục phù hợp: Đăng ký lại kết hôn.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký lại kết hôn theo mẫu (trực tiếp).
+
+Thẩm quyền / nơi nộp:
+- Xa Ủy ban nhân dân cấp xã.
+- Công chức Tư pháp - Hộ tịch.
+
+Biểu mẫu liên quan nếu có trong context: 
+- Tờ khai đăng ký lại kết hôn.
+
+[PROCEDURE CONTEXT] không cung cấp thông tin cụ thể về chủ thể nào bắt buộc phải có mặt khi nhận kết quả đăng ký lại kết hôn. Chỉ rõ rằng cả hai bên nam và nữ phải có mặt khi nhận kết quả đăng ký kết hôn (theo [AUTHORITY CONTEXT]). 
+
+Vì vậy, tôi chưa đủ căn cứ để trả lời chính xác về những chủ thể nào bắt buộc phải có mặt khi nhận kết quả đăng ký lại kết hôn dựa trên thông tin hiện tại.",0.0,0.239521,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,8711.75,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_002,legal,"Việc ban hành quyết định hủy bỏ giá trị pháp lý của giấy tờ, văn bản đã chứng thực không đúng quy định pháp luật thuộc thẩm quyền của ai?",Thuộc thẩm quyền của Chủ tịch Ủy ban nhân dân cấp xã.,"Việc ban hành quyết định hủy bỏ giá trị pháp lý của giấy tờ, văn bản đã chứng thực không đúng quy định pháp luật thuộc thẩm quyền của Chủ tịch Ủy ban nhân dân cấp xã. Đây được quy định tại khoản 2 Điều 7 của Thông tư số 01/2020/TT-BTP. Chủ tịch Ủy ban nhân dân cấp xã có trách nhiệm ban hành quyết định hủy bỏ giá trị pháp lý của giấy tờ, văn bản chứng thực quy định tại khoản 1 Điều 7 của Thông tư số 01/2020/TT-BTP đối với giấy tờ, văn bản do cơ quan mình chứng thực.",0.0,0.198347,legal,legal,1.0,True,1.0,0.0,legal,legal|legal|legal,1.0,1.0,1.0,5969.52,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+legal_003,legal,Cơ quan nào có thẩm quyền kiểm tra và ra quyết định phê duyệt danh sách cộng tác viên dịch thuật do Ủy ban nhân dân cấp xã đề nghị?,Sở Tư pháp có thẩm quyền kiểm tra và ra quyết định phê duyệt danh sách cộng tác viên dịch thuật.,"Thủ tục phù hợp: Theo PROCEDURE CONTEXT, không có thủ tục liên quan đến việc kiểm tra và phê duyệt danh sách cộng tác viên dịch thuật.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không có thông tin cụ thể về hồ sơ hoặc giấy tờ cần chuẩn bị cho thủ tục này.
+
+Thẩm quyền / nơi nộp: Không xác định được thẩm quyền nào có thẩm quyền kiểm tra và phê duyệt danh sách cộng tác viên dịch thuật. Cần thêm thông tin từ PROCEDURE CONTEXT để xác định rõ hơn.
+
+Thời hạn / lệ phí nếu có: Không có thời hạn cụ thể hoặc lệ phí liên quan đến thủ tục này trong PROCEDURE CONTEXT.
+
+Biểu mẫu liên quan nếu có trong context: Không có biểu mẫu liên quan trong PROCEDURE CONTEXT.",0.0,0.235294,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,8715.17,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_004,legal,Cơ quan nào có thẩm quyền đăng ký kết hôn cho công dân Việt Nam cư trú trong nước?,"Ủy ban nhân dân cấp xã nơi cư trú của một trong hai bên nam, nữ có thẩm quyền đăng ký kết hôn.","Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử)
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử)
+
+Thẩm quyền/nơi nộp: Ủy ban nhân dân cấp xã
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận; nếu nhận sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo
+
+Lệ phí: VND Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết')
+
+Các cơ quan có thẩm quyền đăng ký kết hôn cho công dân Việt Nam cư trú trong nước là Ủy ban nhân dân cấp xã.",0.0,0.190909,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,9247.33,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_005,legal,Người yêu cầu đăng ký hộ tịch có thể nộp hồ sơ bằng những phương thức nào?,"Có thể nộp trực tiếp, gửi qua hệ thống bưu chính hoặc nộp trực tuyến qua cổng dịch vụ công.","Thủ tục phù hợp nhất là đăng ký kết hôn. 
+
+Hồ sơ/giấy tờ cần chuẩn bị bao gồm: Tờ khai đăng ký kết hôn.
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (cơ quan đăng ký hộ tịch) Công chức Tư pháp - Hộ tịch.
+
+Cách thức nộp: truc_tiep hoặc qua hệ thống đăng ký hộ tịch trực tuyến nếu tỉnh triển khai. 
+
+Thời hạn giải quyết: không được nêu trong thông tin hiện có.
+
+Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn.",0.0,0.184874,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,7851.85,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_006,legal,Việc đăng ký khai tử thuộc thẩm quyền giải quyết của cơ quan nào?,Ủy ban nhân dân cấp xã nơi cư trú cuối cùng của người chết thực hiện đăng ký khai tử.,"Thủ tục phù hợp: Việc đăng ký khai tử thuộc thẩm quyền giải quyết của Ủy ban nhân dân cấp xã.
+
+Hồ sơ / giấy tờ cần chuẩn bị: Tờ khai đăng ký khai tử theo mẫu (nộp trực tiếp) và Giấy báo tử hoặc giấy tờ thay Giấy báo tử do cơ quan.
+
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã.
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận yêu cầu; không có thông tin về thời hạn cụ thể trong PROCEDURE CONTEXT, nên chưa đủ căn cứ để trả lời chính xác. Lệ phí được nêu trong PROCEDURE CONTEXT nhưng không cung cấp chi tiết.
+
+Biểu mẫu liên quan nếu có trong context: Không có biểu mẫu liên quan trong PROCEDURE CONTEXT hoặc AUTHORITY CONTEXT.",0.0,0.18543,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,7983.56,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_007,legal,Cá nhân có quyền yêu cầu cơ quan nào cấp bản sao trích lục hộ tịch cho mình?,Cá nhân có quyền yêu cầu Cơ quan quản lý Cơ sở dữ liệu hộ tịch cấp bản sao trích lục hộ tịch về sự kiện hộ tịch của mình.,"Thủ tục phù hợp: Cá nhân có quyền yêu cầu cơ quan quản lý Cơ sở dữ liệu hộ tịch cấp bản sao trích lục hộ tịch.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai cấp bản sao trích lục hộ tịch (C5).
+
+Thẩm quyền / nơi nộp: 
+- Cơ quan quản lý Cơ sở dữ liệu hộ tịch.
+
+Thời hạn / lệ phí nếu có:
+- Không rõ thời hạn cụ thể từ PROCEDURE CONTEXT.
+- Lệ phí 8.000 VND/bản sao trích lục/sự kiện hộ tịch đã đăng ký (C1).
+
+Biểu mẫu liên quan nếu có trong context: 
+- Tờ khai cấp bản sao trích lục hộ tịch (C5).",0.0,0.391304,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,7577.46,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_008,legal,Cơ quan nào có thẩm quyền đăng ký khai sinh có yếu tố nước ngoài?,Ủy ban nhân dân cấp huyện nơi cư trú của người cha hoặc người mẹ thực hiện đăng ký khai sinh có yếu tố nước ngoài.,"Thủ tục phù hợp: Đăng ký khai sinh có yếu tố nước ngoài được thực hiện tại cơ quan đăng ký hộ tịch, cụ thể là UBND cấp xã.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai sinh.
+- Giấy tờ tùy thân của người yêu cầu và người được khai sinh (nếu có).
+- Văn bản thỏa thuận lựa chọn quốc tịch cho trẻ nếu cha hoặc mẹ lựa chọn quốc tịch nước ngoài.
+
+Thẩm quyền / nơi nộp: UBND cấp xã.
+
+Biểu mẫu liên quan: Tờ khai đăng ký khai sinh.
+
+Các thông tin pháp lý:
+[C3] Điều 7 khoản 2 1844/VBHN-BTP chỉ ra rằng, trong trường hợp cha hoặc mẹ lựa chọn quốc tịch nước ngoài cho con khi đăng ký khai sinh, cần có xác nhận của cơ quan có thẩm quyền của nước mà trẻ được chọn mang quốc tịch. Nếu không có xác nhận này, cơ quan đăng ký hộ tịch sẽ thực hiện việc đăng ký khai sinh nhưng để trống phần ghi về quốc tịch trong Giấy khai sinh và Sổ đăng ký khai sinh.
+
+Vì vậy, thủ tục phù hợp nhất là đăng ký khai sinh tại UBND cấp xã. Các giấy tờ cần chuẩn bị bao gồm Tờ khai đăng ký khai sinh và các loại giấy tờ tùy thân của người yêu cầu và người được khai sinh (nếu có). Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ, lệ phí là 8000 VND.
+
+[PROCEDURE CONTEXT] không cung cấp thông tin cụ thể về thẩm quyền hoặc nơi nộp thủ tục khi đăng ký khai sinh có yếu tố nước ngoài. Do đó, cần tham chiếu đến [AUTHORITY CONTEXT] để xác định rằng việc đăng ký khai sinh có yếu tố nước ngoài được thực hiện tại UBND cấp xã theo quy định của [C2].",0.0,0.130564,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,12534.84,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_009,legal,"Theo quy định, Sổ hộ tịch được lưu trữ trong thời gian bao lâu?","Sổ hộ tịch được lưu trữ vĩnh viễn tại cơ quan đăng ký, quản lý hộ tịch.","Theo quy định, Sổ hộ tịch được lưu trữ vĩnh viễn để sử dụng và phục vụ nhu cầu của nhân dân và hoạt động quản lý nhà nước theo Điều 37 khoản 1 của Thông tư hướng dẫn Luật Hộ tịch (citations: [C2], [C3]).",0.0,0.387097,legal,legal,1.0,True,1.0,0.0,legal,legal|legal|legal,1.0,1.0,1.0,4224.41,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+legal_010,legal,Thẩm quyền cấp Giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam cư trú trong nước thuộc về ai?,Ủy ban nhân dân cấp xã nơi cư trú của công dân có thẩm quyền cấp Giấy xác nhận tình trạng hôn nhân.,"Kết luận sơ bộ: Thẩm quyền cấp Giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam cư trú trong nước thuộc về Ủy ban nhân dân cấp xã.
+
+Bước cần làm: Không có bước cụ thể được đề cập trực tiếp trong dữ liệu, nhưng thẩm quyền này nằm ở địa phương nơi người yêu cầu cư trú.
+
+Hồ sơ hoặc điều kiện liên quan: Không có thông tin cụ thể về hồ sơ hoặc điều kiện liên quan trong dữ liệu hiện có.
+
+Căn cứ pháp lý: [C3] Luật Hộ tịch (60/2014/QH13) - Điều 48 khoản 1.",0.0,0.352,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,8188.36,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_011,legal,Người yêu cầu đăng ký hộ tịch có được ủy quyền cho người khác thực hiện thay không?,"Được ủy quyền, trừ trường hợp đăng ký kết hôn, đăng ký lại kết hôn, nhận cha, mẹ, con thì không được ủy quyền.","Kết luận sơ bộ: Người yêu cầu đăng ký hộ tịch không được ủy quyền cho người khác thực hiện thay.
+
+Bước cần làm: Không có bước cụ thể trong trường hợp này, chỉ cần thông báo kết luận về việc không được ủy quyền.
+
+Hồ sơ hoặc điều kiện liên quan: Không có hồ sơ cụ thể liên quan đến vấn đề này trong các nguồn dữ liệu được cung cấp.
+
+Căn cứ pháp lý: [C2] Điều 2 khoản 1 của Thông tư hướng dẫn Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.216667,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,9116.07,ok,,engine_llm,case,case,case,case_rag_engine
+legal_012,legal,"Khi đi đăng ký kết hôn, hai bên nam, nữ có bắt buộc phải có mặt tại cơ quan đăng ký không?","Có, bắt buộc cả hai bên nam và nữ đều phải có mặt khi đăng ký kết hôn.","Thủ tục phù hợp: Hai bên nam, nữ đều phải có mặt tại cơ quan đăng ký để xác nhận tự nguyện và ký kết hôn.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên.
+- Các loại giấy tờ tùy thân cho cả hai bên nam, nữ.
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã. Bên nam hoặc bên nữ có thể nộp hồ sơ mà không cần văn bản ủy quyền của bên còn lại; nhưng khi nhận/ghi kết quả thì hai bên phải có mặt để xác nhận tự nguyện và ký kết hôn.
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận; nếu cần xác minh điều kiện kết hôn thì không quá 05 ngày. Lệ phí theo quy định của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết').
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai đăng ký kết hôn.",0.0,0.172043,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,9685.15,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_013,legal,"Khi đăng ký khai sinh, người đi đăng ký phải xuất trình giấy tờ gì để chứng minh sự việc sinh?",Phải nộp Giấy chứng sinh; nếu không có thì nộp văn bản của người làm chứng hoặc giấy cam đoan.,"Thủ tục phù hợp: Người đi đăng ký khai sinh phải nộp tờ khai theo mẫu quy định dan-toc và giấy chứng sinh cho cơ quan đăng ký hộ tịch.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai sinh.
+- Giấy chứng sinh (nếu có).
+- Văn bản của người làm chứng xác nhận về việc sinh (nếu không có giấy chứng sinh).
+
+Thẩm quyền / nơi nộp: Cơ quan đăng ký hộ tịch.
+
+Căn cứ pháp lý: Điều 16 khoản 1 Luật Hộ tịch 2014/QH13 và Điều 8 khoản 3 Thông tư hợp nhất hướng dẫn Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.246154,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,7913.2,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_014,legal,Sự kiện hộ tịch là gì?,"Là các sự kiện như khai sinh, kết hôn, khai tử, v.v. xác định tình trạng nhân thân của cá nhân từ khi sinh ra đến khi chết.","Sự kiện hộ tịch là việc cơ quan nhà nước có thẩm quyền xác nhận hoặc ghi vào Sổ hộ tịch các sự kiện hộ tịch của cá nhân, tạo cơ sở pháp lý để Nhà nước bảo hộ quyền, lợi ích hợp pháp của cá nhân, thực hiện quản lý về dân cư. Theo Điều 2 khoản 2 của Luật Hộ tịch số 60/2014/QH13.",0.0,0.1875,legal,case,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|case|case,0.0,1.0,1.0,7481.59,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_015,legal,Trẻ em sinh ra bị bỏ rơi thì thẩm quyền đăng ký khai sinh thuộc về cơ quan nào?,Ủy ban nhân dân cấp xã nơi phát hiện trẻ bị bỏ rơi thực hiện đăng ký khai sinh cho trẻ.,"Thủ tục phù hợp: Thẩm quyền đăng ký khai sinh trẻ em sinh ra bị bỏ rơi thuộc về cơ quan có thẩm quyền, theo quy định tại Điều 18 khoản 2 điểm b của Văn bản hợp nhất Luật Quốc tịch Việt Nam (53/VBHN-VPQH).
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không yêu cầu hồ sơ hoặc giấy tờ cụ thể vì trường hợp này là trẻ em sinh ra bị bỏ rơi, việc đăng ký khai sinh được thực hiện ngay khi phát hiện.
+
+Thẩm quyền/nơi tiếp nhận: Thẩm quyền thuộc về cơ quan có thẩm quyền theo quy định tại Văn bản hợp nhất Luật Quốc tịch Việt Nam (53/VBHN-VPQH).
+
+Thời hạn giải quyết: Không áp dụng thời hạn vì đây là trường hợp khẩn cấp và cần thực hiện ngay.
+
+Lệ phí: Không yêu cầu lệ phí vì đây là trường hợp đặc biệt.
+
+Biểu mẫu liên quan: Không có biểu mẫu liên quan trong PROCEDURE CONTEXT.",0.0,0.181818,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,9325.52,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_016,legal,Điều kiện để được thay đổi tên của cá nhân theo quy định pháp luật là gì?,Việc thay đổi tên được thực hiện theo yêu cầu của người đó hoặc người đại diện khi có lý do chính đáng quy định tại Bộ luật Dân sự.,"Điều kiện để được thay đổi tên của cá nhân theo quy định pháp luật chưa được cung cấp trực tiếp trong các văn bản hợp nhất mà bạn đã trích dẫn. Các văn bản liên quan đến Luật Hôn nhân và gia đình, Luật Quốc tịch Việt Nam không đề cập đến điều kiện để thay đổi tên.",0.0,0.224719,legal,legal,1.0,True,1.0,0.0,legal,legal|legal|legal,1.0,1.0,1.0,4387.56,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+legal_017,legal,Công dân Việt Nam đã ly hôn tại cơ quan có thẩm quyền nước ngoài thì có phải ghi chú vào Sổ hộ tịch không?,"Có, công dân Việt Nam đã ly hôn ở nước ngoài phải làm thủ tục ghi chú vào Sổ ghi chú ly hôn nếu về cư trú tại Việt Nam.","Kết luận sơ bộ: Công dân Việt Nam đã ly hôn tại cơ quan có thẩm quyền nước ngoài cần ghi chú vào Sổ hộ tịch.
+
+Bước cần làm: Ủy ban nhân dân cấp huyện nơi đã đăng ký kết hôn trước đây hoặc nơi đăng ký kết hôn mới sẽ ghi vào Sổ hộ tịch việc ly hôn, hủy việc kết hôn của công dân Việt Nam đã thực hiện ở nước ngoài.
+
+Hồ sơ liên quan: Không có hồ sơ cụ thể được đề cập trong thông tin cung cấp, nhưng cần xác minh thông tin về địa điểm đăng ký kết hôn và điều kiện ghi vào Sổ hộ tịch.
+
+Căn cứ pháp lý: [C3] Điều 48 khoản 2 của Luật Hộ tịch (60/2014/QH13) quy định về việc ghi vào Sổ hộ tịch việc ly hôn, hủy việc kết hôn của công dân Việt Nam đã được giải quyết tại cơ quan có thẩm quyền của nước ngoài.",0.0,0.248705,legal,case,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|case|case,0.0,1.0,1.0,9720.64,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_018,legal,Việc cải chính hộ tịch được pháp luật cho phép thực hiện trong trường hợp nào?,Khi có sai sót trong nội dung đã đăng ký hộ tịch do lỗi của công chức làm công tác hộ tịch hoặc của người yêu cầu.,"Việc cải chính hộ tịch được pháp luật cho phép thực hiện trong trường hợp thông tin của công dân trong các cơ sở dữ liệu khác không thống nhất với thông tin trong Cơ sở dữ liệu hộ tịch điện tử, Cơ sở dữ liệu quốc gia về dân cư. Trường hợp này, xác định thông tin trong Cơ sở dữ liệu hộ tịch điện tử, Cơ sở dữ liệu quốc gia về dân cư là căn cứ để điều chỉnh thông tin công dân trong các cơ sở dữ liệu khác. Nếu có giấy tờ, tài liệu chứng minh thông tin trong cơ sở dữ liệu khác có trước thì cơ quan quản lý cơ sở dữ liệu có trách nhiệm trao đổi với cơ quan quản lý Cơ sở dữ liệu hộ tịch điện tử để xác minh, làm rõ. Nếu có cơ sở pháp lý xác định thông tin trong Cơ sở dữ liệu hộ tịch điện tử có sai sót thì hướng dẫn người có thông tin không thống nhất thực hiện việc cải chính hộ tịch theo quy định pháp luật. [C3]",0.0,0.12093,legal,legal,1.0,True,1.0,0.0,legal,legal|legal|legal,1.0,1.0,1.0,7522.99,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+legal_019,legal,"Cơ quan nào có thẩm quyền đăng ký thay đổi, cải chính hộ tịch cho người từ đủ 14 tuổi trở lên cư trú ở trong nước?",Ủy ban nhân dân cấp huyện nơi đã đăng ký hộ tịch trước đây hoặc nơi cư trú của cá nhân có thẩm quyền giải quyết.,"Thủ tục phù hợp: Ủy ban nhân dân cấp huyện nơi đã đăng ký hộ tịch trước đây hoặc nơi cư trú của cá nhân có thẩm quyền giải quyết việc thay đổi, cải chính hộ tịch cho công dân Việt Nam từ đủ 14 tuổi trở lên cư trú ở trong nước; xác định lại dân tộc.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không yêu cầu hồ sơ/giấy tờ cụ thể trong thủ tục này.
+
+Thẩm quyền/nơi tiếp nhận: Ủy ban nhân dân cấp huyện nơi đã đăng ký hộ tịch trước đây hoặc nơi cư trú của cá nhân có thẩm quyền giải quyết việc thay đổi, cải chính hộ tịch cho công dân Việt Nam từ đủ 14 tuổi trở lên cư trú ở trong nước; xác định lại dân tộc.
+
+Thời hạn giải quyết: Không rõ thời hạn cụ thể từ PROCEDURE CONTEXT. Cần tham khảo thêm thông tin pháp lý hoặc thủ tục liên quan.
+
+Lệ phí: Không rõ lệ phí từ PROCEDURE CONTEXT. Cần tham khảo thêm thông tin pháp lý hoặc thủ tục liên quan.
+
+Biểu mẫu liên quan: Không có biểu mẫu liên quan trong PROCEDURE CONTEXT.",0.0,0.232143,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,9423.77,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_020,legal,"Thẩm quyền giải quyết việc xác định cha, mẹ, con trong trường hợp không có tranh chấp thuộc về ai?",Thuộc thẩm quyền của cơ quan đăng ký hộ tịch (UBND cấp xã hoặc cấp huyện tùy trường hợp).,"Kết luận sơ bộ: Thẩm quyền giải quyết việc xác định cha, mẹ, con trong trường hợp không có tranh chấp thuộc về cơ quan đăng ký hộ tịch.
+
+Bước cần làm: Cơ quan đăng ký hộ tịch sẽ xác định cha, mẹ, con theo quy định của pháp luật về hộ tịch trong trường hợp không có tranh chấp. 
+
+Hồ sơ hoặc điều kiện liên quan: Không yêu cầu hồ sơ cụ thể khi không có tranh chấp; chỉ cần thông tin cá nhân và chứng thực.
+
+Căn cứ pháp lý: [C2] Điều 101 khoản 2 của Luật Hôn nhân và gia đình (121/VBHN-VPQH).",0.0,0.206349,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,8663.1,ok,,engine_llm,case,case,case,case_rag_engine
+legal_021,legal,Người đảm nhiệm chức danh công chức tư pháp - hộ tịch cấp xã phải đáp ứng tiêu chuẩn gì về trình độ?,Phải có trình độ từ trung cấp luật trở lên và đã được bồi dưỡng nghiệp vụ hộ tịch.,"Kết luận sơ bộ: Người đảm nhiệm chức danh công chức tư pháp - hộ tịch cấp xã phải có trình độ từ trung cấp luật trở lên và đã được bồi dưỡng nghiệp vụ hộ tịch.
+
+Bước cần làm: Không có bước cụ thể trong context, nhưng người đảm nhiệm chức danh này cần tuân thủ tiêu chuẩn về trình độ chuyên môn.
+
+Hồ sơ hoặc điều kiện liên quan: Không có hồ sơ cụ thể yêu cầu đối với công chức tư pháp - hộ tịch cấp xã.
+
+Căn cứ pháp lý: [C2] Luật Hộ tịch (60/2014/QH13) Điều 72 khoản 2 điểm a.",0.0,0.306452,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,8298.77,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_022,legal,"Trong trường hợp cha, mẹ không thể đi đăng ký khai sinh cho con thì ai có trách nhiệm thực hiện?","Ông, bà hoặc người thân thích khác, hoặc cá nhân, tổ chức đang nuôi dưỡng trẻ em có trách nhiệm đi đăng ký.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã Công chức Tư pháp - Hộ tịch
+
+Thời hạn / lệ phí nếu có:
+- Ngay trong ngày tiếp nhận hồ sơ
+- Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai đăng ký khai sinh (C5)
+
+[PROCEDURE CONTEXT] [C1], [C2]",0.0,0.108527,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,8795.57,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_023,legal,"Việc đăng ký nhận cha, mẹ, con có yếu tố nước ngoài thuộc thẩm quyền của cơ quan nào?","Ủy ban nhân dân cấp huyện nơi cư trú của người được nhận là cha, mẹ, con thực hiện đăng ký.","1. Thủ tục phù hợp: Đăng ký nhận cha, mẹ, con khi thiếu sự đồng thuận (một bên không ký/không hợp tác).
+
+2. Hồ sơ / giấy tờ cần chuẩn bị: Không yêu cầu riêng trong PROCEDURE CONTEXT.
+
+3. Thẩm quyền / nơi nộp: Việc đăng ký nhận cha, mẹ, con có yếu tố nước ngoài thuộc thẩm quyền của cơ quan Tòa án nhân dân cấp tỉnh.
+
+4. Thời hạn / lệ phí nếu có: Không có thông tin về thời hạn hoặc lệ phí trong PROCEDURE CONTEXT.
+
+5. Biểu mẫu liên quan nếu có trong context: Không có biểu mẫu liên quan trong PROCEDURE CONTEXT.
+
+[C1]",0.0,0.173228,legal,procedure,0.0,True,1.0,0.0,legal,case,0.0,0.0,0.0,3959.51,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_024,legal,Cơ quan nhà nước xây dựng Cơ sở dữ liệu hộ tịch điện tử nhằm mục đích gì?,"Để lưu giữ thông tin hộ tịch, giải quyết thủ tục hành chính, cấp giấy tờ hộ tịch và phục vụ quản lý nhà nước.","Kết luận sơ bộ: Cơ quan nhà nước xây dựng Cơ sở dữ liệu hộ tịch điện tử nhằm mục đích tuân thủ Luật Hộ tịch và các quy định về quản lý, kết nối và chia sẻ dữ liệu số của cơ quan nhà nước.
+
+Bước cần làm: Việc xây dựng Cơ sở dữ liệu hộ tịch điện tử phải tuân thủ các quy định pháp luật liên quan đến hộ tịch và kiến trúc Chính phủ điện tử Việt Nam. 
+
+Hồ sơ hoặc điều kiện liên quan: Không có thông tin cụ thể về hồ sơ hoặc điều kiện liên quan trong context hiện tại.
+
+Căn cứ pháp lý: [C3] Nghị định quy định về Cơ sở dữ liệu hộ tịch điện tử, đăng ký hộ tịch trực tuyến (1068/VBHN-BTP) - Điều 4 khoản 4.",0.0,0.159509,legal,case,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|case|case,0.0,1.0,1.0,9548.2,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_025,legal,Việc bổ sung thông tin hộ tịch được thực hiện trong hoàn cảnh nào?,Khi giấy tờ hộ tịch của cá nhân đã được đăng ký nhưng còn thiếu thông tin so với biểu mẫu quy định hiện hành.,"Kết luận sơ bộ: Việc bổ sung thông tin hộ tịch được thực hiện khi thông tin đã có trong Cơ sở dữ liệu Quốc gia về dân cư/Cơ sở dữ liệu hộ tịch điện tử và không thể tự động điền vào.
+
+Bước cần làm: Cần xác minh thông tin mới từ người yêu cầu hoặc các nguồn khác để đảm bảo chính xác. 
+
+Hồ sơ hoặc điều kiện liên quan: Hồ sơ bao gồm giấy tờ chứng minh nhân thân, giấy tờ nơi cư trú (nếu không được khai thác qua CSDLQG về dân cư/CSDL hộ tịch điện tử), và thông tin bổ sung từ người yêu cầu.
+
+Căn cứ pháp lý: 
+[C3] Điều 18 khoản 4 1844/VBHN-BTP của Hợp nhất Thông tư hướng dẫn Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.168675,legal,case,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|case|case,0.0,1.0,1.0,9785.33,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_026,legal,Nếu trẻ em sinh ra và chết ngay sau khi sinh nhưng chưa được đăng ký khai sinh thì có phải đăng ký khai tử không?,"Không phải đăng ký khai sinh và khai tử, trừ trường hợp cha mẹ có yêu cầu thì mới thực hiện.","Thủ tục phù hợp: Đăng ký khai tử cho trẻ em sinh ra và chết ngay sau khi sinh nhưng chưa được đăng ký khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai tử.
+- Giấy chứng sinh (nếu có).
+
+Thẩm quyền / nơi nộp: 
+- UBND cấp xã
+
+Thời hạn / lệ phí nếu có: 
+- Không rõ từ thông tin hiện tại, cần tra cứu thêm.
+
+Biểu mẫu liên quan: 
+- Tờ khai đăng ký khai tử. 
+
+Để thực hiện thủ tục này, bạn cần chuẩn bị đầy đủ các giấy tờ và nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu đến UBND cấp xã.",0.0,0.215385,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,8108.06,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_027,legal,Xử lý thế nào đối với giấy tờ hộ tịch được đăng ký không đúng thẩm quyền quy định?,"Cơ quan nhà nước có thẩm quyền sẽ thu hồi, hủy bỏ giấy tờ hộ tịch đó và yêu cầu cơ quan có thẩm quyền thực hiện đăng ký lại.","Đối với giấy tờ hộ tịch được đăng ký không đúng thẩm quyền quy định, cơ quan nhà nước có thẩm quyền sẽ thu hồi, hủy bỏ giấy chứng nhận theo quy định của pháp luật về hộ tịch và yêu cầu hai bên thực hiện lại việc đăng ký tại cơ quan có thẩm quyền. Nếu thông tin cá nhân trong Cơ sở dữ liệu hộ tịch điện tử khác với thông tin trong Cơ sở dữ liệu quốc gia về dân cư, cơ quan đăng ký hộ tịch sẽ phối hợp với cơ quan công an cùng cấp để xác minh và điều chỉnh thông tin. Trường hợp người nước ngoài đã đăng ký hộ tịch tại cơ quan có thẩm quyền của Việt Nam, Ủy ban nhân dân cấp huyện nơi cư trú hoặc nơi đã đăng ký hộ tịch trước đây có thẩm quyền giải quyết việc cải chính, bổ sung hộ tịch.",0.0,0.31016,legal,legal,1.0,True,1.0,0.0,legal,legal|legal|legal,1.0,1.0,1.0,6238.32,ok,,engine_llm,legal,legal,legal,legal_lookup_engine
+legal_028,legal,Cá nhân có quyền yêu cầu cơ quan nào xác nhận tình trạng hôn nhân khi đã có thời gian cư trú ở nhiều nơi khác nhau?,"UBND cấp xã nơi cư trú hiện tại, tuy nhiên người yêu cầu phải có trách nhiệm chứng minh tình trạng hôn nhân ở các nơi cư trú trước đây.","Kết luận sơ bộ: Cá nhân có quyền yêu cầu cơ quan đăng ký hộ tịch xác nhận tình trạng hôn nhân khi đã có thời gian cư trú ở nhiều nơi khác nhau.
+
+Bước cần làm: Cá nhân cần đến cơ quan đăng ký hộ tịch để yêu cầu xác nhận tình trạng hôn nhân. Họ phải cung cấp thông tin về các nơi cư trú và thời gian cư trú.
+
+Hồ sơ hoặc điều kiện liên quan: Người yêu cầu cần cung cấp danh sách các nơi cư trú, thời gian cư trú tại mỗi địa điểm, giấy tờ tùy thân để chứng minh thông tin cá nhân. 
+
+Căn cứ pháp lý: Điều 33 khoản 2 của Thông tư hướng dẫn Luật Hộ tịch và Nghị định 123/2015/NĐ-CP (Citation: [C3]).",0.0,0.266667,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,10464.28,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_029,legal,Điều kiện bắt buộc để một sự kiện hộ tịch được phép đăng ký lại là gì?,Sự kiện đó phải được đăng ký trước ngày 01/01/2016 và hiện tại cả Sổ hộ tịch cùng bản chính giấy tờ hộ tịch đều đã bị mất.,"Điều kiện bắt buộc để một sự kiện hộ tịch được phép đăng ký lại là hai bên nam nữ phải có mặt khi đăng ký. Điều này liên quan đến thủ tục đăng ký kết hôn trong nước (hồ sơ C4). 
+
+[C4] Đăng ký kết hôn trong nước (hai bên đủ điều kiện, đủ giấy tờ)
+Đăng ký kết hôn trong nước (hai bên đủ điều kiện, đủ giấy tờ)
+du_ho_so du_dieu_kien_ket_hon
+
+Hai bên nam nữ có mặt khi đăng ký; và phải đáp ứng đủ điều kiện kết hôn theo quy định.",0.0,0.215385,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,7698.86,ok,,engine_llm,case,legal,legal,case_rag_engine
+legal_030,legal,Người nước ngoài cư trú tại khu vực biên giới muốn đăng ký kết hôn với công dân Việt Nam thường trú ở khu vực biên giới đó thì thực hiện tại đâu?,Thực hiện tại Ủy ban nhân dân cấp xã nơi cư trú của công dân Việt Nam thuộc khu vực biên giới.,"Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên.
+- Có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử).
+- Form N.
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã
+
+Thời hạn / lệ phí nếu có:
+- Ngay trong ngày tiếp nhận hồ sơ.
+- Nếu cần xác minh điều kiện kết hôn thì không quá 5 ngày làm việc.
+- Lệ phí theo quy định của địa phương, được hiển thị trên Cổng DVCQG.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (tùy thuộc vào mẫu cụ thể do cơ quan hành chính cấp xã cung cấp).",0.0,0.145455,legal,procedure,0.0,True,1.0,0.0,legal,procedure|procedure|legal|legal|template,0.0,1.0,1.0,8489.8,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+legal_031,legal,Trong trường hợp con do người vợ sinh ra trong thời kỳ hôn nhân nhưng vợ chồng không thừa nhận là con chung thì thủ tục pháp lý xử lý như thế nào?,Vợ chồng phải có chứng cứ chứng minh và yêu cầu từ chối nhận con chung này phải được Tòa án xác định bằng quyết định hợp pháp.,"Kết luận sơ bộ: Trường hợp này liên quan đến việc đăng ký khai sinh cho con do vợ sinh ra trong thời kỳ hôn nhân nhưng vợ chồng không thừa nhận là con chung. 
+
+Bước cần làm: Thủ tục pháp lý sẽ yêu cầu cơ quan hộ tịch xác minh thông tin và có thể yêu cầu vợ chồng thừa nhận hoặc Tòa án giải quyết.
+
+Hồ sơ hoặc điều kiện liên quan: Cần hồ sơ chứng minh mối quan hệ giữa người vợ và con, nếu có. Nếu không đủ căn cứ để vợ chồng thừa nhận thì cần Tòa án xác định quyền nuôi dưỡng và chăm sóc cho trẻ em.
+
+Căn cứ pháp lý: 
+[C2] Điều 16 khoản 4 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP.",0.0,0.252874,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,9895.7,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+legal_032,legal,"Thẩm quyền ra quyết định cho phép khôi phục lại dữ liệu hộ tịch điện tử trên Phần mềm dùng chung trước khi bị điều chỉnh, xóa bỏ thuộc về ai?",Chủ tịch Ủy ban nhân dân cấp tỉnh có thẩm quyền phê duyệt cho phép khôi phục lại dữ liệu hộ tịch điện tử.,"Kết luận sơ bộ: Thẩm quyền cho phép khôi phục lại dữ liệu hộ tịch điện tử trên Phần mềm dùng chung trước khi bị điều chỉnh, xóa bỏ thuộc về Cơ quan được giao trực tiếp quản lý Cơ sở dữ liệu hộ tịch điện tử thuộc Bộ Tư pháp.
+
+Bước cần làm: Cơ quan này có thẩm quyền cho phép khôi phục lại dữ liệu nếu có văn bản, quyết định có hiệu lực pháp luật của cơ quan nhà nước có thẩm quyền cho phép khôi phục lại.
+
+Hồ sơ hoặc điều kiện liên quan: Cần có văn bản, quyết định có hiệu lực pháp luật từ cơ quan nhà nước có thẩm quyền cho phép khôi phục lại dữ liệu hộ tịch điện tử. 
+
+Căn cứ pháp lý: [C3] Điều 13 khoản 3 của Hợp nhất Thông tư quy định thi hành Nghị định 87/2020/NĐ-CP.",0.0,0.181818,legal,case,0.0,True,1.0,0.0,legal,procedure|legal|legal|case|case,0.0,1.0,1.0,9752.03,ok,,engine_llm,case,legal,legal,case_rag_engine
+legal_033,legal,"Việc đăng ký nhận cha, mẹ, con giữa công dân Việt Nam với nhau mà xảy ra tranh chấp thì cơ quan nào có thẩm quyền giải quyết?","Tòa án nhân dân có thẩm quyền giải quyết theo quy định của pháp luật về tố tụng dân sự, không thuộc thẩm quyền của cơ quan đăng ký hộ tịch.","1. Thủ tục phù hợp: Theo PROCEDURE CONTEXT, khi xảy ra tranh chấp giữa công dân về việc đăng ký nhận cha, mẹ, con, cơ quan có thẩm quyền giải quyết là Tòa án.
+
+2. Hồ sơ / giấy tờ cần chuẩn bị: Không có thông tin cụ thể trong PROCEDURE CONTEXT về hồ sơ hoặc giấy tờ cần chuẩn bị cho trường hợp này.
+
+3. Thẩm quyền / nơi nộp: Cơ quan có thẩm quyền giải quyết là Tòa án.
+
+4. Thời hạn / lệ phí nếu có: Không có thông tin về thời hạn hoặc lệ phí trong PROCEDURE CONTEXT.
+
+5. Biểu mẫu liên quan nếu có trong context: Không có thông tin về biểu mẫu liên quan trong PROCEDURE CONTEXT.
+
+[C1]",0.0,0.263158,legal,procedure,0.0,True,1.0,0.0,legal,case,0.0,0.0,0.0,4585.76,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_001,multi_source,"Để thực hiện thủ tục đăng ký khai sinh tại Ủy ban nhân dân cấp xã, người đi đăng ký cần điền vào mẫu giấy tờ nào theo quy định?",Cần điền vào Tờ khai đăng ký khai sinh.,"Thủ tục phù hợp: Người đi đăng ký cần điền vào mẫu giấy tờ Tờ khai đăng ký khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Mẫu Tờ khai đăng ký khai sinh được quy định trong PROCEDURE CONTEXT C1 và AUTHORITY CONTEXT C2.
+
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã nơi cư trú hiện tại thực hiện việc đăng ký khai sinh cho công dân Việt Nam cư trú trong nước, sinh trước ngày 01 tháng 01 năm 2016, chưa đăng ký khai sinh nhưng đã có hồ sơ, giấy tờ cá nhân (bản chính hoặc bản sao hợp lệ) như: giấy tờ tùy thân theo quy định tại khoản 1 Điều 2 Nghị định số 123/2015/NĐ-CP; giấy tờ khác do cơ quan, tổ chức có thẩm quyền của Việt Nam cấp.
+
+Thời hạn / lệ phí nếu có: Thủ tục giải quyết ngay trong ngày tiếp nhận hồ sơ. Lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai đăng ký khai sinh được quy định trong TEMPLATE CONTEXT C5.",0.0,0.081818,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10746.47,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_002,multi_source,"Trong trường hợp trẻ sinh ra tại nhà và không có Giấy chứng sinh của cơ sở y tế, cơ quan đăng ký khai sinh sẽ căn cứ vào loại giấy tờ nào để thay thế khi giải quyết thủ tục?",Cơ quan đăng ký sẽ căn cứ vào văn bản xác nhận của người làm chứng về việc sinh; nếu không có người làm chứng thì căn cứ vào giấy cam đoan về việc sinh của người đi đăng ký.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp:
+- Cơ quan đăng ký hộ tịch (được chỉ định tại PROCEDURE CONTEXT)
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ
+- Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai đăng ký khai sinh (TEMPLATE CONTEXT)",0.0,0.207407,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8005.59,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_003,multi_source,"Hai bên nam, nữ có bắt buộc phải cùng có mặt khi nộp hồ sơ đăng ký kết hôn không, và quy định về sự có mặt khi nhận Giấy chứng nhận kết hôn như thế nào?","Khi nộp hồ sơ, một bên có thể nộp thay mà không cần văn bản ủy quyền của bên còn lại. Tuy nhiên, khi trả kết quả, bắt buộc cả hai bên nam và nữ đều phải có mặt để xác nhận tự nguyện và cùng ký vào Sổ hộ tịch, Giấy chứng nhận kết hôn.","Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Sổ hộ tịch của cả hai bên nam và nữ.
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã. Bên nam hoặc bên nữ có thể nộp hồ sơ mà không cần văn bản ủy quyền của bên còn lại; nhưng khi nhận/ghi kết quả thì cả hai bên phải có mặt để xác nhận tự nguyện và ký vào Sổ đăng ký kết hôn và Giấy chứng nhận kết hôn tại cơ quan đăng ký hộ tịch.
+
+Quy định về sự có mặt khi nhận Giấy chứng nhận kết hôn: Khi trả kết quả đăng ký kết hôn, cả hai bên nam, nữ đều phải có mặt. 
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; nếu cần xác minh điều kiện kết hôn thì không quá 05 ngày làm việc.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (Citation: [C5]).",0.0,0.403226,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9217.84,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_004,multi_source,"Theo hướng dẫn trên biểu mẫu Tờ khai đăng ký kết hôn, trường hợp nào người yêu cầu bắt buộc phải dán ảnh của hai bên nam, nữ vào tờ khai?","Trường hợp làm thủ tục đăng ký kết hôn có yếu tố nước ngoài thì phải dán ảnh của hai bên nam, nữ vào tờ khai.","Tên biểu mẫu: Tờ khai đăng ký kết hôn
+
+Biểu mẫu này được sử dụng để người yêu cầu (bên nữ) cung cấp thông tin cá nhân và thông tin về đối tác nam khi đăng ký kết hôn.
+
+Các trường thông tin chính cần điền vào tờ khai bao gồm:
+- Họ, chữ đệm, tên (bên nữ)
+- Ngày, tháng, năm sinh (bên nữ)
+- Dân tộc (bên nữ)
+- Quốc tịch (bên nữ)
+- Nơi cư trú (bên nữ)
+- Giấy tờ tùy thân (bên nữ)
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký kết hôn.
+- Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử.
+
+Thủ tục liên quan chỉ nêu ngắn gọn trong context, không được đề cập cụ thể.",0.0,0.214286,case,template,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|legal|legal|template,1.0,1.0,1.0,9280.56,ok,,engine_llm,template,template,template,template_engine
+multi_source_005,multi_source,"Theo danh mục thủ tục hành chính, thủ tục 'Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh' (mã 2.000635) thuộc thẩm quyền thực hiện của cơ quan nào?","Thuộc thẩm quyền của Cơ quan quản lý Cơ sở dữ liệu hộ tịch điện tử (bao gồm Sở Tư pháp, Ủy ban nhân dân cấp xã).","Thủ tục 'Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh' (mã 2.000635) thuộc thẩm quyền thực hiện của cơ quan quản lý Cơ sở dữ liệu Hộ tịch (Sở Tư pháp, UBND cấp xã).
+
+[Tài liệu citation: [C1]]",0.0,0.571429,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6999.74,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_006,multi_source,Cơ quan giải quyết thủ tục có được phép yêu cầu người dân xuất trình lại bản giấy các giấy tờ tùy thân nếu thông tin của họ đã được khai thác từ Cơ sở dữ liệu quốc gia về dân cư không?,"Không được yêu cầu nộp, xuất trình bản giấy nếu thông tin đã được khai thác từ cơ sở dữ liệu, trừ trường hợp cơ quan nhà nước cần sử dụng cho mục đích xác minh, thẩm tra lại tính xác thực của thông tin đó.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp:
+- Thẩm quyền: xa UBND cấp xã
+- Nơi tiếp nhận: Công chức Tư pháp - Hộ tịch
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+- Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai đăng ký kết hôn (không liên quan đến thủ tục này)",0.0,0.26738,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9091.13,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_007,multi_source,"Đối với thủ tục yêu cầu trích lục lại sự kiện khai sinh đã đăng ký, người dân phải sử dụng biểu mẫu nào để lập hồ sơ?",Tờ khai cấp bản sao trích lục hộ tịch.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không có yêu cầu cụ thể về hồ sơ hoặc giấy tờ khác ngoài việc cung cấp thông tin cá nhân và lý do yêu cầu trích lục lại sự kiện khai sinh đã đăng ký.
+
+Thẩm quyền / nơi nộp: Thẩm quyền được xác định tại PROCEDURE CONTEXT, người dân phải nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do.
+
+Biểu mẫu liên quan nếu có trong context: Không có biểu mẫu liên quan được cung cấp trong PROCEDURE CONTEXT. 
+
+Thời hạn / lệ phí nếu có: Thời hạn giải quyết là ngay trong ngày tiếp nhận hồ sơ; lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.
+
+Nếu cần thêm thông tin về biểu mẫu, tôi sẽ cần thêm thông tin từ PROCEDURE CONTEXT hoặc TEMPLATE CONTEXT. Hiện tại, không có biểu mẫu liên quan được cung cấp trong PROCEDURE CONTEXT.",0.0,0.094737,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9917.09,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_008,multi_source,"Khi thực hiện đăng ký khai tử cho người chết đã lâu năm và bị mất Giấy báo tử, Tờ khai đăng ký khai tử sẽ ghi thông tin phần giấy tờ thay thế như thế nào cho hợp lệ?","Cần gạch cụm từ 'Giấy tờ thay thế Giấy báo tử' (hoặc gạch 'Giấy báo tử') trên tờ khai và ghi rõ tên, số của giấy tờ thay thế hợp lệ (ví dụ: xác nhận của cơ quan có thẩm quyền) làm căn cứ khai tử.","Thủ tục phù hợp: Đăng ký khai tử.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai tử theo mẫu (nộp trực tiếp).
+- Giấy tờ tùy thân của người yêu cầu.
+- Giấy tờ tùy thân của người đã chết (nếu có).
+
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã.
+
+Biểu mẫu liên quan: Tờ khai đăng ký khai tử (C5).
+
+Đối chiếu từ PROCEDURE CONTEXT C1 và AUTHORITY CONTEXT C2. 
+
+Về giấy tờ thay thế, theo [C4] Điều 31 khoản 9 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch, khi thực hiện thủ tục đăng ký khai tử, nếu người chết đã mất Giấy báo tử thì cần ghi rõ thông tin về Giấy tờ tùy thân (giấy tờ thay thế) và cơ quan cấp giấy tờ. 
+
+Vì vậy, Tờ khai đăng ký khai tử sẽ ghi như sau:
+- Giấy tờ tùy thân của người yêu cầu.
+- Giấy tờ tùy thân của người đã chết (nếu có).
+- Cơ quan cấp Giấy tờ tùy thân.
+
+Lưu ý rằng không cần ghi thông tin về Giấy báo tử, chỉ cần ghi rõ thông tin về Giấy tờ tùy thân thay thế và cơ quan cấp.",0.0,0.277778,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,11251.83,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_009,multi_source,"Căn cứ theo phân cấp thẩm quyền, Ủy ban nhân dân cấp xã có thẩm quyền giải quyết những loại thủ tục đăng ký khai sinh nào?","Đăng ký khai sinh trong nước, đăng ký khai sinh có yếu tố nước ngoài tại khu vực biên giới và đăng ký lại khai sinh.","Thủ tục phù hợp: Ủy ban nhân dân cấp xã có thẩm quyền giải quyết thủ tục đăng ký khai sinh cho trẻ em mà có người yêu cầu đăng ký nhận cha, mẹ, con.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai sinh
+
+Thẩm quyền/nơi tiếp nhận: Ủy ban nhân dân cấp xã nơi cư trú của cha hoặc mẹ.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.
+
+Các thủ tục khác liên quan đến đăng ký khai sinh cho trẻ em mà có người yêu cầu đăng ký nhận cha, mẹ, con sẽ được Ủy ban nhân dân cấp xã nơi cư trú của cha hoặc mẹ kết hợp giải quyết.",0.0,0.169312,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8942.48,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_010,multi_source,"Khi người cha đi đăng ký khai sinh cho con và muốn đồng thời làm thủ tục nhận con, nhưng người mẹ từ chối ký giấy xác nhận thì cơ quan hộ tịch sẽ xử lý như thế nào?","Cơ quan hộ tịch sẽ từ chối giải quyết thủ tục nhận cha, mẹ, con theo thủ tục hành chính do có tranh chấp/thiếu đồng thuận. Cán bộ sẽ hướng dẫn người dân thu thập chứng cứ và giải quyết tranh chấp tại cơ quan có thẩm quyền trước khi ghi nhận quan hệ cha con vào giấy khai sinh.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (người yêu cầu là cá nhân).
+- Văn bản từ chối giải quyết của Tòa án nếu có.
+- Chứng cứ chứng minh quan hệ cha, con theo quy định tại khoản 1 Điều 14 của Thông tư này.
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã (công chức Tư pháp - Hộ tịch).
+
+Biểu mẫu liên quan: Tờ khai đăng ký khai sinh.
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Các thông tin này được lấy từ [C1].",0.0,0.280702,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9885.87,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_011,multi_source,Thủ tục hành chính 'Đăng ký giám hộ' (mã HOTICH_TTHC_GIAMHO_01) do cấp cơ quan nào trực tiếp tiếp nhận và giải quyết?,Ủy ban nhân dân cấp xã.,"Thủ tục hành chính 'Đăng ký giám hộ' (mã HOTICH_TTHC_GIAMHO_01) do cấp cơ quan trực tiếp tiếp nhận và giải quyết là xa UBND cấp xã (Cơ quan đăng ký hộ tịch). Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (Cơ quan đăng ký hộ tịch).
+
+[C1]",0.0,0.105263,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6371.47,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_012,multi_source,"Trong các tờ khai đăng ký hộ tịch như khai sinh, khai tử hay kết hôn, người yêu cầu chỉ bắt buộc phải điền thủ công thông tin vào mục 'Nơi cư trú' trong hoàn cảnh nào?","Chỉ bắt buộc điền khi người yêu cầu chưa có hoặc không cung cấp được số định danh cá nhân, thẻ Căn cước công dân hoặc thẻ Căn cước điện tử để cơ quan nhà nước tự tra cứu.","Trong các tờ khai đăng ký hộ tịch như khai sinh, khai tử hay kết hôn, người yêu cầu chỉ bắt buộc phải điền thủ công thông tin vào mục 'Nơi cư trú' trong hoàn cảnh sau:
+
+[C2] Trường hợp tiếp nhận, giải quyết yêu cầu liên thông trực tuyến các thủ tục: đăng ký khai sinh, đăng ký thường trú, cấp thẻ bảo hiểm y tế cho trẻ em dưới 6 tuổi; đăng ký khai tử, xóa đăng ký thường trú, hưởng chế độ tử tuất, hỗ trợ chi phí mai táng, hưởng mai táng phí.
+
+Trong trường hợp này, người yêu cầu chỉ cần điền thủ công thông tin vào mục 'Nơi cư trú' nếu cơ quan hộ tịch không thể khai thác được thông tin cư trú theo quy định.",0.0,0.244186,case,template,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|legal|legal|template|template,1.0,1.0,1.0,9251.92,ok,,engine_llm,template,template,template,template_engine
+multi_source_013,multi_source,Nếu đương sự nhờ một người bạn thân đi nộp Tờ khai cấp bản sao trích lục hộ tịch để xin lại bản sao giấy khai sinh thì hồ sơ bắt buộc phải nộp kèm thêm loại giấy tờ gì?,Người đi làm thay bắt buộc phải nộp kèm văn bản ủy quyền hợp lệ đã được cơ quan nhà nước chứng thực theo quy định.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai cấp bản sao trích lục hộ tịch (đã được đề cập trong PROCEDURE CONTEXT).
+
+Thẩm quyền / nơi nộp: 
+- UBND cấp xã hoặc cơ quan đăng ký hộ tịch có thẩm quyền.
+
+Biểu mẫu liên quan: 
+- Tờ khai cấp bản sao trích lục hộ tịch (được mô tả trong TEMPLATE CONTEXT).
+
+Không cần phải nộp thêm giấy tờ nào ngoài việc chuẩn bị đầy đủ hồ sơ và biểu mẫu như đã đề cập.",0.0,0.152542,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8350.23,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_014,multi_source,Trình tự các bước giải quyết việc cấp bản sao trích lục khai sinh do đương sự tự đi làm trực tiếp tại cơ quan có thẩm quyền diễn ra như thế nào?,"1. Xác định quyền yêu cầu cấp trích lục và kiểm tra giấy tờ nhân thân đương sự. 2. Tra cứu cơ sở dữ liệu hộ tịch và đối chiếu thông tin bản ghi. 3. In bản sao trích lục từ hệ thống, trình ký và trả kết quả cho đương sự.","1. Thủ tục phù hợp: Cấp bản sao Giấy khai sinh
+
+2. Hồ sơ / giấy tờ cần chuẩn bị:
+   - Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+   - Giấy tờ tùy thân của đương sự (nếu yêu cầu)
+
+3. Thẩm quyền / nơi nộp: 
+   - Cơ quan đăng ký hộ tịch có thẩm quyền
+
+4. Thời hạn / lệ phí nếu có:
+   - Ngay trong ngày tiếp nhận hồ sơ
+   - Lệ phí 8000 VND
+
+5. Biểu mẫu liên quan nếu có trong context:
+   - Tờ khai cấp bản sao trích lục hộ tịch
+
+[Tất cả thông tin được lấy từ [C1]].",0.0,0.373333,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8004.16,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+multi_source_015,multi_source,"Sau khi được cấp Trích lục đăng ký nhận cha, mẹ, con, nếu người cha muốn đổi họ cho con từ họ của người mẹ sang họ của mình thì phải thực hiện thủ tục gì tiếp theo?","Phải nộp hồ sơ thực hiện thủ tục thay đổi hộ tịch (cụ thể là thay đổi họ cho con), sử dụng Trích lục đăng ký nhận cha, mẹ, con làm căn cứ pháp lý chứng minh.","Thủ tục phù hợp: Người cha muốn đổi họ cho con từ họ của người mẹ sang họ của mình cần thực hiện thủ tục là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Giấy tờ tùy thân (nếu có yêu cầu)
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND.
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai cấp bản sao trích lục hộ tịch
+
+Citation:
+[C1]",0.0,0.268293,case,procedure,0.0,True,1.0,0.0,legal|procedure|template|authority|case,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8645.79,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_001,procedure,Cơ quan nào có thẩm quyền tiếp nhận và giải quyết thủ tục đăng ký khai sinh?,Ủy ban nhân dân cấp xã.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch
+
+Citation: [C1]
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND.
+
+Cách thức nộp: truc_tiep qua Cổng DVCQG hoặc buu_chinh qua dịch vụ bưu chính
+
+Điều kiện / trường hợp áp dụng:
+- Trường hợp đăng ký khai sinh cho trẻ em mà có người yêu cầu đăng ký nhận cha, mẹ, con thì Ủy ban nhân dân cấp xã nơi cư trú của cha hoặc mẹ kết hợp giải quyết thủ tục đăng ký khai sinh và thủ tục đăng ký nhận cha, mẹ, con.",0.0,0.071856,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9286.51,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_002,procedure,Thời hạn giải quyết thủ tục đăng ký khai sinh được quy định là bao lâu kể từ khi nhận đủ hồ sơ hợp lệ?,Ngay trong ngày tiếp nhận yêu cầu. Trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Citation:
+[C1]",0.0,0.358025,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8701.78,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_003,procedure,Kết quả nhận được sau khi cơ quan có thẩm quyền giải quyết xong thủ tục đăng ký khai sinh là gì?,Giấy khai sinh và bản sao Trích lục khai sinh (nếu có yêu cầu).,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (được cung cấp trong PROCEDURE CONTEXT).
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã
+- Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (được cung cấp trong PROCEDURE CONTEXT).",0.0,0.121951,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9757.04,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_004,procedure,Mức lệ phí áp dụng đối với thủ tục đăng ký khai sinh là bao nhiêu?,Miễn lệ phí.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Người yêu cầu là cá nhân, nộp trực tiếp hoặc qua bưu chính
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Lệ phí: 8000 VND
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Căn cứ/dẫn chiếu liên quan: Cổng DVCQG - Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-tricluoc.html?ma_thu_tuc=185429 Cổng DVCQG - Cấp bản sao trích lục hộ tịch (cấp xã) https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-tricluoc.html?ma_thu_tuc=185429
+
+Đối chiếu với các tài liệu pháp lý: [C1], [C3]",0.0,0.020305,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,11840.61,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_005,procedure,Người yêu cầu cần sử dụng biểu mẫu nào để điền thông tin khi nộp hồ sơ đăng ký khai sinh?,Tờ khai đăng ký khai sinh.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không có hồ sơ/giấy tờ cụ thể được đề cập trong PROCEDURE CONTEXT để điền thông tin khi nộp hồ sơ đăng ký khai sinh.
+
+Thẩm quyền/nơi tiếp nhận: Thẩm quyền và nơi tiếp nhận không liên quan đến việc người yêu cầu cần sử dụng biểu mẫu nào để điền thông tin khi nộp hồ sơ đăng ký khai sinh.
+
+Thời hạn giải quyết, lệ phí: Không có thời hạn giải quyết hoặc lệ phí được đề cập trong PROCEDURE CONTEXT.
+
+Biểu mẫu liên quan: Không có biểu mẫu liên quan đến việc người yêu cầu cần sử dụng biểu mẫu nào để điền thông tin khi nộp hồ sơ đăng ký khai sinh trong PROCEDURE CONTEXT. 
+
+[PROCEDURE CONTEXT C1] chỉ đề cập đến thủ tục cấp bản sao Giấy khai sinh, không liên quan trực tiếp đến việc điền thông tin vào biểu mẫu khi nộp hồ sơ đăng ký khai sinh.",0.0,0.067039,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9024.81,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_006,procedure,Lệ phí đăng ký giám hộ tại Ủy ban nhân dân cấp xã là bao nhiêu?,Miễn lệ phí.,"Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh. 
+
+Lệ phí đăng ký giám hộ tại Ủy ban nhân dân cấp xã là 8000 VND.
+
+Hồ sơ cần chuẩn bị bao gồm: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch, giấy tờ tùy thân của người yêu cầu và lý do yêu cầu.
+
+Thẩm quyền thực hiện thủ tục là xa UBND cấp xã.
+
+Nơi nộp hồ sơ là xa UBND cấp xã.
+
+Thời hạn giải quyết là ngay trong ngày tiếp nhận hồ sơ. 
+
+Lệ phí: 8000 VND.
+
+Không có biểu mẫu liên quan trong context.",0.0,0.037736,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6902.87,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_007,procedure,Cơ quan nào có thẩm quyền tiếp nhận và giải quyết thủ tục đăng ký giám hộ?,Ủy ban nhân dân cấp xã.,"Thủ tục phù hợp: Đăng ký giám hộ được thực hiện tại xa UBND cấp xã (cơ quan đăng ký hộ tịch).
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) hoặc nhiều giấy tờ tùy trường hợp.
+- Decision_or_agreement; Giấy tờ chứng minh điều kiện giám hộ đương nhiên (theo Bộ luật Dân sự).
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã (cơ quan đăng ký hộ tịch). 
+
+Thời hạn / lệ phí nếu có: Thời hạn giải quyết là 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ. Lệ phí không được nêu trong thông tin hiện có.
+
+Biểu mẫu liên quan nếu có trong context: Không có trong thông tin hiện có.",0.0,0.069444,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8478.85,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_008,procedure,Lệ phí đăng ký kết hôn tại Ủy ban nhân dân cấp xã đối với công dân Việt Nam cư trú trong nước được quy định như thế nào?,Miễn lệ phí.,"Thủ tục phù hợp: Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Bản sao Giấy khai sinh của người yêu cầu (bên nữ và bên nam).
+
+Thẩm quyền / nơi nộp: 
+- Thẩm quyền là xa UBND cấp xã, nơi tiếp nhận hồ sơ là Công chức Tư pháp - Hộ tịch.
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn. 
+
+[PROCEDURE CONTEXT C1, C2]",0.0,0.037736,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,7414.24,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_009,procedure,"Khi thực hiện thủ tục đăng ký kết hôn, người yêu cầu cần điền thông tin vào biểu mẫu nào?",Tờ khai đăng ký kết hôn.,"Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp).
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã Công chức Tư pháp - Hộ tịch.
+
+Biểu mẫu liên quan nếu có trong context: [C5] Tờ khai đăng ký kết hôn.",0.0,0.190476,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6288.88,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_010,procedure,Người đi đăng ký khai sinh phải nộp loại giấy tờ gì để chứng minh sự việc sinh của trẻ?,"Giấy chứng sinh (hoặc văn bản của người làm chứng, giấy cam đoan nếu không có Giấy chứng sinh).","Thủ tục phù hợp: Người đi đăng ký khai sinh phải nộp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không yêu cầu người đi đăng ký khai sinh phải nộp thêm giấy tờ nào ngoài bản sao Giấy khai sinh.
+
+Thẩm quyền / nơi nộp: Thủ tục được thực hiện tại cơ quan đăng ký hộ tịch (UBND cấp xã).
+
+Không có thời hạn cụ thể trong thủ tục này.
+
+Lệ phí: Không có thông tin về lệ phí trong thủ tục này.
+
+Biểu mẫu liên quan: Không có biểu mẫu liên quan trong thủ tục này.",0.0,0.15,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6807.93,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_011,procedure,Việc giải quyết thủ tục đăng ký khai tử thuộc thẩm quyền của cơ quan nào?,Ủy ban nhân dân cấp xã nơi cư trú cuối cùng của người chết.,"Thủ tục phù hợp: Đăng ký khai tử.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai tử theo mẫu (nộp trực tiếp) 01 form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký khai tử (nộp trực tuyến) 01 (điện tử)
+- Giấy báo tử hoặc giấy tờ thay Giấy báo tử do cơ quan.
+
+Thẩm quyền / nơi nộp: Ủy ban nhân dân cấp xã.
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận yêu cầu; không có thời hạn cụ thể, nhưng cần giải quyết ngay sau khi nhận yêu cầu. Lệ phí xem chi tiết trên Cổng DVCQG.
+
+Biểu mẫu liên quan nếu có trong context: Tờ khai đăng ký khai tử.",0.0,0.117647,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,7842.13,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_012,procedure,Biểu mẫu cần sử dụng để lập hồ sơ đăng ký khai tử là gì?,Tờ khai đăng ký khai tử.,"Thủ tục phù hợp: Không tìm thấy thủ tục cụ thể liên quan đến lập hồ sơ đăng ký khai tử.
+
+Hồ sơ/giấy tờ cần chuẩn bị: Không tìm thấy thông tin về biểu mẫu hoặc giấy tờ cần chuẩn bị cho việc lập hồ sơ đăng ký khai tử.
+
+Thẩm quyền/nơi nộp: Không tìm thấy thông tin về thẩm quyền thực hiện thủ tục và nơi nộp hồ sơ.
+
+Thời hạn/lệ phí nếu có: Không tìm thấy thông tin về thời hạn giải quyết và lệ phí.
+
+Biểu mẫu liên quan nếu có trong context: Không tìm thấy biểu mẫu cụ thể để lập hồ sơ đăng ký khai tử.",0.0,0.1,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,6670.21,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_013,procedure,Việc đăng ký khai tử đúng hạn có phải nộp lệ phí không?,Miễn lệ phí đối với việc đăng ký khai tử đúng hạn.,"Thủ tục phù hợp: Đăng ký khai tử.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai tử theo mẫu (nộp trực tiếp) 01 form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký khai tử (nộp trực tuyến) 01 (điện tử)
+- Giấy báo tử hoặc giấy tờ thay Giấy báo tử do cơ quan.
+
+Thẩm quyền/nơi tiếp nhận: Ủy ban nhân dân cấp xã Công chức Tư pháp - Hộ tịch.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận yêu cầu; nếu cần xác minh thì không quá 03 ngày là.
+
+Lệ phí: VND Lệ phí xem chi tiết trên Cổng DVCQG.
+
+Các thông tin về việc đăng ký khai tử đúng hạn có phải nộp lệ phí hay không được nêu rõ trong PROCEDURE CONTEXT. Tuy nhiên, từ nguồn [PROCEDURE CONTEXT] và [LEGAL CONTEXT], chúng ta biết rằng thủ tục đăng ký khai tử là một phần của quy trình hộ tịch và thường đi kèm với việc nộp lệ phí theo quy định hiện hành.
+
+Vì vậy, mặc dù không có thông tin cụ thể về việc phải nộp lệ phí trong PROCEDURE CONTEXT, dựa trên các quy định pháp lý liên quan, việc đăng ký khai tử đúng hạn thường yêu cầu nộp lệ phí.",0.0,0.087719,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10416.39,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_014,procedure,Yêu cầu cấp bản sao trích lục khai sinh cần sử dụng mẫu tờ khai nào?,Tờ khai cấp bản sao trích lục hộ tịch.,"Tên biểu mẫu: Tờ khai cấp bản sao trích lục hộ tịch
+
+Biểu mẫu này được sử dụng để yêu cầu cấp bản sao trích lục hộ tịch, bao gồm cả Giấy khai sinh.
+
+Các trường thông tin chính cần điền:
+- Kính gửi (tên cơ quan đề nghị cấp bản sao trích lục hộ tịch)
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu)
+- Quan hệ với người được cấp bản sao trích lục hộ tịch
+- Loại việc hộ tịch đã đăng ký trước đây, nay đề nghị cấp bản sao trích lục
+
+Lưu ý khi điền:
+- Ghi tên cơ quan đề nghị thực hiện việc cấp bản sao trích lục hộ tịch.
+
+Thủ tục liên quan chỉ nêu ngắn gọn trong context: Người yêu cầu có thể trực tiếp thực hiện hoặc ủy quyền cho người khác thực hiện theo quy định.",0.0,0.105882,procedure,template,0.0,False,1.0,0.0,procedure,procedure|legal|legal|template|template,1.0,1.0,1.0,9698.02,ok,,engine_llm,template,template,template,template_engine
+procedure_015,procedure,Kết quả nhận được sau khi giải quyết xong thủ tục đăng ký giám hộ là loại giấy tờ gì?,Trích lục đăng ký giám hộ (bản chính).,"Thủ tục phù hợp: Đăng ký giám hộ.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form (theo Bộ luật Dân sự).
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã (Cơ quan đăng ký hộ tịch).
+- Công chức Tư pháp - Hộ tịch.
+
+Giấy tờ tùy thân cần chuẩn bị: 
+- Tờ khai đăng ký giám hộ theo mẫu 01 form.
+- Giấy tờ chứng minh điều kiện giám hộ đương nhiên hoặc căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự).
+
+Thời hạn / lệ phí:
+- Thời hạn giải quyết là 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ.
+
+Biểu mẫu liên quan: 
+- Tờ khai đăng ký giám hộ theo mẫu 01 form. 
+
+Giấy tờ tùy thân cần chuẩn bị bao gồm: 
+- Tờ khai đăng ký giám hộ theo mẫu 01 form.
+- Giấy tờ chứng minh điều kiện giám hộ đương nhiên hoặc căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự).
+
+Kết quả nhận được sau khi giải quyết xong thủ tục đăng ký giám hộ là loại giấy tờ gì? 
+- Kết quả nhận được là Sổ hộ tịch.",0.0,0.038835,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10885.51,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_016,procedure,Thời hạn giải quyết thủ tục đăng ký giám hộ được quy định là bao lâu?,Ngay trong ngày tiếp nhận hồ sơ hợp lệ. Trường hợp nhận sau 15 giờ thì trả kết quả trong ngày làm việc tiếp theo.,"Thủ tục phù hợp: Đăng ký giám hộ.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) 
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự)
+- Decision_or_agreement
+- Nhiều giấy tờ tùy trường hợp như: proof
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã (Cơ quan đăng ký hộ tịch)
+- Công chức Tư pháp - Hộ tịch
+
+Thời hạn giải quyết:
+- 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ.
+
+Lệ phí: VND Lệ phí theo quy định địa phương.
+
+Biểu mẫu liên quan: Tờ khai đăng ký giám hộ. 
+
+Citation: [C1]",0.0,0.146341,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8317.84,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_017,procedure,Thời hạn quy định để cơ quan có thẩm quyền giải quyết thủ tục đăng ký kết hôn là bao lâu?,Ngay sau khi tiếp nhận đủ hồ sơ hợp lệ. Nếu cần xác minh thì thời hạn giải quyết không quá 05 ngày làm việc.,"Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử).
+- Form N.
+
+Thẩm quyền / nơi nộp:
+- xa Ủy ban nhân dân cấp xã
+- Công chức Tư pháp - Hộ tịch
+
+Thời hạn / lệ phí nếu có:
+- Ngay trong ngày tiếp nhận hồ sơ.
+- Nếu cần xác minh điều kiện kết hôn thì không quá 05 ngày làm việc.
+
+Biểu mẫu liên quan nếu có trong context: 
+- Tờ khai đăng ký kết hôn (CITATION: [C5])
+
+[PROCEDURE CONTEXT] đã cung cấp thông tin về thời hạn giải quyết thủ tục là ngay trong ngày tiếp nhận hồ sơ. Thời hạn xác minh điều kiện kết hôn không quá 05 ngày làm việc, nhưng không có quy định cụ thể cho trường hợp cần xác minh này.",0.0,0.233503,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9732.87,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_018,procedure,Hồ sơ đăng ký kết hôn yêu cầu người dân phải nộp những loại giấy tờ nào?,"Tờ khai đăng ký kết hôn, Giấy xác nhận tình trạng hôn nhân (nếu có), và Quyết định hoặc bản án ly hôn đã có hiệu lực pháp luật (nếu có).","Thủ tục phù hợp: Đăng ký kết hôn.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Tờ khai đăng ký kết hôn theo mẫu (trực tuyến).
+
+Thẩm quyền/nơi nộp: xa Ủy ban nhân dân cấp xã.
+
+Biểu mẫu liên quan: [C5] Tờ khai đăng ký kết hôn.
+
+[PROCEDURE CONTEXT]
+- Thủ tục phù hợp nhất là Đăng ký kết hôn.
+- Hồ sơ/giấy tờ nổi bật bao gồm: Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính; Tờ khai đăng ký kết hôn theo mẫu (trực tuyến).
+- Thẩm quyền/nơi tiếp nhận là xa Ủy ban nhân dân cấp xã.
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận hoặc không quá 5 ngày làm việc nếu cần xác minh điều kiện kết hôn.
+
+[LEGAL CONTEXT]
+- Điều 3 khoản 2 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP yêu cầu người tiếp nhận hồ sơ không được yêu cầu người đăng ký hộ tịch nộp thêm giấy tờ mà pháp luật hộ tịch không quy định phải nộp.
+- Điều 37 khoản 2 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP yêu cầu Cục Lãnh sự, Cơ quan đại diện, Ủy ban nhân dân cấp xã, Ủy ban nhân dân cấp huyện, Sở Tư pháp có trách nhiệm lưu trữ, bảo quản, khai thác sử dụng Sổ hộ tịch theo đúng quy định của pháp luật; thực hiện các biện pháp phòng chống bão lụt, cháy, ẩm ướt, mối mọt để bảo đảm an toàn.
+- Điều 3 khoản 4 của Thông tư quy định chi tiết thi hành một số điều của Luật Hộ tịch và Nghị định 123/2015/NĐ-CP yêu cầu người trả kết quả có trách nhiệm hướng dẫn người yêu cầu đăng ký hộ tịch kiểm tra nội dung giấy tờ hộ tịch và Sổ hộ tịch. Nếu người yêu cầu đăng ký hộ tịch thấy nội dung đúng, phù hợp với hồ sơ đăng ký hộ tịch thì ký, ghi rõ họ, tên trong Sổ hộ tịch.
+
+[CHÚ THÍCH]
+- Hồ sơ đăng ký kết hôn cần có Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Hồ sơ đăng ký kết hôn cũng yêu cầu người dân nộp Tờ khai đăng ký kết hôn theo mẫu (trực tuyến).
+- Người dân không cần nộp thêm giấy tờ khác ngoài những gì được yêu cầu trong PROCEDURE CONTEXT và LEGAL CONTEXT.",0.0,0.097276,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,17467.63,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_019,procedure,Thủ tục đăng ký kết hôn cho công dân Việt Nam cư trú trong nước do cơ quan nào giải quyết?,"Ủy ban nhân dân cấp xã nơi cư trú của một trong hai bên nam, nữ.","Thủ tục đăng ký kết hôn cho công dân Việt Nam cư trú trong nước được giải quyết bởi Ủy ban nhân dân cấp xã. 
+
+[Hồ sơ/giấy tờ cần chuẩn bị]:
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính.
+- Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử).
+- Form Nộp trực tiếp.
+
+[Thẩm quyền / nơi nộp]:
+- Ủy ban nhân dân cấp xã
+
+[Thời hạn / lệ phí nếu có]:
+- Ngay trong ngày tiếp nhận hồ sơ.
+- Nếu cần xác minh điều kiện kết hôn thì không quá 05 ngày làm việc.
+- VND Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết').
+
+[Biểu mẫu liên quan nếu có trong context]:
+- Tờ khai đăng ký kết hôn.",0.0,0.168675,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8594.91,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_020,procedure,Thời gian giải quyết thủ tục đăng ký khai tử là bao lâu kể từ khi tiếp nhận đủ hồ sơ?,Ngay trong ngày tiếp nhận yêu cầu. Nếu nhận hồ sơ sau 15 giờ thì trả kết quả trong ngày làm việc tiếp theo.,"Thủ tục phù hợp: Đăng ký giám hộ.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form (theo PROCEDURE CONTEXT C1).
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã (Cơ quan đăng ký hộ tịch) Công chức Tư pháp - Hộ tịch.
+
+Thời hạn giải quyết: 3 ngày làm việc kể từ khi nhận đủ hồ sơ hợp lệ (theo PROCEDURE CONTEXT C1).
+
+Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương (không thấy rõ trong PROCEDURE CONTEXT, nên không đưa ra).
+
+Căn cứ pháp lý:
+- [C2] Authority rule 29
+
+Biểu mẫu liên quan: Không có biểu mẫu liên quan trong PROCEDURE CONTEXT.",0.0,0.145985,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8414.99,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_021,procedure,Hồ sơ đăng ký khai tử gồm những loại giấy tờ cơ bản nào mà người dân cần nộp?,Tờ khai đăng ký khai tử và Giấy báo tử hoặc giấy tờ thay thế Giấy báo tử do cơ quan có thẩm quyền cấp.,"Thủ tục phù hợp: Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Các giấy tờ theo quy định tại điểm b, c khoản 1 Điều 26 Nghị định số 123/2015/NĐ-CP.
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch.
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí: 8.000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.
+
+Biểu mẫu liên quan nếu có trong context: Không có trong context.",0.0,0.197183,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8474.38,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_022,procedure,Kết quả của thủ tục yêu cầu cấp bản sao trích lục khai sinh là gì?,Bản sao Trích lục khai sinh.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu) nếu cần
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan: Tờ khai cấp bản sao trích lục hộ tịch (C5).",0.0,0.067416,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10257.39,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_023,procedure,Thời hạn cấp bản sao trích lục khai sinh được cơ quan nhà nước giải quyết trong bao lâu?,Ngay trong ngày tiếp nhận yêu cầu; trường hợp nhận hồ sơ sau 15 giờ thì trả kết quả trong ngày làm việc tiếp theo.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Người yêu cầu là cá nhân, nộp trực tiếp hoặc qua bưu chính
+
+Thẩm quyền / nơi nộp:
+- xa UBND cấp xã
+- Công chức Tư pháp - Hộ tịch
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+
+Lệ phí: 8000 VND
+
+Biểu mẫu liên quan:
+- Tờ khai cấp bản sao trích lục hộ tịch
+
+[PROCEDURE CONTEXT]: C1
+[AUTHORITY CONTEXT]: C2
+[CITATION]: [C1], [C2]",0.0,0.35461,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8531.87,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_024,procedure,Cơ quan nào có thẩm quyền cấp bản sao trích lục khai sinh từ Cơ sở dữ liệu hộ tịch cho người dân?,"Cơ quan quản lý Cơ sở dữ liệu hộ tịch (Ủy ban nhân dân cấp xã, Ủy ban nhân dân cấp huyện hoặc cơ quan cấp cao hơn quản lý dữ liệu hộ tịch).","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh từ Cơ sở dữ liệu hộ tịch cho người dân.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Bản chụp hoặc bản sao điện tử các giấy tờ, tài liệu có liên quan đến nội dung đề nghị cấp bản sao trích lục hộ tịch trong trường hợp nộp hồ sơ trực tuyến.
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã
+
+Căn cứ pháp lý:
+[C2] Authority rule 29
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND.
+
+Biểu mẫu liên quan nếu có trong context:
+[C5] Tờ khai cấp bản sao trích lục hộ tịch",0.0,0.262295,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8978.31,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_025,procedure,Trình tự thực hiện thủ tục đăng ký giám hộ diễn ra như thế nào?,"1. Người yêu cầu nộp hồ sơ. 2. Cán bộ tiếp nhận kiểm tra hồ sơ. 3. Nếu hợp lệ, báo cáo Chủ tịch UBND cấp xã. 4. Ghi thông tin vào Sổ hộ tịch và cấp Trích lục đăng ký giám hộ cho người yêu cầu.","Thủ tục phù hợp: Đăng ký giám hộ.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự) hoặc nhiều giấy tờ tùy trường hợp.
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự).
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (Cơ quan đăng ký hộ tịch). Công chức Tư pháp - Hộ tịch.
+
+Thủ tục thực hiện:
+1. Người yêu cầu nộp tờ khai đăng ký giám hộ theo mẫu quy định và giấy tờ chứng minh điều kiện giám hộ đương nhiên cho cơ quan đăng ký hộ tịch.
+2. Trường hợp có nhiều người cùng đủ điều kiện làm giám hộ đương nhiên thì cần nộp thêm văn bản t.
+
+Thời hạn giải quyết: 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ.
+
+Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương.
+
+Các thông tin trên dựa trên PROCEDURE CONTEXT [C1] và AUTHORITY CONTEXT [C2].",0.0,0.261224,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9415.97,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_026,procedure,Hãy nêu trình tự các bước thực hiện thủ tục đăng ký kết hôn tại Ủy ban nhân dân cấp xã?,"1. Hai bên nam nữ nộp hồ sơ tại UBND cấp xã. 2. Công chức tư pháp - hộ tịch kiểm tra hồ sơ. 3. Báo cáo Chủ tịch UBND ký Giấy chứng nhận kết hôn. 4. Hai bên nam, nữ cùng ký vào Sổ hộ tịch và Giấy chứng nhận kết hôn. 5. Trao Giấy chứng nhận kết hôn cho hai bên.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký kết hôn
+
+Thẩm quyền/nơi nộp: Ủy ban nhân dân cấp xã nơi cư trú của một trong hai bên nam, nữ thực hiện đăng ký kết hôn.
+
+Thời hạn: Ngay khi nhận đủ hồ sơ hợp lệ.
+
+Lệ phí: 8.000 VND cho mỗi bản sao trích lục hộ tịch.
+
+Căn cứ pháp lý:
+- Cổng DVCQG - Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=185429
+- Cổng DVCQG - Cấp bản sao trích lục hộ tịch (cấp xã) https://thutuc.dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=185429
+
+Biểu mẫu liên quan: Tờ khai đăng ký kết hôn (Tờ khai đăng ký kết hôn).",0.0,0.292237,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10079.61,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_027,procedure,"Khi yêu cầu đăng ký khai sinh, người đi đăng ký phải xuất trình những giấy tờ gì để cơ quan nhà nước kiểm tra?","1. Hộ chiếu/CMND/CCCD hoặc giấy tờ có dán ảnh chứng minh nhân thân. 2. Giấy tờ chứng minh nơi cư trú. 3. Giấy chứng nhận kết hôn (nếu cha, mẹ của trẻ đã đăng ký kết hôn).","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch (người yêu cầu là cá nhân).
+- Request_letter (nếu người yêu cầu là cơ quan, tổ chức).
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã.
+
+Căn cứ pháp lý: [C1]
+
+Thời hạn và lệ phí không được cung cấp trong thông tin hiện có. 
+
+Biểu mẫu liên quan: Tờ khai đăng ký khai sinh (người yêu cầu).",0.0,0.193548,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,7995.67,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_028,procedure,Nêu trình tự tiếp nhận và giải quyết hồ sơ đăng ký khai tử?,1. Người yêu cầu nộp hồ sơ tại UBND cấp xã. 2. Công chức Tư pháp - Hộ tịch tiếp nhận và kiểm tra hồ sơ. 3. Báo cáo Chủ tịch UBND cấp xã ký Trích lục. 4. Ghi thông tin vào Sổ hộ tịch. 5. Cấp Trích lục khai tử cho người đi đăng ký.,"Thủ tục phù hợp nhất là Đăng ký giám hộ (Citation: C1).
+
+Hồ sơ/giấy tờ cần chuẩn bị bao gồm:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự) hoặc nhiều giấy tờ tùy trường hợp.
+- Decision_or_agreement.
+
+Thẩm quyền/nơi tiếp nhận: xa UBND cấp xã (Cơ quan đăng ký hộ tịch). Thẩm quyền cụ thể được quy định tại [C2].
+
+Thời hạn giải quyết: 3 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ (đối với nhánh giám hộ cử).
+
+Lệ phí: VND Lệ phí theo quy định địa phương.
+
+Nơi nộp hồ sơ: xa UBND cấp xã (Cơ quan đăng ký hộ tịch). Cách thức nộp: trực tiếp hoặc qua nền tảng hộ tịch điện tử nếu tỉnh triển khai.",0.0,0.26087,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9682.35,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_029,procedure,Trình tự các bước giải quyết yêu cầu cấp bản sao trích lục khai sinh được thực hiện ra sao?,1. Nộp hồ sơ đề nghị cấp bản sao trích lục. 2. Người tiếp nhận kiểm tra hồ sơ và đối chiếu Cơ sở dữ liệu hộ tịch. 3. In bản sao trích lục khai sinh từ hệ thống. 4. Trình lãnh đạo ký và đóng dấu. 5. Trả kết quả cho người dân.,"1. Thủ tục phù hợp: Cấp bản sao Giấy khai sinh
+
+2. Hồ sơ / giấy tờ cần chuẩn bị:
+   - Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+   - Người yêu cầu là cá nhân, nộp trực tiếp hoặc qua bưu chính
+   - Văn bản yêu cầu cấp bản sao Trích lục hộ tịch
+
+3. Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+4. Thời hạn / lệ phí nếu có:
+   - Ngay trong ngày tiếp nhận hồ sơ
+   - Trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+   - Lệ phí: 8000 VND
+
+5. Biểu mẫu liên quan nếu có trong context:
+   - Tờ khai cấp bản sao trích lục hộ tịch",0.0,0.334975,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9647.22,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_030,procedure,"Khi người yêu cầu cấp bản sao trích lục khai sinh ủy quyền cho người khác, hồ sơ xuất trình cần thêm giấy tờ gì và trường hợp nào không cần văn bản ủy quyền?","Phải xuất trình văn bản ủy quyền được chứng thực hợp lệ. Tuy nhiên, nếu người được ủy quyền là ông, bà, cha, mẹ, con, vợ, chồng, anh, chị, em ruột của người ủy quyền thì không cần văn bản ủy quyền nhưng phải có giấy tờ chứng minh mối quan hệ.","Thủ tục phù hợp: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch.
+- Người yêu cầu là cá nhân hoặc cơ quan, tổ chức cung cấp văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do.
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã Công chức Tư pháp - Hộ tịch Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+Biểu mẫu liên quan: Tờ khai cấp bản sao trích lục hộ tịch (C5).
+
+Thời hạn / lệ phí nếu có:
+- Ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Trường hợp không cần văn bản ủy quyền là khi người yêu cầu tự thực hiện yêu cầu cấp bản sao Trích lục hộ tịch mà không cần ủy quyền cho người khác.",0.0,0.183333,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10684.03,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_catalog_001,procedure_catalog,"Khi công dân muốn xin lại bản sao giấy khai sinh từ cơ quan nhà nước, tình huống này tương ứng với thủ tục hành chính nào trong danh mục?",Cấp bản sao trích lục khai sinh.,"Kết luận sơ bộ: Tình huống này tương ứng với thủ tục hành chính cấp bản sao Giấy khai sinh.
+
+Bước cần làm: Công dân sẽ đến cơ quan đăng ký hộ tịch để yêu cầu cấp bản sao Giấy khai sinh. 
+
+Hồ sơ hoặc điều kiện liên quan: Không có hồ sơ cụ thể được đề cập, nhưng công dân cần cung cấp thông tin cá nhân và xác nhận họ là người yêu cầu.
+
+Căn cứ pháp lý: 
+[C1] Mô tả thủ tục hành chính cấp bản sao Giấy khai sinh trong tài liệu C1.",0.0,0.096154,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,8738.44,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+procedure_catalog_002,procedure_catalog,"Để chứng minh tình trạng độc thân hoặc đã ly hôn phục vụ cho các giao dịch dân sự, công dân cần thực hiện thủ tục có tên gọi chính xác là gì?",Cấp Giấy xác nhận tình trạng hôn nhân.,"Kết luận sơ bộ: Thủ tục cần thực hiện để chứng minh tình trạng độc thân hoặc đã ly hôn phục vụ cho các giao dịch dân sự là Đăng ký kết hôn.
+
+Bước cần làm: Công dân phải đến Ủy ban nhân dân cấp xã nộp hồ sơ đăng ký kết hôn theo mẫu và cung cấp giấy tờ tùy thân, giấy tờ về nơi cư trú nếu cần. 
+
+Hồ sơ hoặc điều kiện liên quan: Hồ sơ bao gồm Tờ khai đăng ký kết hôn, Giấy chứng minh nhân dân/thẻ căn cước của cả hai bên, và các giấy tờ chứng minh nơi cư trú.
+
+Căn cứ pháp lý: 
+[C1] Đăng ký kết hôn - Điều 32 khoản 1 Luật Hôn nhân và gia đình (121/VBHN-VPQH).",0.0,0.101449,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,9383.66,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+procedure_catalog_003,procedure_catalog,"Trong danh mục thủ tục, làm thế nào để phân biệt tình huống áp dụng của thủ tục 'Đăng ký khai sinh' và thủ tục 'Cấp bản sao trích lục khai sinh'?","'Đăng ký khai sinh' được áp dụng để ghi nhận sự kiện sinh lần đầu tiên, trong khi 'Cấp bản sao trích lục khai sinh' áp dụng khi sự kiện sinh đã được đăng ký trước đó và công dân có nhu cầu xin cấp bản sao từ cơ sở dữ liệu.","Thủ tục phù hợp nhất là Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị bao gồm: Tờ khai đề nghị cấp bản sao Trích lục hộ tịch, giấy tờ tùy thân của người yêu cầu và thông tin về việc đã đăng ký khai sinh.
+
+Thẩm quyền/nơi tiếp nhận là xa UBND cấp xã hoặc qua Cổng DVCQG.
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. 
+
+Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Các thủ tục khác như Đăng ký khai sinh sẽ yêu cầu các giấy tờ và quy trình khác biệt.",0.0,0.334975,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9413.04,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_catalog_004,procedure_catalog,Hai người muốn chính thức trở thành vợ chồng hợp pháp thì cần thực hiện thủ tục có tên là gì trong danh mục?,Đăng ký kết hôn.,"Kết luận sơ bộ: Để chính thức trở thành vợ chồng hợp pháp, hai người cần thực hiện thủ tục cấp bản sao Giấy khai sinh.
+
+Bước cần làm: Đầu tiên, họ cần cung cấp đầy đủ thông tin cá nhân và giấy tờ liên quan để cơ quan đăng ký hộ tịch có thể tra cứu thông tin về sự kiện khai sinh của cả hai. Sau đó, cơ quan sẽ cấp bản sao Giấy khai sinh.
+
+Hồ sơ hoặc điều kiện liên quan: Cần cung cấp bản sao Giấy khai sinh của cả hai người và các giấy tờ khác nếu cần thiết để chứng minh thông tin cá nhân.
+
+Căn cứ pháp lý: 
+[C1] Luật Hôn nhân và gia đình (Điều 26 khoản 2) quy định về việc xác nhận tình trạng hôn nhân.",0.0,0.056738,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,9798.71,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+procedure_catalog_005,procedure_catalog,"Khi có trẻ em mới sinh, gia đình cần làm thủ tục hành chính nào để nhà nước ghi nhận sự ra đời của trẻ?",Đăng ký khai sinh.,"Khi có trẻ em mới sinh, gia đình cần làm thủ tục hành chính là cấp bản sao Giấy khai sinh. 
+
+Bước xử lý: 
+1. Gia đình sẽ nộp hồ sơ đến cơ quan đăng ký hộ tịch (xa UBND cấp xã).
+2. Cơ quan đăng ký hộ tịch sẽ kiểm tra thông tin và cung cấp bản sao Giấy khai sinh.
+
+Hồ sơ liên quan:
+- Bản sao Giấy khai sinh
+
+Căn cứ pháp lý: 
+[C1] Quy định về cấp bản sao trích lục hộ tịch [ND_123_2015_ND-CP].",0.0,0.084211,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,9111.19,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+procedure_catalog_006,procedure_catalog,Tình huống người thân trong gia đình qua đời tương ứng với việc phải thực hiện thủ tục nào?,Đăng ký khai tử.,"Kết luận sơ bộ: Tình huống người thân trong gia đình qua đời tương ứng với việc phải thực hiện thủ tục cấp bản sao Giấy khai sinh.
+
+Bước cần làm: Người yêu cầu sẽ cần cung cấp thông tin đầy đủ để cơ quan đăng ký hộ tịch có thể tra cứu và cấp bản sao Giấy khai sinh cho trường hợp này.
+
+Hồ sơ hoặc điều kiện liên quan: Cần giấy tờ chứng minh mối quan hệ gia đình, như Giấy khai sinh, nếu đã được cấp trước đó. 
+
+Căn cứ pháp lý: [C1] Luật Hôn nhân và gia đình (121/VBHN-VPQH) - Điều 32 khoản 2.",0.0,0.053097,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,9071.35,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+procedure_catalog_007,procedure_catalog,"Để cử một cá nhân làm người đại diện hợp pháp chăm sóc, bảo vệ quyền lợi cho trẻ em mồ côi hoặc người mất năng lực hành vi dân sự, cần thực hiện thủ tục nào?",Đăng ký giám hộ.,"Kết luận sơ bộ: Để cử một cá nhân làm người đại diện hợp pháp chăm sóc, bảo vệ quyền lợi cho trẻ em mồ côi hoặc người mất năng lực hành vi dân sự, cần thực hiện thủ tục Đăng ký giám hộ.
+
+Bước cần làm: Thực hiện việc đăng ký giám hộ theo quy định của Luật Hộ tịch và các văn bản liên quan. Hồ sơ cần có Tờ khai đăng ký giám hộ, Văn bản cử người giám hộ (theo Bộ luật Dân sự), giấy tờ chứng minh quyền lợi của trẻ em hoặc người mất năng lực hành vi dân sự.
+
+Căn cứ pháp lý: [C1]",0.0,0.069565,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,10350.61,ok,,engine_llm,case,case,case,case_rag_engine
+procedure_catalog_008,procedure_catalog,Công dân muốn xin giấy tờ chứng minh mình đang độc thân để thực hiện các giao dịch dân sự như mua bán bất động sản thì phải làm thủ tục có tên là gì?,Cấp Giấy xác nhận tình trạng hôn nhân.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+[Hồ sơ/giấy tờ cần chuẩn bị]:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+[Thẩm quyền / nơi nộp]:
+- xa UBND cấp xã
+- Thủ tục gốc trên Cổng DVCQG có tên: Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh.
+
+[Thời hạn / lệ phí nếu có]:
+- Ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+[Biểu mẫu liên quan nếu có trong context]:
+- Tờ khai đăng ký kết hôn
+
+[Tài liệu cần chuẩn bị theo PROCEDURE CONTEXT, không cần thêm thông tin từ AUTHORITY/LEGAL/TEMPLATE]:",0.0,0.057143,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,8999.65,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_catalog_009,procedure_catalog,Tình huống người dân phát hiện họ đệm của mình bị ghi sai lỗi chính tả trong Sổ hộ tịch so với thực tế thì tương ứng với việc phải thực hiện thủ tục hành chính nào?,"Thay đổi, cải chính, bổ sung hộ tịch.","Kết luận sơ bộ: Tình huống người dân phát hiện họ đệm của mình bị ghi sai lỗi chính tả trong Sổ hộ tịch so với thực tế tương ứng với việc phải thực hiện thủ tục cải chính hộ tịch.
+
+Bước cần làm: Người dân nên tiến hành thủ tục cải chính hộ tịch để sửa đổi thông tin sai lệch trong Sổ hộ tịch. 
+
+Hồ sơ hoặc điều kiện liên quan: Cần có giấy tờ chứng minh thông tin đúng và nếu có, người yêu cầu cũng cần cung cấp giấy tờ về thân nhân hoặc giám hộ đương nhiên.
+
+Căn cứ pháp lý: [C4] Cải chính hộ tịch (sai họ tên/ngày sinh do ghi nhầm, có chứng cứ).",0.0,0.092308,procedure,case,0.0,False,1.0,0.0,procedure,procedure|legal|legal|case|case,1.0,1.0,1.0,10166.72,ok,,engine_llm,case,procedure,procedure,case_rag_engine
+procedure_catalog_010,procedure_catalog,"Khi một người muốn xác lập mối quan hệ huyết thống pháp lý với con đẻ của mình sau thời gian thất lạc, họ cần nộp hồ sơ thực hiện thủ tục có tên là gì?","Đăng ký nhận cha, mẹ, con.","Thủ tục phù hợp: Đăng ký giám hộ.
+
+[Hồ sơ / giấy tờ cần chuẩn bị]:
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Văn bản cử người giám hộ (theo Bộ luật Dân sự)
+- Tờ khai đăng ký giám hộ theo mẫu 01 form Giấy tờ chứng minh điều kiện giám hộ đương nhiên / căn cứ phát sinh giám hộ đương nhiên (theo Bộ luật Dân sự)
+
+[Thẩm quyền / nơi nộp]:
+- xa UBND cấp xã (Cơ quan đăng ký hộ tịch)
+- Công chức Tư pháp - Hộ tịch
+
+[Nơi nộp hồ sơ]:
+- xa UBND cấp xã (Cơ quan đăng ký hộ tịch)
+
+[Thời hạn / lệ phí nếu có]:
+- Thời hạn giải quyết: 3 03 ngày làm việc kể từ ngày nhận đủ giấy tờ hợp lệ
+- Lệ phí: VND Lệ phí (nếu có) theo quy định địa phương
+
+[Biểu mẫu liên quan nếu có trong context]:
+- Tờ khai cấp bản sao trích lục hộ tịch [C5]",0.0,0.03681,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,9475.15,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_catalog_011,procedure_catalog,Làm thế nào để phân biệt tình huống áp dụng của thủ tục 'Đăng ký kết hôn' và thủ tục 'Đăng ký lại kết hôn'?,"'Đăng ký kết hôn' áp dụng để xác lập quan hệ hôn nhân mới, trong khi 'Đăng ký lại kết hôn' chỉ áp dụng cho trường hợp đã đăng ký kết hôn hợp pháp trước ngày 01/01/2016 nhưng hiện nay cả Sổ hộ tịch và bản chính Giấy chứng nhận kết hôn đều đã bị mất.","Thủ tục phù hợp: Đăng ký lại kết hôn
+
+[Hồ sơ/giấy tờ cần chuẩn bị]:
+- Tờ khai đăng ký lại kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký lại kết hôn (trực tuyến) 01 bản chính (điện tử)
+
+Thẩm quyền / nơi nộp: xa Ủy ban nhân dân cấp xã
+
+Thời hạn giải quyết: Ngay trong ngày tiếp nhận; nếu nhận sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo.
+
+Lệ phí: VND Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết').
+
+Cách thức nộp: truc_tiep truc_tuyen Cổng DVCQG/Cổng DVC công cấp tỉnh buu_chinh Qua dịch vụ bưu chính.
+
+Để phân biệt tình huống áp dụng của thủ tục 'Đăng ký kết hôn' và thủ tục 'Đăng ký lại kết hôn', cần chú ý rằng:
+- Thủ tục Đăng ký lại kết hôn thường được áp dụng khi có yêu cầu từ người dân về việc xác lập quan hệ hôn nhân theo quy định tại khoản 2 Điều 11 Luật hôn nhân và gia đình, hoặc trong trường hợp đăng ký lại kết hôn, đăng ký hôn nhân thực tế mà không xác định được ngày đăng ký kết hôn trước đây.
+- Thủ tục Đăng ký kết hôn thường áp dụng cho các trường hợp mới kết hôn.",0.0,0.311111,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,11254.65,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_catalog_012,procedure_catalog,Sự khác biệt cơ bản về tình huống áp dụng giữa thủ tục 'Cấp bản sao trích lục hộ tịch' và 'Đăng ký lại khai sinh' khi công dân bị mất Giấy khai sinh bản chính là gì?,"Nếu chỉ mất bản chính Giấy khai sinh nhưng thông tin trong Sổ hộ tịch hoặc cơ sở dữ liệu vẫn còn, công dân thực hiện 'Cấp bản sao trích lục hộ tịch'. Trường hợp mất cả bản chính và Sổ hộ tịch (đối với sự kiện đăng ký trước 01/01/2016) thì mới được thực hiện 'Đăng ký lại khai sinh'.","Thủ tục phù hợp: Cấp bản sao trích lục hộ tịch
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+- Giấy tờ tùy thân của người yêu cầu (nếu có)
+
+Thẩm quyền / nơi nộp: xa UBND cấp xã
+
+Thời hạn / lệ phí nếu có: Ngay trong ngày tiếp nhận hồ sơ; trường hợp nhận hồ sơ sau 15 giờ mà không giải quyết được ngay thì trả kết quả trong ngày làm việc tiếp theo. Lệ phí là 8000 VND.
+
+Biểu mẫu liên quan: Tờ khai cấp bản sao trích lục hộ tịch
+
+Các thủ tục 'Cấp bản sao trích lục hộ tịch' và 'Đăng ký lại khai sinh' có sự khác biệt cơ bản về tình huống áp dụng. Thủ tục 'Cấp bản sao trích lục hộ tịch' được áp dụng khi công dân mất Giấy khai sinh bản chính nhưng vẫn còn bản sao hoặc giấy tờ tùy thân, trong khi thủ tục 'Đăng ký lại khai sinh' được áp dụng khi người yêu cầu cần xác nhận thông tin hộ tịch đã đăng ký trước đó nhưng không còn bản chính giấy tờ hộ tịch hoặc cơ quan đăng ký hộ tịch không còn lưu giữ được Sổ hộ tịch.",0.0,0.341818,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,10835.88,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+procedure_catalog_013,procedure_catalog,"Trong trường hợp hai người đã ra Tòa ly hôn, nay muốn quay lại và tiếp tục quan hệ vợ chồng thì họ thuộc tình huống của thủ tục 'Đăng ký kết hôn' hay 'Đăng ký lại kết hôn'?","Họ phải thực hiện thủ tục 'Đăng ký kết hôn' (xác lập quan hệ hôn nhân mới), vì quan hệ hôn nhân trước đó đã hoàn toàn chấm dứt về mặt pháp lý theo quyết định/bản án của Tòa án, không thuộc diện đăng ký lại.","Thủ tục phù hợp: Đăng ký lại kết hôn
+
+[Hồ sơ/giấy tờ cần chuẩn bị]:
+- Tờ khai đăng ký lại kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký lại kết hôn (trực tuyến) 01 bản chính (điện tử)
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử)
+
+[Thẩm quyền / nơi nộp]:
+- Thẩm quyền: xa Ủy ban nhân dân cấp xã
+- Thẩm quyền/nơi tiếp nhận: Công chức Tư pháp - Hộ tịch Bên nam hoặc bên nữ có thể nộp hồ sơ mà không cần văn bản ủy quyền của bên còn lại; nhưng khi nhận/ghi kết quả thì hai bên phải có mặt để xác nhận tự nguyện và ký..
+
+[Thời hạn / lệ phí nếu có]:
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận
+- Lệ phí: VND Theo quy định phí/lệ phí của địa phương (Cổng DVCQG hiển thị mục 'Xem chi tiết')
+
+[Các giấy tờ liên quan]:
+- Tờ khai đăng ký lại kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký lại kết hôn (trực tuyến) 01 bản chính (điện tử)
+- Tờ khai đăng ký kết hôn theo mẫu (trực tiếp) – có đủ thông tin 2 bên, có thể khai chung một tờ khai 01 bản chính form Nộp trực tiếp Mẫu hộ tịch điện tử tương tác đăng ký kết hôn (trực tuyến) 01 bản chính (điện tử)
+
+[Thủ tục phù hợp]:
+- Đăng ký lại kết hôn",0.0,0.145161,procedure,procedure,1.0,False,1.0,0.0,procedure,procedure|procedure|legal|legal|template,1.0,1.0,1.0,14242.02,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+template_001,template,"Để thực hiện thủ tục đăng ký khai sinh, người yêu cầu cần điền thông tin vào biểu mẫu có tên là gì?",Tờ khai đăng ký khai sinh.,"Thủ tục phù hợp: Đăng ký khai sinh.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Tờ khai đăng ký khai sinh
+
+Thẩm quyền / nơi nộp:
+- Công chức tư pháp - hộ tịch cấp xã
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết ngay trong ngày tiếp nhận hồ sơ
+- Lệ phí 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch: 8.000 đồng/bản sao trích lục/sự kiện hộ tịch đã đăng ký.
+
+Biểu mẫu liên quan nếu có trong context:
+- Tờ khai đăng ký khai sinh [C5]",0.0,0.116505,template,procedure,0.0,False,1.0,0.0,template,procedure|procedure|legal|legal|template,0.0,0.0,1.0,8202.24,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+template_002,template,Biểu mẫu 'Tờ khai đăng ký kết hôn' được sử dụng để giải quyết thủ tục hành chính nào?,Được sử dụng cho thủ tục đăng ký kết hôn.,"Tên biểu mẫu: Tờ khai đăng ký kết hôn
+
+Biểu mẫu được sử dụng để giải quyết thủ tục hành chính: Đăng ký kết hôn
+
+Các trường thông tin chính cần điền:
+- Kính gửi (tên cơ quan đăng ký kết hôn)
+- Họ, chữ đệm, tên (bên nữ)
+- Ngày, tháng, năm sinh (bên nữ)
+- Dân tộc (bên nữ)
+- Quốc tịch (bên nữ)
+- Nơi cư trú (bên nữ)
+- Giấy tờ tùy thân (bên nữ)
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký kết hôn
+- Chỉ ghi trong trường hợp người có yêu cầu chưa cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử
+
+Thủ tục liên quan: Nộp trực tiếp hoặc qua dịch vụ bưu chính.",0.0,0.135338,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,8586.57,ok,,engine_llm,template,template,template,template_engine
+template_003,template,Khi cá nhân có yêu cầu cơ quan nhà nước cấp bản sao trích lục các sự kiện hộ tịch của mình thì cần nộp mẫu tờ khai nào?,Tờ khai cấp bản sao trích lục hộ tịch.,"Tên biểu mẫu: Tờ khai cấp bản sao trích lục hộ tịch
+
+Biểu mẫu này được sử dụng để cá nhân yêu cầu cơ quan nhà nước cấp bản sao trích lục các sự kiện hộ tịch của mình.
+
+Các trường thông tin chính cần điền vào tờ khai bao gồm:
+- Kính gửi (tên cơ quan đề nghị cấp bản sao trích lục hộ tịch)
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu)
+- Quan hệ với người được cấp bản sao trích lục hộ tịch
+- Loại việc hộ tịch đã đăng ký trước đây, nay đề nghị cấp bản sao trích lục
+
+Lưu ý khi điền:
+- Ghi tên cơ quan đề nghị thực hiện việc cấp bản sao trích lục hộ tịch. Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử.
+- ""Nơi cư trú"" ghi theo thường trú.
+
+Thủ tục liên quan:
+- Cá nhân cần nộp mẫu tờ khai này để yêu cầu cơ quan nhà nước cấp bản sao trích lục các sự kiện hộ tịch của mình.",0.0,0.082192,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,10079.41,ok,,engine_llm,template,template,template,template_engine
+template_004,template,Biểu mẫu nào được yêu cầu nộp khi công dân đi đăng ký khai tử cho người thân?,Tờ khai đăng ký khai tử.,"Tên biểu mẫu: Tờ khai đăng ký khai tử
+
+Biểu mẫu được sử dụng để công dân đi đăng ký khai tử cho người thân.
+
+Các trường thông tin chính cần điền:
+- Kính gửi (tên cơ quan đăng ký khai tử)
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu)
+- Quan hệ với người đã chết
+- Họ, chữ đệm, tên người đã chết
+- Ngày, tháng, năm sinh (người đã chết)
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký khai tử.
+- Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/căn cước công dân/thẻ căn cước/chứng minh nhân dân; không cung cấp đầy đủ thông tin ngày, tháng, năm sinh.
+
+Thủ tục liên quan:
+- Nộp trực tiếp hoặc nộp qua dịch vụ bưu chính.",0.0,0.072289,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,10459.69,ok,,engine_llm,template,template,template,template_engine
+template_005,template,Tờ khai đăng ký kết hôn là biểu mẫu được quy định để dùng trong thủ tục hành chính nào?,Thủ tục đăng ký kết hôn.,"Tên biểu mẫu: Tờ khai đăng ký kết hôn
+
+Biểu mẫu này được quy định để dùng trong thủ tục hành chính là Đăng ký kết hôn.
+
+Các trường thông tin chính cần điền:
+- Kính gửi (tên cơ quan đăng ký kết hôn)
+- Họ, chữ đệm, tên (bên nữ)
+- Ngày, tháng, năm sinh (bên nữ)
+- Dân tộc (bên nữ)
+- Quốc tịch (bên nữ)
+- Nơi cư trú (bên nữ)
+- Giấy tờ tùy thân (bên nữ)
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký kết hôn.
+- Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử.
+
+Thủ tục liên quan chỉ nêu ngắn gọn trong context, không có thông tin cụ thể.",0.0,0.085714,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,7997.98,ok,,engine_llm,template,template,template,template_engine
+template_006,template,Tên biểu mẫu cần chuẩn bị để nộp hồ sơ xin cấp bản sao trích lục khai sinh là gì?,Tờ khai cấp bản sao trích lục hộ tịch.,"Thủ tục phù hợp: Cấp bản sao Giấy khai sinh.
+
+Hồ sơ/giấy tờ cần chuẩn bị:
+- Tờ khai đề nghị cấp bản sao Trích lục hộ tịch
+
+Thẩm quyền / nơi nộp:
+- Nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do
+- Thanh tra viên, công chức Tư pháp - Hộ tịch tại UBND cấp xã
+
+Biểu mẫu liên quan:
+- Tờ khai cấp bản sao trích lục hộ tịch [C5]
+
+Thời hạn / lệ phí nếu có:
+- Ngay trong ngày tiếp nhận hồ sơ
+- Lệ phí: 8000 VND
+
+Đối chiếu với C1 và C2, thủ tục phù hợp nhất là cấp bản sao Giấy khai sinh. Hồ sơ cần chuẩn bị bao gồm Tờ khai đề nghị cấp bản sao Trích lục hộ tịch. Thẩm quyền là UBND cấp xã hoặc công chức Tư pháp - Hộ tịch tại địa phương. Biểu mẫu cần chuẩn bị là Tờ khai cấp bản sao trích lục hộ tịch. Thời hạn giải quyết là ngay trong ngày tiếp nhận hồ sơ và lệ phí là 8000 VND.",0.0,0.09375,template,procedure,0.0,False,1.0,0.0,template,procedure|procedure|legal|legal|template,0.0,0.0,1.0,10352.09,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+template_007,template,Tờ khai cấp bản sao trích lục hộ tịch được sử dụng trong trường hợp người dân có yêu cầu gì đối với cơ quan nhà nước?,Khi người dân có yêu cầu cơ quan nhà nước cấp bản sao trích lục các sự kiện hộ tịch đã được đăng ký.,"Tên biểu mẫu: Tờ khai cấp bản sao trích lục hộ tịch
+
+Biểu mẫu này được sử dụng để đáp ứng yêu cầu của người dân khi họ cần một bản sao trích lục từ cơ quan nhà nước.
+
+Các trường thông tin chính cần điền vào tờ khai bao gồm:
+- Kính gửi (tên cơ quan đề nghị cấp bản sao trích lục hộ tịch)
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu)
+- Quan hệ với người được cấp bản sao trích lục hộ tịch
+- Loại việc hộ tịch đã đăng ký trước đây, nay đề nghị cấp bản sao trích lục
+
+Lưu ý khi điền:
+- Ghi tên cơ quan đề nghị thực hiện việc cấp bản sao trích lục hộ tịch. Chỉ ghi trong trường hợp người có yêu cầu đăng ký hộ tịch chưa có/không cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử.
+- ""Nơi cư trú"" ghi theo thường trú.
+
+Thủ tục liên quan:
+- Người yêu cầu có thể trực tiếp thực hiện hoặc ủy quyền cho người khác thực hiện qua dịch vụ bưu chính trên Cổng DVCQG.",0.0,0.198276,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,11168.99,ok,,engine_llm,template,template,template,template_engine
+template_008,template,Biểu mẫu Tờ khai đăng ký khai tử được sử dụng để giải quyết thủ tục gì theo quy định?,Được sử dụng cho thủ tục đăng ký khai tử.,"Tên biểu mẫu: Tờ khai đăng ký khai tử
+
+Biểu mẫu này được sử dụng để giải quyết thủ tục đăng ký khai tử theo quy định.
+
+Các trường thông tin chính cần điền:
+- Kính gửi (tên cơ quan đăng ký khai tử)
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu)
+- Quan hệ với người đã chết
+- Họ, chữ đệm, tên người đã chết
+- Ngày, tháng, năm sinh (người đã chết)
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký khai tử nếu người yêu cầu chưa cung cấp số định danh cá nhân hoặc thông tin ngày, tháng, năm sinh.
+
+Thủ tục liên quan chỉ nêu ngắn gọn trong context: 
+- Người yêu cầu nộp trực tiếp hoặc qua dịch vụ bưu chính.
+- Cơ quan đăng ký kiểm tra tính đầy đủ và hợp lệ của hồ sơ.
+- Nếu đủ điều kiện, cơ quan sẽ ghi Sổ đăng ký khai tử và in Trích lục khai tử.",0.0,0.095745,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,9823.03,ok,,engine_llm,template,template,template,template_engine
+template_009,template,"Hai bên nam, nữ cần điền thông tin vào biểu mẫu nào khi đến cơ quan nhà nước để xác lập quan hệ hôn nhân?",Tờ khai đăng ký kết hôn.,"Tên biểu mẫu: Tờ khai đăng ký kết hôn
+
+Biểu mẫu này được sử dụng để xác lập quan hệ hôn nhân giữa nam và nữ.
+
+Các trường thông tin chính cần điền:
+- Kính gửi (tên cơ quan đăng ký kết hôn)
+- Họ, chữ đệm, tên (bên nữ)
+- Ngày, tháng, năm sinh (bên nữ)
+- Dân tộc (bên nữ)
+- Quốc tịch (bên nữ)
+- Nơi cư trú (bên nữ)
+- Giấy tờ tùy thân (bên nữ)
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký kết hôn.
+- Nếu người có yêu cầu chưa cung cấp số định danh cá nhân, chỉ ghi trong trường hợp người có yêu cầu hộ tịch chưa có/không cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử.
+
+Thủ tục liên quan:
+- Nộp trực tiếp hoặc trực tuyến
+- Kiểm tra hồ sơ và tiếp nhận nếu hợp lệ
+- Cấp/gửi kết quả trong ngày làm việc tiếp theo",0.0,0.073171,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template,0.0,0.0,1.0,8712.25,ok,,engine_llm,template,template,template,template_engine
+template_010,template,"Để được cấp lại bản sao giấy khai sinh từ dữ liệu đã lưu, công dân phải sử dụng biểu mẫu có tên chính xác là gì?",Tờ khai cấp bản sao trích lục hộ tịch.,"Tên biểu mẫu cần sử dụng để được cấp lại bản sao giấy khai sinh là Tờ khai đăng ký khai sinh.
+
+Tờ khai đăng ký khai sinh dùng để làm gì:
+- Người dân điền thông tin vào tờ khai này để yêu cầu cơ quan hộ tịch đăng ký khai sinh cho trẻ sơ sinh hoặc người đã sinh trước đó nhưng chưa được đăng ký khai sinh.
+
+Các trường thông tin chính cần điền trong Tờ khai đăng ký khai sinh bao gồm:
+- Họ, chữ đệm, tên người yêu cầu (người có trách nhiệm)
+- Ngày, tháng, năm sinh của người yêu cầu
+- Nơi cư trú của người yêu cầu
+- Quan hệ với người được khai sinh (trẻ sơ sinh)
+- Họ, chữ đệm, tên của người được khai sinh
+
+Lưu ý khi điền:
+- Ghi rõ tên cơ quan đăng ký hộ tịch nơi yêu cầu
+- Chỉ ghi trong trường hợp người có yêu cầu chưa cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử hoặc thông tin ngày, tháng, năm sinh không đầy đủ
+
+Thủ tục liên quan:
+- Người dân nộp tờ khai đăng ký khai sinh và các giấy tờ tùy thân cần thiết cho trẻ sơ sinh tại cơ quan hộ tịch nơi cư trú
+- Cơ quan hộ tịch sẽ tiến hành kiểm tra và xác nhận thông tin trước khi thực hiện việc đăng ký khai sinh",0.0,0.056911,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template|template,0.0,0.0,1.0,11920.86,ok,,engine_llm,template,template,template,template_engine
+template_011,template,Sự khác biệt về mục đích sử dụng giữa biểu mẫu đăng ký khai sinh và biểu mẫu cấp bản sao trích lục đối với sự kiện khai sinh là gì?,"Tờ khai đăng ký khai sinh dùng để đăng ký sự kiện khai sinh lần đầu, còn Tờ khai cấp bản sao trích lục hộ tịch dùng để xin cấp lại bản sao của sự kiện khai sinh đã đăng ký trước đó.","Thủ tục phù hợp: Cấp bản sao Giấy khai sinh và cấp bản sao trích lục hộ tịch đều liên quan đến sự kiện khai sinh. Tuy nhiên, mục đích sử dụng của chúng khác nhau.
+
+Hồ sơ / giấy tờ cần chuẩn bị:
+- Đối với cấp bản sao Giấy khai sinh: Người yêu cầu nộp trực tiếp hoặc qua bưu chính Văn bản yêu cầu cấp bản sao Trích lục hộ tịch nêu rõ lý do.
+- Đối với cấp bản sao trích lục hộ tịch: Người yêu cầu phải cung cấp thông tin về họ, tên, ngày tháng năm sinh, nơi cư trú và giấy tờ tùy thân của người được cấp bản sao.
+
+Thẩm quyền / nơi nộp:
+- Cấp bản sao Giấy khai sinh: xa UBND cấp xã
+- Cấp bản sao trích lục hộ tịch: xa UBND cấp xã
+
+Thời hạn / lệ phí nếu có:
+- Thời hạn giải quyết: Ngay trong ngày tiếp nhận hồ sơ.
+- Lệ phí: 8000 VND Phí khai thác, sử dụng thông tin trong cơ sở dữ liệu hộ tịch.
+
+Biểu mẫu liên quan nếu có trong context:
+- Cấp bản sao trích lục hộ tịch: Tờ khai cấp bản sao trích lục hộ tịch
+
+Các thủ tục này đều được quy định tại [C1] và [C2].",0.0,0.213439,template,procedure,0.0,False,1.0,0.0,template,procedure|procedure|legal|legal|template,0.0,0.0,1.0,10709.78,ok,,engine_llm,procedure,procedure,procedure,procedure_engine
+template_012,template,"Trong trường hợp công dân muốn xin cấp bản sao trích lục cho nhiều sự kiện hộ tịch khác nhau như khai sinh, kết hôn, khai tử thì sử dụng chung một loại biểu mẫu nào?",Tờ khai cấp bản sao trích lục hộ tịch.,"Tên biểu mẫu: Tờ khai cấp bản sao trích lục hộ tịch
+
+Biểu mẫu này được sử dụng để xin cấp bản sao trích lục cho nhiều sự kiện hộ tịch khác nhau, như khai sinh, kết hôn và khai tử.
+
+Các trường thông tin chính cần điền trong tờ khai này bao gồm:
+- Kính gửi (tên cơ quan đề nghị cấp bản sao trích lục hộ tịch)
+- Họ, chữ đệm, tên người yêu cầu
+- Ngày, tháng, năm sinh (người yêu cầu)
+- Nơi cư trú (người yêu cầu)
+- Giấy tờ tùy thân (người yêu cầu)
+- Quan hệ với người được cấp bản sao trích lục hộ tịch
+- Loại việc hộ tịch đã đăng ký trước đây, nay đề nghị cấp bản sao trích lục
+
+Lưu ý khi điền:
+- Ghi tên cơ quan đề nghị thực hiện việc cấp bản sao trích lục hộ tịch. Chỉ ghi trong trường hợp người có yêu cầu chưa cung cấp số định danh cá nhân/CCCD/thẻ căn cước/căn cước điện tử.
+- ""Nơi cư trú"" ghi theo thường trú.
+
+Thủ tục liên quan:
+- Người yêu cầu có thể trực tiếp thực hiện hoặc ủy quyền cho người khác thực hiện theo quy định.",0.0,0.086124,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template|template,0.0,0.0,1.0,11369.0,ok,,engine_llm,template,template,template,template_engine
+template_013,template,"Khi đối chiếu giữa tên gọi thủ tục và tên biểu mẫu, thủ tục đăng ký khai sinh và thủ tục đăng ký khai tử sử dụng các tờ khai có tên tương ứng là gì?",Tờ khai đăng ký khai sinh và Tờ khai đăng ký khai tử.,"Khi đối chiếu giữa tên gọi thủ tục và tên biểu mẫu, thủ tục đăng ký khai sinh và thủ tục đăng ký khai tử sử dụng các tờ khai có tên tương ứng là:
+
+1. Thủ tục Đăng ký Khai sinh sử dụng Tờ khai đăng ký khai sinh.
+2. Thủ tục Đăng ký Khai tử sử dụng Tờ khai đăng ký khai tử.
+
+[Tờ khai đăng ký khai sinh] và [Tờ khai đăng ký khai tử] là biểu mẫu phù hợp nhất cho thủ tục đăng ký khai sinh và thủ tục đăng ký khai tử, tương ứng.",0.0,0.230088,template,template,1.0,False,1.0,0.0,template,procedure|legal|legal|template|template,0.0,0.0,1.0,8241.98,ok,,engine_llm,template,template,template,template_engine

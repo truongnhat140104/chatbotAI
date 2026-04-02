@@ -1,0 +1,136 @@
+{
+  "meta": {
+    "dataset_path": "rag_eval_normalized.jsonl",
+    "api_base": "http://127.0.0.1:8000",
+    "mode": "auto",
+    "use_llm": true
+  },
+  "overall": {
+    "num_samples": 150,
+    "num_success": 150,
+    "num_errors": 0,
+    "exact_match": 0.0,
+    "token_f1": 20.02,
+    "citation_rate_required_only": 100.0,
+    "grounded_accuracy": 0.0,
+    "source_hit_at_1": 53.33,
+    "source_hit_at_3": 70.67,
+    "source_hit_at_5": 84.0,
+    "avg_latency_ms": 9080.67,
+    "median_latency_ms": 9101.16,
+    "routing_accuracy": 48.67
+  },
+  "by_category": {
+    "authority": {
+      "num_samples": 18,
+      "exact_match": 0.0,
+      "token_f1": 23.55,
+      "citation_rate_required_only": 0.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 94.44,
+      "source_hit_at_3": 94.44,
+      "source_hit_at_5": 94.44,
+      "routing_accuracy": 88.89,
+      "avg_latency_ms": 8674.44
+    },
+    "case": {
+      "num_samples": 13,
+      "exact_match": 0.0,
+      "token_f1": 27.18,
+      "citation_rate_required_only": 0.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 0.0,
+      "source_hit_at_3": 0.0,
+      "source_hit_at_5": 38.46,
+      "routing_accuracy": 38.46,
+      "avg_latency_ms": 9893.85
+    },
+    "edge_case": {
+      "num_samples": 15,
+      "exact_match": 0.0,
+      "token_f1": 20.99,
+      "citation_rate_required_only": 0.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 0.0,
+      "source_hit_at_3": 0.0,
+      "source_hit_at_5": 13.33,
+      "routing_accuracy": 13.33,
+      "avg_latency_ms": 9250.58
+    },
+    "legal": {
+      "num_samples": 33,
+      "exact_match": 0.0,
+      "token_f1": 22.12,
+      "citation_rate_required_only": 100.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 15.15,
+      "source_hit_at_3": 93.94,
+      "source_hit_at_5": 93.94,
+      "routing_accuracy": 15.15,
+      "avg_latency_ms": 8177.7
+    },
+    "multi_source": {
+      "num_samples": 15,
+      "exact_match": 0.0,
+      "token_f1": 24.74,
+      "citation_rate_required_only": 100.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 100.0,
+      "source_hit_at_3": 100.0,
+      "source_hit_at_5": 100.0,
+      "routing_accuracy": 0.0,
+      "avg_latency_ms": 8930.81
+    },
+    "procedure": {
+      "num_samples": 30,
+      "exact_match": 0.0,
+      "token_f1": 15.91,
+      "citation_rate_required_only": 0.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 100.0,
+      "source_hit_at_3": 100.0,
+      "source_hit_at_5": 100.0,
+      "routing_accuracy": 96.67,
+      "avg_latency_ms": 9209.69
+    },
+    "procedure_catalog": {
+      "num_samples": 13,
+      "exact_match": 0.0,
+      "token_f1": 13.7,
+      "citation_rate_required_only": 0.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 100.0,
+      "source_hit_at_3": 100.0,
+      "source_hit_at_5": 100.0,
+      "routing_accuracy": 46.15,
+      "avg_latency_ms": 10064.7
+    },
+    "template": {
+      "num_samples": 13,
+      "exact_match": 0.0,
+      "token_f1": 11.84,
+      "citation_rate_required_only": 0.0,
+      "grounded_accuracy": 0.0,
+      "source_hit_at_1": 0.0,
+      "source_hit_at_3": 0.0,
+      "source_hit_at_5": 100.0,
+      "routing_accuracy": 76.92,
+      "avg_latency_ms": 9817.22
+    }
+  },
+  "engine_confusion": {
+    "procedure -> legal": 1,
+    "procedure -> procedure": 51,
+    "procedure -> case": 8,
+    "case -> procedure": 31,
+    "case -> case": 7,
+    "case -> legal": 2,
+    "case -> template": 3,
+    "legal -> procedure": 16,
+    "legal -> legal": 5,
+    "legal -> case": 12,
+    "procedure -> template": 1,
+    "template -> procedure": 3,
+    "template -> template": 10
+  }
+}
