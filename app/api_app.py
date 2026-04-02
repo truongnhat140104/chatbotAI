@@ -18,7 +18,7 @@ from app.engines.legal_engine import LegalLookupEngine
 from app.engines.procedure_engine import ProcedureEngine
 from app.engines.selector import EngineSelector
 from app.engines.template_engine import TemplateEngine
-
+from app.core.answer_builder import HotichAnswerBuilder
 
 class AskRequest(BaseModel):
     query: str = Field(..., min_length=1, description="Cau hoi nguoi dung")
@@ -71,6 +71,12 @@ class HotichQAService:
             base_url=llm_base_url,
             model_name=llm_model,
             api_key=llm_api_key,
+        )
+
+        self.answer_builder = HotichAnswerBuilder(
+            bundle=self.bundle,
+            retriever=self.retriever,
+            hc_reranker=self.hc_reranker,
         )
 
         self.legal_engine = LegalLookupEngine(

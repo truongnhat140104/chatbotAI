@@ -125,6 +125,21 @@ class HotichEngineQAService:
             out[kind] = [self._serialize_result(r) for r in rows]
         return out
 
+    @staticmethod
+    def _normalize_mode(mode: str) -> str:
+        requested_mode = (mode or "auto").strip().lower()
+        if requested_mode not in {"auto", "legal", "procedure", "template", "case"}:
+            return "auto"
+        return requested_mode
+
+    @staticmethod
+    def _is_exact_engine(engine_name: str) -> bool:
+        return engine_name in {
+            "legal_lookup_engine",
+            "procedure_engine",
+            "template_engine",
+        }
+
     def health(self) -> dict[str, Any]:
         stats = self.bundle.summary()
         stats["init_warnings"] = self.init_warnings
@@ -132,9 +147,7 @@ class HotichEngineQAService:
 
     def ask(self, query: str, per_kind: int = 3, use_llm: bool = True, mode: str = "auto") -> dict[str, Any]:
         route = self.router.route(query)
-        requested_mode = (mode or "auto").strip().lower()
-        if requested_mode not in {"auto", "legal", "procedure", "template", "case"}:
-            requested_mode = "auto"
+        requested_mode = self._normalize_mode(mode)
 
         engine = self.selector.pick(query=query, route=route, requested_mode=requested_mode)
         engine_result = engine.run(query=query, route=route, per_kind=per_kind)
@@ -151,9 +164,16 @@ class HotichEngineQAService:
         llm_used = False
         llm_error = None
 
-        missing_legal_context = built_context.query_mode in {"legal", "legal_article_lookup"} and not built_context.citation_map
+        missing_legal_context = (
+            built_context.query_mode in {"legal", "legal_article_lookup"}
+            and not built_context.citation_map
+        )
 
-        if use_llm and not missing_legal_context:
+        # Chi cho phep LLM o case engine de tranh cau tra loi dai dong, lech wording
+        # lam Exact Match / F1 giam manh o cac cau exact lookup.
+        allow_llm = use_llm and engine_result.engine_name == "case_rag_engine"
+
+        if allow_llm and not missing_legal_context:
             try:
                 llm_result = self.llm_answerer.answer(built_context)
                 answer_text = llm_result.answer_text
@@ -165,6 +185,13 @@ class HotichEngineQAService:
                 answer_mode = "engine_fallback_rule_based"
         elif missing_legal_context:
             llm_error = "Skipped LLM: legal engine chưa truy xuất được căn cứ pháp lý đủ tin cậy."
+            answer_mode = "engine_rule_based_no_legal_context"
+        elif self._is_exact_engine(engine_result.engine_name):
+            llm_error = "LLM disabled for exact-answer engine to preserve short, deterministic output."
+            answer_mode = "engine_rule_based_exact"
+        else:
+            llm_error = "LLM disabled by request."
+            answer_mode = "engine_rule_based"
 
         return {
             "query": query,
@@ -198,7 +225,7 @@ def get_service() -> HotichEngineQAService:
 
 app = FastAPI(
     title="Hotich Engine QA API",
-    version="2.0.0",
+    version="2.0.1",
     description="API engine-based: router -> engine selector -> exact engine / case RAG engine -> context -> LLM",
 )
 
